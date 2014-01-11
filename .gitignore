@@ -1,0 +1,13 @@
+.htaccess
+favicon.ico
+include/
+index.php
+site_assets/global/images/flags/ad.png
+site_assets/global/
+site_assets/mobile/
+site_assets/mpos/
+templates/cache/
+templates/compile/
+templates/mail/
+templates/mobile/
+templates/mpos/
