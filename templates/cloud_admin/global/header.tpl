@@ -1,7 +1,7 @@
 <div class="container">
 <div class="navbar-brand">
     <!-- COMPANY LOGO -->
-    <h1 class="site_title"><a href="index.html">{$GLOBAL.website.name|default:"Unknown Pool"}</a></h1>
+    <h1 class="site_title"><a href="{$smarty.server.PHP_SELF}">{$GLOBAL.website.name|default:"Unknown Pool"}</a></h1>
     <!-- /COMPANY LOGO -->
     <!-- TEAM STATUS FOR MOBILE -->
     <div class="visible-xs">

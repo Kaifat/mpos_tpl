@@ -124,18 +124,33 @@
             <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
             <div class="container">
                 <div class="row">
-                    {if is_array($smarty.session.POPUP|default)}
-                        {section popup $smarty.session.POPUP}
-                            <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
-                        {/section}
-                    {/if}
-                    {if $CONTENT != "empty" && $CONTENT != ""}
-                        {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
-                            {include file="$PAGE/$ACTION/$CONTENT"}
-                        {else}
-                            Missing template for this page
-                        {/if}
-                    {/if}
+                    <div id="content" class="col-lg-12">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="page-header">
+                                    <!-- BREADCRUMBS -->
+                                    {include file="global/breadcrumbs.tpl"}
+                                    <!-- /BREADCRUMBS -->
+                                    <div class="clearfix">
+                                        <h3 class="content-title pull-left">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape|capitalize}{else}{$smarty.request.page|escape|default:"home"|capitalize}{/if}</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {if is_array($smarty.session.POPUP|default)}
+                                {section popup $smarty.session.POPUP}
+                                    <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
+                                {/section}
+                            {/if}
+                            {if $CONTENT != "empty" && $CONTENT != ""}
+                                {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
+                                    {include file="$PAGE/$ACTION/$CONTENT"}
+                                {else}
+                                    Missing template for this page
+                                {/if}
+                            {/if}
+                        </div>
+                    </div>
                 </div>
                 <footer class="footer">
                     {include file="global/footer.tpl"}
