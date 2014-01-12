@@ -3180,7 +3180,7 @@ var App = function () {
 
         //Initialise theme pages
         init: function () {
-		
+
             if (App.isPage("index")) {
 				handleDateTimePickers(); //Function to display Date Timepicker
 				handleSparkline();		//Function to display Sparkline charts

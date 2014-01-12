@@ -91,31 +91,35 @@
     <header class="navbar clearfix" id="header">
         {include file="global/header.tpl"}
     </header>
+    {*<section id="secondary_bar">*}
+        {*{include file="global/userinfo.tpl"}*}
+        {*{include file="global/breadcrumbs.tpl"}*}
+    {*</section>*}
     <!--/HEADER -->
-    <section id="secondary_bar">
-        {include file="global/userinfo.tpl"}
-        {include file="global/breadcrumbs.tpl"}
-    </section>
-    <aside id="sidebar" class="column">
-        {include file="global/navigation.tpl"}
-    </aside>
-    <section id="main" class="column">
-        {if is_array($smarty.session.POPUP|default)}
-            {section popup $smarty.session.POPUP}
-                <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
-            {/section}
-        {/if}
-        {if $CONTENT != "empty" && $CONTENT != ""}
-            {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
-                {include file="$PAGE/$ACTION/$CONTENT"}
-            {else}
-                Missing template for this page
+    <!-- PAGE -->
+    <section id="page">
+        <aside id="sidebar" class="sidebar">
+            {include file="global/navigation.tpl"}
+        </aside>
+        <section id="main" class="column">
+            {if is_array($smarty.session.POPUP|default)}
+                {section popup $smarty.session.POPUP}
+                    <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
+                {/section}
             {/if}
-        {/if}
-        <div class="spacer"></div>
+            {if $CONTENT != "empty" && $CONTENT != ""}
+                {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
+                    {include file="$PAGE/$ACTION/$CONTENT"}
+                {else}
+                    Missing template for this page
+                {/if}
+            {/if}
+            <div class="spacer"></div>
+        </section>
+        <footer class="footer">
+            {include file="global/footer.tpl"}
+        </footer>
     </section>
-    <footer class="footer">
-        {include file="global/footer.tpl"}
-    </footer>
+    <!--/PAGE -->
 </body>
 </html>

@@ -599,4 +599,5 @@
 </div>
 </div>
 <!-- /TEAM STATUS -->
-{include file="login/small.tpl"}
+
+{*{include file="login/small.tpl"}*}
