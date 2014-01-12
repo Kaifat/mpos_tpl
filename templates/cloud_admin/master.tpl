@@ -137,25 +137,39 @@
                                     <div class="description">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape}{else}{$smarty.request.page|escape|default:"home"}{/if}</div>
                                 </div>
                             </div>
+                        </div>
 
-                            {if is_array($smarty.session.POPUP|default)}
-                                {section popup $smarty.session.POPUP}
-                                    <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
-                                {/section}
+                        {if is_array($smarty.session.POPUP|default)}
+                            {section popup $smarty.session.POPUP}
+                                <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
+                            {/section}
+                        {/if}
+                        {if $CONTENT != "empty" && $CONTENT != ""}
+                            {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
+                                {include file="$PAGE/$ACTION/$CONTENT"}
+                            {else}
+                                Missing template for this page
                             {/if}
-                            {if $CONTENT != "empty" && $CONTENT != ""}
-                                {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
-                                    {include file="$PAGE/$ACTION/$CONTENT"}
-                                {else}
-                                    Missing template for this page
-                                {/if}
-                            {/if}
+                        {/if}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="footer-tools">
+                            <span class="go-top">
+                            <i class="fa fa-chevron-up"></i>
+                            Top
+                            </span>
                         </div>
                     </div>
                 </div>
-                <footer class="footer">
+
+                <div class="separator"></div>
+
+                <div class="row">
                     {include file="global/footer.tpl"}
-                </footer>
+                </div>
             </div>
         </div>
     </section>
