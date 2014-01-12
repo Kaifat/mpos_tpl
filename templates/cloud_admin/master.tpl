@@ -93,7 +93,6 @@
     </header>
     {*<section id="secondary_bar">*}
         {*{include file="global/userinfo.tpl"}*}
-        {*{include file="global/breadcrumbs.tpl"}*}
     {*</section>*}
     <!--/HEADER -->
     <!-- PAGE -->
@@ -134,6 +133,7 @@
                                     <div class="clearfix">
                                         <h3 class="content-title pull-left">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape|capitalize}{else}{$smarty.request.page|escape|default:"home"|capitalize}{/if}</h3>
                                     </div>
+                                    <div class="description">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape}{else}{$smarty.request.page|escape|default:"home"}{/if}</div>
                                 </div>
                             </div>
 
