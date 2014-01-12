@@ -98,27 +98,50 @@
     <!--/HEADER -->
     <!-- PAGE -->
     <section id="page">
-        <aside id="sidebar" class="sidebar">
+        <div id="sidebar" class="sidebar">
             {include file="global/navigation.tpl"}
-        </aside>
-        <section id="main" class="column">
-            {if is_array($smarty.session.POPUP|default)}
-                {section popup $smarty.session.POPUP}
-                    <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
-                {/section}
-            {/if}
-            {if $CONTENT != "empty" && $CONTENT != ""}
-                {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
-                    {include file="$PAGE/$ACTION/$CONTENT"}
-                {else}
-                    Missing template for this page
-                {/if}
-            {/if}
-            <div class="spacer"></div>
-        </section>
-        <footer class="footer">
-            {include file="global/footer.tpl"}
-        </footer>
+        </div>
+
+        <div id="main-content">
+            <!-- SAMPLE BOX CONFIGURATION MODAL FORM-->
+            <div class="modal fade" id="box-config" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title">Box Settings</h4>
+                        </div>
+                        <div class="modal-body">
+                            Here goes box setting content.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /SAMPLE BOX CONFIGURATION MODAL FORM-->
+            <div class="container">
+                <div class="row">
+                    {if is_array($smarty.session.POPUP|default)}
+                        {section popup $smarty.session.POPUP}
+                            <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
+                        {/section}
+                    {/if}
+                    {if $CONTENT != "empty" && $CONTENT != ""}
+                        {if file_exists($smarty.current_dir|cat:"/$PAGE/$ACTION/$CONTENT")}
+                            {include file="$PAGE/$ACTION/$CONTENT"}
+                        {else}
+                            Missing template for this page
+                        {/if}
+                    {/if}
+                </div>
+                <footer class="footer">
+                    {include file="global/footer.tpl"}
+                </footer>
+            </div>
+        </div>
     </section>
     <!--/PAGE -->
 </body>
