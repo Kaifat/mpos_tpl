@@ -1,6 +1,7 @@
 var App = function () {
 
 	var currentPage = ''; // current page
+    var themePath = ''; // theme folder path
 	var collapsed = false; //sidebar collapsed
 	var is_mobile = false; //is screen mobile?
 	var is_mini_menu = false; //is mini-menu activated
@@ -2998,7 +2999,7 @@ var App = function () {
 	var handleThemeSkins = function () {
 		// Handle theme colors
         var setSkin = function (color) {
-            $('#skin-switcher').attr("href", "css/themes/" + color + ".css");
+            $('#skin-switcher').attr("href", themePath + "css/themes/" + color + ".css");
             $.cookie('skin_color', color);
         }
 		$('ul.skins > li a').click(function () {
@@ -3312,6 +3313,11 @@ var App = function () {
 			handleGoToTop(); 	//Funtion to handle goto top buttons
 			handleNavbarFixedTop();		//Function to check & handle if navbar is fixed top
 			handleThemeSkins();		//Function to handle theme skins
+        },
+
+        // set theme path
+        setThemePath: function(path) {
+            themePath = path;
         },
 
         //Set page
