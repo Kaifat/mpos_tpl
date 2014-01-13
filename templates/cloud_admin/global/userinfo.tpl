@@ -600,7 +600,7 @@
     <!-- /TEAM STATUS -->
 
 {else}
-    <div class="pull-right" style="margin-top:10px;">
+    <div class="pull-right navbar-form">
         {include file="login/small.tpl"}
     </div>
 {/if}
