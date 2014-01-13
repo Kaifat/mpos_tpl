@@ -38,15 +38,19 @@
         {/if}
 
         {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
-        <li class="has-sub">
+        <li class="has-sub{if $smarty.request.page|escape == "admin"} active{/if}">
             <a href="javascript:;">
                 <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">Admin Panel</span>
                 <span class="arrow"></span>
             </a>
             <ul class="sub">
-                <li><a href="{$smarty.server.PHP_SELF}?page=admin&action=dashboard">Dashboard</a></li>
+
+                <li{if $smarty.request.page|escape == "admin" && $smarty.request.action|escape == "dashboard"} class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=admin&action=dashboard">Dashboard</a></li>
+
                 <li><a href="{$smarty.server.PHP_SELF}?page=admin&action=monitoring">Monitoring</a></li>
+
                 <li><a href="{$smarty.server.PHP_SELF}?page=admin&action=user">User Info</a></li>
+
                 <li><a href="{$smarty.server.PHP_SELF}?page=admin&action=wallet">Wallet Info</a></li>
                 <li><a href="{$smarty.server.PHP_SELF}?page=admin&action=transactions">Transactions</a></li>
                 <li><a href="{$smarty.server.PHP_SELF}?page=admin&action=settings">Settings</a></li>

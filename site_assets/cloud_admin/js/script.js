@@ -3181,6 +3181,16 @@ var App = function () {
 
         //Initialise theme pages
         init: function () {
+            if (App.isPage("home")) {
+
+            }
+            if (App.isPage("dashboard")) {
+
+            }
+            if (App.isPage("account")) {
+
+            }
+
 
             if (App.isPage("index")) {
 				handleDateTimePickers(); //Function to display Date Timepicker
