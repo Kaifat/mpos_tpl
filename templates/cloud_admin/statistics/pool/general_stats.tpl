@@ -2,8 +2,7 @@
     <div class="box border">
         <div class="box-title">General Statistics</div>
         <div class="box-body">
-            <table id="datatable1" cellpadding="0" cellspacing="0" border="0"
-                   class="datatable table table-hover">
+            <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                 <tbody>
                 <tr>
                     <th>Pool Hash Rate</th>
