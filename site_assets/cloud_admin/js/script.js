@@ -3191,6 +3191,7 @@ var App = function () {
 
             }
 
+            handleSelect2(); // TODO: need only forms!!!
 
             if (App.isPage("index")) {
 				handleDateTimePickers(); //Function to display Date Timepicker

@@ -23,6 +23,8 @@
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/fullcalendar/fullcalendar.min.css"/>
     <!-- GRITTER -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/gritter/css/jquery.gritter.css"/>
+    <!-- SELECT2 -->
+    <link rel="stylesheet" type="text/css" href="{$PATH}/js/select2/select2.min.css" />
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 
@@ -70,6 +72,9 @@
     <script type="text/javascript" src="{$PATH}/js/jQuery-Cookie/jquery.cookie.min.js"></script>
     <!-- GRITTER -->
     <script type="text/javascript" src="{$PATH}/js/gritter/js/jquery.gritter.min.js"></script>
+    <!-- SELECT2 -->
+    <script type="text/javascript" src="{$PATH}/js/select2/select2.min.js"></script>
+    <!-- UNIFORM -->
     <!-- CUSTOM SCRIPT -->
     <script src="{$PATH}/js/script.js"></script>
 
@@ -131,7 +136,7 @@
                                     <div class="clearfix">
                                         <h3 class="content-title pull-left">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape|capitalize}{else}{$smarty.request.page|escape|default:"home"|capitalize}{/if}</h3>
                                     </div>
-                                    <div class="description">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape}{else}{$smarty.request.page|escape|default:"home"}{/if}</div>
+                                    <div class="description"></div>
                                 </div>
                             </div>
                         </div>
