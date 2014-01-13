@@ -92,9 +92,6 @@
     <header class="navbar clearfix" id="header">
         {include file="global/header.tpl"}
     </header>
-    {*<section id="secondary_bar">*}
-        {*{include file="global/userinfo.tpl"}*}
-    {*</section>*}
     <!--/HEADER -->
     <!-- PAGE -->
     <section id="page">
