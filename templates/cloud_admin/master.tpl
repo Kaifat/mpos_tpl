@@ -76,7 +76,7 @@
     <script>
         jQuery(document).ready(function () {
             App.setThemePath("{$PATH}/");
-            App.setPage("index");  //Set current page
+            App.setPage("{$smarty.request.page|escape|default:'home'}");  //Set current page
             App.init(); //Initialise plugins and elements
         });
     </script>
