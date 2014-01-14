@@ -14,7 +14,7 @@
                 </div>
                 <div class="form-group">
                     <label>Message</label>
-                    <textarea name="data[message]"
+                    <textarea class="form-control" name="data[message]"
                               rows="5">{$smarty.request.data.message|escape|default:"Please accept my invitation to this awesome pool."}</textarea>
                 </div>
             </div>

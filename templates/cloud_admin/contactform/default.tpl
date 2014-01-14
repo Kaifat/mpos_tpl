@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Your Message</label>
-                    <textarea type="text" name="senderMessage" cols="80" rows="10" maxlength="10000"
+                    <textarea class="form-control" type="text" name="senderMessage" cols="80" rows="10" maxlength="10000"
                               required>{$smarty.request.senderMessage|escape|default:""}</textarea>
                 </div>
                 <center>{nocache}{$RECAPTCHA|default:""}{/nocache}</center>

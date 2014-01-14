@@ -46,7 +46,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input type="submit" value="Register" class="alt_btn">
+                    <input class="btn btn-inverse" type="submit" value="Register" class="alt_btn">
                 </div>
             </div>
         </div>

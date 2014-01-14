@@ -9,6 +9,7 @@
     <div class="box border">
         <div class="box-title"><h4>News Posts</h4></div>
         <div class="box-body">
+            </fieldset>
             <ul>
                 <li>News posts support the Markdown syntax</li>
             </ul>
@@ -23,7 +24,7 @@
                         <input class="form-control" size="30" type="text" name="data[header]" required/>
                     </div>
                     <label>Content</label>
-                    <textarea class="cleditor" name="data[content]" rows="5" required></textarea>
+                    <textarea class="form-control" name="data[content]" rows="5" required></textarea>
                 </div>
                 {*</div>*}
                 <div class="toolbox bottom">
