@@ -22,7 +22,7 @@
 {if $smarty.session.AUTHENTICATED|default:"0" == 1}
 <li class="has-sub{if $smarty.request.page|default:false && $smarty.request.page|default:false == "dashboard" || $smarty.request.page|default:false == "account"} active{/if}">
     <a href="javascript:;">
-        <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">My Account</span>
+        <i class="fa fa-user fa-fw"></i> <span class="menu-text">My Account</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub">
@@ -57,7 +57,7 @@
 {if $smarty.session.AUTHENTICATED|default:"0" == 1 && $GLOBAL.userdata.is_admin == 1}
 <li class="has-sub{if $smarty.request.page|default:false == "admin"} active{/if}">
     <a href="javascript:;">
-        <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">Admin Panel</span>
+        <i class="fa fa-cogs fa-fw"></i> <span class="menu-text">Admin Panel</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub">
@@ -108,7 +108,7 @@
 {if $smarty.session.AUTHENTICATED|default}
 <li class="has-sub{if $smarty.request.page|default:false == "statistics"} active{/if}">
     <a href="javascript:;">
-        <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">Statistics</span>
+        <i class="fa fa-bar-chart-o fa-fw"></i> <span class="menu-text">Statistics</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub">
@@ -134,7 +134,7 @@
 
 <li class="has-sub{if $smarty.request.page|default:false == "statistics"} active{/if}">
     <a href="javascript:;">
-        <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">Statistics</span>
+        <i class="fa fa-cogs fa-fw"></i> <span class="menu-text">Statistics</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub">
@@ -175,7 +175,7 @@
 
 <li class="has-sub{if $smarty.request.page|default:false == "gettingstarted" || $smarty.request.page|default:false == "about"} active{/if}">
     <a href="javascript:;">
-        <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">Help</span>
+        <i class="fa fa-question-circle fa-fw"></i> <span class="menu-text">Help</span>
         <span class="arrow"></span>
     </a>
     <ul class="sub">
@@ -197,7 +197,7 @@
 <li class="has-sub{if $smarty.request.page|default:false == "contactform" || $smarty.request.page|default:false == "logout" || $smarty.request.page|default:false == "login" || $smarty.request.page|default:false == "register" || $smarty.request.page|default:false == "contactform" || $smarty.request.page|default:false == "tac"} active{/if}"
 ">
 <a href="javascript:;">
-    <i class="fa fa-bookmark-o fa-fw"></i> <span class="menu-text">Other</span>
+    <i class="fa fa-briefcase fa-fw"></i> <span class="menu-text">Other</span>
     <span class="arrow"></span>
 </a>
 <ul class="sub">
