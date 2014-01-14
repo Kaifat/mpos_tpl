@@ -23,3 +23,8 @@ h1.site_title a {
 h1.site_title a:hover {
     text-decoration: none;
 }
+
+.tree-folder-header,
+.tree-item {
+    height: 20px !important;
+}

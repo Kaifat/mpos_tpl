@@ -25,6 +25,8 @@
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/gritter/css/jquery.gritter.css"/>
     <!-- SELECT2 -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/select2/select2.min.css" />
+    <!-- FUELUX TREE -->
+    <link rel="stylesheet" type="text/css" href="{$PATH}/js/fuelux-tree/fuelux.min.css" />
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
 
@@ -74,6 +76,9 @@
     <script type="text/javascript" src="{$PATH}/js/gritter/js/jquery.gritter.min.js"></script>
     <!-- SELECT2 -->
     <script type="text/javascript" src="{$PATH}/js/select2/select2.min.js"></script>
+    <!-- FUELUX TREE -->
+    <script type="text/javascript" src="{$PATH}/js/fuelux-tree/fuelux.tree-sampledata.js"></script>
+    <script type="text/javascript" src="{$PATH}/js/fuelux-tree/fuelux.tree.min.js"></script>
     <!-- UNIFORM -->
     <!-- CUSTOM SCRIPT -->
     <script src="{$PATH}/js/script.js"></script>

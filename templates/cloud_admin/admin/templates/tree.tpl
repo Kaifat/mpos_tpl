@@ -1,27 +1,23 @@
-<div id="tree2" class="tree"></div>
+<div id="templates-tree" class="tree"></div>
 
-<ul>
-  {foreach from=$files item="value" key="file"}
-  {if is_array($value)}
-    <li class="folder">
-      {$file}
-    {assign var="new_prefix" value="$prefix$file/"}
-    {include file="admin/templates/tree.tpl" files=$value prefix=$new_prefix}
-    </li>
-  {else}
-    {assign var="path" value="$prefix$file"}
+{literal}
+<script type="text/javascript">
 
-    {assign var="classes" value=array()}
-    {if array_key_exists($path, $ACTIVE_TEMPLATES)}
-      {assign var="tmp" value=array_push($classes,"dynatree-activated")}
-    {/if}
-    {if $CURRENT_TEMPLATE eq $path}
-      {assign var="tmp" value=array_push($classes,"dynatree-active")}
-    {/if}
-    {assign var="classes" value=join(" ", $classes)}
-    <li{if $classes} class="{$classes}" data="addClass:'{$classes}'{if strpos("dynatree-active", $classes) !== false}, activate: true{/if}"{/if}>
-      <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&template={$prefix}{$file}">{$file}</a>
-    </li>
-  {/if}
-  {/foreach}
-</ul>
+    var tree_data = {/literal}{$JSON_TEMPLATES}{literal};
+    var templatesTreeDataSource = new DataSourceTree({data: tree_data});
+
+    $('#templates-tree').admin_tree({
+        dataSource: templatesTreeDataSource ,
+        loadingHTML:'<div class="tree-loading"><i class="fa fa-spinner fa-2x fa-spin"></i></div>',
+        'open-icon' : 'fa-folder-open',
+        'close-icon' : 'fa-folder',
+        'selectable' : false,
+        'selected-icon' : null,
+        'unselected-icon' : null
+    });
+
+    //To add font awesome support
+    $('.tree').find('[class*="fa-"]').addClass("fa");
+
+</script>
+{/literal}
