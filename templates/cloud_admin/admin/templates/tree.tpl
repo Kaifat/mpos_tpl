@@ -1,3 +1,5 @@
+<div id="tree2" class="tree"></div>
+
 <ul>
   {foreach from=$files item="value" key="file"}
   {if is_array($value)}
