@@ -49,12 +49,12 @@
                 </table>
                 <div class="form-group">
                     <label>Account</label>
-                    <input size="20" type="text" name="filter[account]"
+                    <input class="form-control" size="20" type="text" name="filter[account]"
                            value="{$smarty.request.filter.account|default:""}"/>
                 </div>
                 <div class="form-group">
                     <label>E-Mail</label>
-                    <input size="20" type="text" name="filter[email]"
+                    <input class="form-control" size="20" type="text" name="filter[email]"
                            value="{$smarty.request.filter.email|default:""}"/>
                 </div>
                 <div class="form-group">
