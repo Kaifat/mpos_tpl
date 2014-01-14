@@ -10,11 +10,11 @@
                 <div class="module_content">
                     <div class="form-group">
                         <label>Worker Name</label>
-                        <input type="text" name="username" value="user" size="10" maxlength="20" required>
+                        <input class="form-control" type="text" name="username" value="user" size="10" maxlength="20" required>
                     </div>
                     <div class="form-group">
                         <label>Worker Password</label>
-                        <input type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
+                        <input class="form-control" type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
                     </div>
                 </div>
                 <div class="clear"></div>
