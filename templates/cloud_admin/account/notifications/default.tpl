@@ -7,8 +7,7 @@
         <div class="box border">
             <div class="box-title">Notification Settings</div>
             <div class="box-body">
-                <table id="datatable1" cellpadding="0" cellspacing="0" border="0"
-                       class="datatable table table-hover">
+                <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                     <tr>
                         <th align="left">Type</th>
                         <th align="center">Active</th>
@@ -41,38 +40,43 @@
                               </label>
                               </span>
                         </td>
-                        </tr>
-                        <tr>
+                    </tr>
+                    <tr>
                         <td align="left">Auto Payout</td>
                         <td>
                             <span class="toggle">
                                 <label for="data[auto_payout]">
                                     <input type="hidden" name="data[auto_payout]" value="0"/>
-                                    <input type="checkbox" class="ios-switch" name="data[auto_payout]" id="data[auto_payout]"
-                                             value="1"{nocache}{if $SETTINGS['auto_payout']}checked{/if}{/nocache} />
+                                    <input type="checkbox" class="ios-switch" name="data[auto_payout]"
+                                           id="data[auto_payout]"
+                                           value="1"{nocache}{if $SETTINGS['auto_payout']}checked{/if}{/nocache} />
+
                                     <div class="switch"></div>
                                 </label>
                             </span>
                         </td>
-                        </tr>
-                        <tr>
-                            <td align="left">Manual Payout</td>
-                            <td>
-                                <span class="toggle">
-                                    <label for="data[manual_payout]">
-                                        <input type="hidden" name="data[manual_payout]" value="0"/>
-                                        <input type="checkbox" class="ios-switch" name="data[manual_payout]" id="data[manual_payout]"
-                                             value="1"{nocache}{if $SETTINGS['manual_payout']}checked{/if}{/nocache} />
-                                        <div class="switch"></div>
-                                    </label>
-                                </span>
-                            </td>
-                        </tr>
+                    </tr>
+                    <tr>
+                        <td align="left">Manual Payout</td>
+                        <td>
+                            <span class="toggle">
+                                <label for="data[manual_payout]">
+                                    <input type="hidden" name="data[manual_payout]" value="0"/>
+                                    <input type="checkbox" class="ios-switch" name="data[manual_payout]"
+                                           id="data[manual_payout]"
+                                           value="1"{nocache}{if $SETTINGS['manual_payout']}checked{/if}{/nocache} />
+
+                                    <div class="switch"></div>
+                                </label>
+                            </span>
+                        </td>
+                    </tr>
                 </table>
-                </div>
+            </div>
             <div class="toolbox bottom">
-            <div class="submit_link">
-                <input type="submit" value="Update" class="alt_btn">
+                <div class="submit_link">
+                    <input type="submit" value="Update" class="alt_btn">
+                </div>
             </div>
         </div>
     </div>
@@ -82,35 +86,34 @@
     <div class="box border">
         <div class="box-title">Notification History</div>
         <div class="box-body">
-            <table id="datatable2" cellpadding="0" cellspacing="0" border="0"
-                   class="datatable table table-hover">
-    <thead style="font-size:13px;">
-      <tr>
-        <th align="center" style="cursor: pointer;">ID</th>
-        <th align="center" style="cursor: pointer;">Time</th>
-        <th align="center" style="cursor: pointer;">Type</th>
-        <th align="center" style="cursor: pointer;">Active</th>
-      </tr>
-    </thead>
-    <tbody style="font-size:12px;">
-{section notification $NOTIFICATIONS}
-      <tr class="{cycle values="odd,even"}">
-        <td align="center">{$NOTIFICATIONS[notification].id}</td>
-        <td align="center">{$NOTIFICATIONS[notification].time}</td>
-        <td align="center">
-{if $NOTIFICATIONS[notification].type == new_block}New Block
-{else if $NOTIFICATIONS[notification].type == auto_payout}Auto Payout
-{else if $NOTIFICATIONS[notification].type == idle_worker}IDLE Worker
-{else if $NOTIFICATIONS[notification].type == manual_payout}Manual Payout
-{/if}
-        </td>
-        <td align="center">
-          <i class="icon-{if $NOTIFICATIONS[notification].active}ok{else}cancel{/if}"></i>
-        </td>
-      </tr>
-{/section}
-    </tbody>
-  </table>
-</div>
+            <table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
+                <thead style="font-size:13px;">
+                <tr>
+                    <th align="center" style="cursor: pointer;">ID</th>
+                    <th align="center" style="cursor: pointer;">Time</th>
+                    <th align="center" style="cursor: pointer;">Type</th>
+                    <th align="center" style="cursor: pointer;">Active</th>
+                </tr>
+                </thead>
+                <tbody style="font-size:12px;">
+                {section notification $NOTIFICATIONS}
+                <tr class="{cycle values="odd,even"}">
+                    <td align="center">{$NOTIFICATIONS[notification].id}</td>
+                    <td align="center">{$NOTIFICATIONS[notification].time}</td>
+                    <td align="center">
+                        {if $NOTIFICATIONS[notification].type == new_block}New Block
+                            {else if $NOTIFICATIONS[notification].type == auto_payout}Auto Payout
+                            {else if $NOTIFICATIONS[notification].type == idle_worker}IDLE Worker
+                            {else if $NOTIFICATIONS[notification].type == manual_payout}Manual Payout
+                        {/if}
+                    </td>
+                    <td align="center">
+                        <i class="icon-{if $NOTIFICATIONS[notification].active}ok{else}cancel{/if}"></i>
+                    </td>
+                </tr>
+                {/section}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
