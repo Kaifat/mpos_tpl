@@ -5,7 +5,7 @@
 
     <div class="col-md-4">
         <div class="box border">
-            <div class="box-title">Invitation</div>
+            <div class="box-title"><h4>Invitation</h4></div>
             <div class="box-body">
                 <fieldset>
                     <label>E-Mail</label>
@@ -30,7 +30,7 @@
 
 <div class="col-md-8">
     <div class="box border">
-        <div class="box-title">Past Invitations</div>
+        <div class="box-title"><h4>Past Invitations</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0"
                    class="datatable table table-hover">

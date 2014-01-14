@@ -2,7 +2,7 @@
 
 <div class="col-md-12">
     <div class="box border">
-        <div class="box-title">Transaction Summary</div>
+        <div class="box-title"><h4>Transaction Summary</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0"
                    class="datatable table table-striped table-hover">
@@ -28,7 +28,7 @@
 
 <div class="col-md-4">
     <div class="box border">
-        <div class="box-title">Transaction Filter</div>
+        <div class="box-title"><h4>Transaction Filter</h4></div>
         <div class="box-body">
             <form action="{$smarty.server.PHP_SELF}">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>
@@ -71,7 +71,7 @@
 
 <div class="col-md-8">
     <div class="box border">
-        <div class="box-title">Transaction History</div>
+        <div class="box-title"><h4>Transaction History</h4></div>
         <div class="box-body">
             <table id="datatable2" cellpadding="0" cellspacing="0" border="0"
                    class="datatable table table-striped table-hover">

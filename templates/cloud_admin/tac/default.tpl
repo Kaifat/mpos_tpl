@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="box border">
-        <div class="box-title">Terms &amp; Conditions</div>
+        <div class="box-title"><h4>Terms &amp; Conditions</h4></div>
         <div class="box-body">
             <p>This Agreement governs your use of {$GLOBAL.website.name}.</p>
             <ol>

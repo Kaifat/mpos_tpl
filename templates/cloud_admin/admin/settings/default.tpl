@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <div class="box border">
-        <div class="box-title">Settings</div>
+        <div class="box-title"><h4>Settings</h4></div>
         <div class="box-body">
             <form method="POST" class="form-horizontal" role="form">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>

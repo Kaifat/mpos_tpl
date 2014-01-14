@@ -1,7 +1,7 @@
 {if $DISABLE_TRANSACTIONSUMMARY|default:"0" != 1}
 <div class="col-md-12">
     <div class="box border">
-        <div class="box-title">Transaction Summary</div>
+        <div class="box-title"><h4>Transaction Summary</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                 <thead>
@@ -76,7 +76,7 @@
 
 <div class="col-md-8">
     <div class="box border">
-        <div class="box-title">Transaction History</div>
+        <div class="box-title"><h4>Transaction History</h4></div>
         <div class="box-body">
             <table id="datatable3" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                 <thead>

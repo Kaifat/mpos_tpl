@@ -5,7 +5,7 @@
 
     <div class="col-md-4">
         <div class="box border">
-            <div class="box-title">Notification Settings</div>
+            <div class="box-title"><h4>Notification Settings</h4></div>
             <div class="box-body">
                 <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                     <tr>
@@ -84,7 +84,7 @@
 
 <div class="col-md-8">
     <div class="box border">
-        <div class="box-title">Notification History</div>
+        <div class="box-title"><h4>Notification History</h4></div>
         <div class="box-body">
             <table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                 <thead style="font-size:13px;">

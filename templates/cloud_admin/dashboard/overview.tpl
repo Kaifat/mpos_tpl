@@ -1,8 +1,8 @@
 <div class="col-md-8">
     <div class="box border">
-        <div class="box-title">Overview {if $GLOBAL.config.price.currency}{$GLOBAL.config.currency}
+        <div class="box-title"><h4>Overview {if $GLOBAL.config.price.currency}{$GLOBAL.config.currency}
             /{$GLOBAL.config.price.currency}: <span id="b-price">{$GLOBAL.price|number_format:"8"}</span>{/if} / Pool
-            Workers: <span id="b-dworkers">{$GLOBAL.workers}</span></div>
+            Workers: <span id="b-dworkers">{$GLOBAL.workers}</span></h4></div>
         <div class="box-body">
             <center>
                 <div style="display: inline-block;">

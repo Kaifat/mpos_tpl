@@ -1,6 +1,6 @@
 <div class="col-md-4">
     <div class="box border">
-        <div class="box-title">Add New Worker</div>
+        <div class="box-title"><h4>Add New Worker</h4></div>
         <div class="box-body">
             <form action="{$smarty.server.PHP_SELF}" method="post">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}">
@@ -30,7 +30,7 @@
 
 <div class="col-md-8">
     <div class="box border">
-        <div class="box-title">Worker Configuration</div>
+        <div class="box-title"><h4>Worker Configuration</h4></div>
         <div class="box-body">
             <form action="{$smarty.server.PHP_SELF}" method="post">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}">

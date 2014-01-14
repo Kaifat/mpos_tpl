@@ -5,7 +5,7 @@
 
     <div class="col-md-6">
         <div class="box border">
-            <div class="box-title">Account Details</div>
+            <div class="box-title"><h4>Account Details</h4></div>
             <div class="box-body">
                 <fieldset>
                     <label>Username</label>
@@ -83,7 +83,7 @@
 
     <div class="col-md-6">
         <div class="box border">
-            <div class="box-title">Cash Out</div>
+            <div class="box-title"><h4>Cash Out</h4></div>
             <div class="box-body">
                 <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
                     Please note:
@@ -122,7 +122,7 @@
 
     <div class="col-md-6">
         <div class="box border">
-            <div class="box-title">Change Password</div>
+            <div class="box-title"><h4>Change Password</h4></div>
             <div class="box-body">
                 <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
                     Note: You will be redirected to login on successful completion of a password change
@@ -161,7 +161,7 @@
 
     <div class="col-md-6">
         <div class="box border">
-            <div class="box-title">Reset PIN</div>
+            <div class="box-title"><h4>Reset PIN</h4></div>
             <div class="box-body">
                 <fieldset>
                     <label>Current Password</label>
