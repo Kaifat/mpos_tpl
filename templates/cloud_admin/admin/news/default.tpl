@@ -1,43 +1,59 @@
 <script src="{$PATH}/js/cleditor/jquery.cleditor.min.js"></script>
 <link rel="stylesheet" href="{$PATH}/js/cleditor/jquery.cleditor.css">
 <script type="text/javascript">
-  $(document).ready(function () { $(".cleditor").cleditor(); });
+    $(document).ready(function () {
+        $(".cleditor").cleditor();
+    });
 </script>
-<article class="module width_full">
-  <header><h3>News Posts</h3></header>
-  <ul><li>News posts support the Markdown syntax</li></ul>
-  <form method="POST" action="{$smarty.server.PHP_SELF}">
-    <input type="hidden" name="page" value="{$smarty.request.page|escape}">
-    <input type="hidden" name="action" value="{$smarty.request.action|escape}">
-    <input type="hidden" name="do" value="add">
-    <div class="module_content">
-      <div class="form-group">
-        <label>Header</label>
-        <input size="30" type="text" name="data[header]" required />
-      </div>
-      <label>Content</label>
-      <textarea class="cleditor" name="data[content]" rows="5" required></textarea>
+<div class="col-md-12">
+    <div class="box border">
+        <div class="box-title"><h4>News Posts</h4></div>
+        <div class="box-body">
+            <ul>
+                <li>News posts support the Markdown syntax</li>
+            </ul>
+            <form method="POST" action="{$smarty.server.PHP_SELF}">
+                <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+                <input type="hidden" name="action" value="{$smarty.request.action|escape}">
+                <input type="hidden" name="do" value="add">
+
+                <div class="module_content">
+                    <div class="form-group">
+                        <label>Header</label>
+                        <input class="form-control" size="30" type="text" name="data[header]" required/>
+                    </div>
+                    <label>Content</label>
+                    <textarea class="cleditor" name="data[content]" rows="5" required></textarea>
+                </div>
+                {*</div>*}
+                <div class="toolbox bottom">
+                    <div class="submit_link">
+                        <input type="submit" value="Add" class="alt_btn">
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-    <footer>
-      <div class="submit_link">
-        <input type="submit" value="Add" class="alt_btn">
-      </div>
-    </footer>
-  </form>
-</article>
+</div>
 
 {nocache}
-{section name=news loop=$NEWS}
-<article class="module width_full">
-  <header><h3>{$NEWS[news].header} posted {$NEWS[news].time} by {$NEWS[news].author}</h3>
-{if $NEWS[news].active == 0}<font size="2px"><font color="red"><b>inactive</b></font><br /><br />{/if}</header>
-  <div class="module_content">{$NEWS[news].content nofilter}</div>
-  <footer>
-    <div class="submit_link">
-      <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action=news_edit&id={$NEWS[news].id}'><i class="icon-wrench"></i></a>&nbsp;
-      <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&do=delete&id={$NEWS[news].id}'><i class="icon-trash"></i></a>
+    {section name=news loop=$NEWS}
+
+    <div class="col-md-12">
+        <div class="box border">
+            <div class="box-title"><h4>{$NEWS[news].header} posted {$NEWS[news].time} by {$NEWS[news].author}</h4>
+                {if $NEWS[news].active == 0}<font size="2px"><font color="red"><b>inactive</b></font><br/><br/>{/if}
+            </div>
+            <div class="box-body">
+                {$NEWS[news].content nofilter}</div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action=news_edit&id={$NEWS[news].id}'><i class="icon-wrench"></i></a>&nbsp;
+                    <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&do=delete&id={$NEWS[news].id}'><i
+                            class="icon-trash"></i></a>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
-</article>
-{/section}
+    {/section}
 {/nocache}

@@ -9,7 +9,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label>E-Mail</label>
-                    <input type="text" name="data[email]" value="{$smarty.request.data.email|escape|default:""}"
+                    <input class="form-control" type="text" name="data[email]" value="{$smarty.request.data.email|escape|default:""}"
                            size="30"/>
                 </div>
                 <div class="form-group">

@@ -58,12 +58,12 @@
                 </div>
                 <div class="form-group">
                     <label>Account</label>
-                    <input size="20" type="text" name="filter[account]"
+                    <input class="form-control" size="20" type="text" name="filter[account]"
                            value="{$smarty.request.filter.account|default:""}"/>
                 </div>
                 <div class="form-group">
                     <label>Address</label>
-                    <input size="20" type="text" name="filter[address]"
+                    <input class="form-control" size="20" type="text" name="filter[address]"
                            value="{$smarty.request.filter.address|default:""}"/>
                 </div>
         </div>
