@@ -61,20 +61,20 @@
                 <input type="hidden" name="template" value="{$CURRENT_TEMPLATE}">
                 <input type="hidden" name="do" value="save">
                 <div class="module_content">
-                    <fieldset>
+                    <div class="form-group">
                         <label>Active</label>
                         <input type="hidden" name="active" value="0" />
                         <input type="checkbox" name="active" value="1" id="active" {nocache}{if $DATABASE_TEMPLATE.active}checked{/if}{/nocache} />
                         <label for="active"></label>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div class="form-group">
                         <label>Content</label>
                         <textarea name="content" rows="15" type="text" required>{nocache}{$DATABASE_TEMPLATE.content|escape}{/nocache}</textarea>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div class="form-group">
                         <label>Original Template Content</label>
                         <textarea readonly rows="15" type="text" required>{nocache}{$ORIGINAL_TEMPLATE|escape}{/nocache}</textarea>
-                    </fieldset>
+                    </div>
                 </div>
                 <footer>
                     <div class="submit_link">
