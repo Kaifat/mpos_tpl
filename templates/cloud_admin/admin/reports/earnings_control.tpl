@@ -21,19 +21,19 @@
           <fieldset style="width:200px; padding-right:8px;">
             <label>Select User</label>
             {html_options name="id" options=$USERLIST selected=$USERID|default:"0"}
-          </fieldset>
+          </div>
         </td>
         <td>
           <fieldset style="width:200px; padding-right:8px;">
             <label>Block Limit</label>
             <input size="10" type="text" name="limit" value="{$BLOCKLIMIT|default:"20"}" />
-          </fieldset>
+          </div>
         </td>
         <td>
           <fieldset style="width:200px; padding-right:8px;">
             <label>Starting block height</label>
             <input type="text" class="pin" name="search" value="{$HEIGHT|default:"%"}">
-          </fieldset>
+          </div>
         </td>
         <td><b>SHOW EMPTY ROUNDS</b><br><br>
           <span style="margin: 0px 28px;" class="toggle">

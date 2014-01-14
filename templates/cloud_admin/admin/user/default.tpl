@@ -47,28 +47,28 @@
                         </td>
                     </tbody>
                 </table>
-                <fieldset>
+                <div class="form-group">
                     <label>Account</label>
                     <input size="20" type="text" name="filter[account]"
                            value="{$smarty.request.filter.account|default:""}"/>
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>E-Mail</label>
                     <input size="20" type="text" name="filter[email]"
                            value="{$smarty.request.filter.email|default:""}"/>
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>Is Admin</label>
                 {html_options name="filter[is_admin]" options=$ADMIN selected=$smarty.request.filter.is_admin|default:""}
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>Is Locked</label>
                 {html_options name="filter[is_locked]" options=$LOCKED selected=$smarty.request.filter.is_locked|default:""}
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>No Fees</label>
                 {html_options name="filter[no_fees]" options=$NOFEE selected=$smarty.request.filter.no_fees|default:""}
-                </fieldset>
+                </div>
                 <ul>
                     <li>Note: Text search fields support '%' as wildcard.</li>
                 </ul>

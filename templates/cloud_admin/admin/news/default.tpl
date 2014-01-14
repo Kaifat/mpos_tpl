@@ -11,10 +11,10 @@
     <input type="hidden" name="action" value="{$smarty.request.action|escape}">
     <input type="hidden" name="do" value="add">
     <div class="module_content">
-      <fieldset>
+      <div class="form-group">
         <label>Header</label>
         <input size="30" type="text" name="data[header]" required />
-      </fieldset>
+      </div>
       <label>Content</label>
       <textarea class="cleditor" name="data[content]" rows="5" required></textarea>
     </div>

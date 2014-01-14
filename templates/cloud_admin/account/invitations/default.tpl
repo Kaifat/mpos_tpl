@@ -7,16 +7,16 @@
         <div class="box border">
             <div class="box-title"><h4>Invitation</h4></div>
             <div class="box-body">
-                <fieldset>
+                <div class="form-group">
                     <label>E-Mail</label>
                     <input type="text" name="data[email]" value="{$smarty.request.data.email|escape|default:""}"
                            size="30"/>
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>Message</label>
                     <textarea name="data[message]"
                               rows="5">{$smarty.request.data.message|escape|default:"Please accept my invitation to this awesome pool."}</textarea>
-                </fieldset>
+                </div>
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
