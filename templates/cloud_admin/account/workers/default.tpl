@@ -8,14 +8,14 @@
                 <input type="hidden" name="do" value="add">
 
                 <div class="module_content">
-                    <fieldset>
+                    <div class="form-group">
                         <label>Worker Name</label>
                         <input type="text" name="username" value="user" size="10" maxlength="20" required>
-                    </fieldset>
-                    <fieldset>
+                    </div>
+                    <div class="form-group">
                         <label>Worker Password</label>
                         <input type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
-                    </fieldset>
+                    </div>
                 </div>
                 <div class="clear"></div>
                 <div class="toolbox bottom">

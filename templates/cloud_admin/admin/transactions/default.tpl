@@ -48,24 +48,24 @@
                         </td>
                     </tbody>
                 </table>
-                <fieldset>
+                <div class="form-group">
                     <label>Type</label>
                 {html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>Status</label>
                 {html_options name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>Account</label>
                     <input size="20" type="text" name="filter[account]"
                            value="{$smarty.request.filter.account|default:""}"/>
-                </fieldset>
-                <fieldset>
+                </div>
+                <div class="form-group">
                     <label>Address</label>
                     <input size="20" type="text" name="filter[address]"
                            value="{$smarty.request.filter.address|default:""}"/>
-                </fieldset>
+                </div>
         </div>
         <div class="toolbox bottom">
             <div class="submit_link">

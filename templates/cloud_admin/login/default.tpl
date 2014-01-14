@@ -3,14 +3,14 @@
     <input type="hidden" name="to" value="{($smarty.request.to|default:"{$smarty.server.PHP_SELF}?page=dashboard")|escape}" />
     <header><h3>Login with existing account</h3></header>
     <div class="module_content">
-        <fieldset>
+        <div class="form-group">
           <label>Username or E-Mail</label>
           <input type="text" name="username" size="22" maxlength="100" value="{$smarty.request.username|default:""|escape}" placeholder="Your username or email" required />
-        </fieldset>
-        <fieldset>
+        </div>
+        <div class="form-group">
           <label>Password</label>
           <input type="password" name="password" size="22" maxlength="100" placeholder="Your password" required />
-        </fieldset>
+        </div>
       <div class="clear"></div>
     </div>
     <footer>

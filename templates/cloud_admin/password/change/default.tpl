@@ -6,14 +6,14 @@
     <input type="hidden" name="do" value="resetPassword">
     <header><h3>Password reset</h3></header>
     <div class="module_content">
-      <fieldset>
+      <div class="form-group">
         <label>New Password</label>
         <input type="password" name="newPassword" required>
-      </fieldset>
-      <fieldset>
+      </div>
+      <div class="form-group">
         <label>Repeat New Password</label>
         <input type="password" name="newPassword2" required>
-      </fieldset>
+      </div>
       <div class="clear"></div>
     </div>
     <footer>
