@@ -1,81 +1,89 @@
 <form action="{$smarty.server.PHP_SELF}" method="POST">
-  <input type="hidden" name="page" value="{$smarty.request.page|escape}">
-  <input type="hidden" name="action" value="{$smarty.request.action|escape}">
-  <input type="hidden" name="do" value="save">
-  <article class="module width_quarter">
-    <header>
-      <h3>Notification Settings</h3>
-    </header>
-    <div class="module_content">
-    <table width="100%">
-      <tr>
-        <th align="left">Type</th>
-        <th align="center">Active</th>
-      </tr>
-      <tr>
-        <td align="left">IDLE Worker</td>
-        <td>
-          <span class="toggle">
-          <label for="data[idle_worker]">
-          <input type="hidden" name="data[idle_worker]" value="0" />
-          <input type="checkbox" class="ios-switch" name="data[idle_worker]" id="data[idle_worker]" value="1"{nocache}{if $SETTINGS['idle_worker']}checked{/if}{/nocache} />
-          <div class="switch"></div>
-          </label>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td align="left">New Blocks</td>
-        <td>
-          <span class="toggle">
-          <label for="data[new_block]">
-          <input type="hidden" name="data[new_block]" value="0" />
-          <input type="checkbox" class="ios-switch" name="data[new_block]" id="data[new_block]" value="1"{nocache}{if $SETTINGS['new_block']}checked{/if}{/nocache} />
-          <div class="switch"></div>
-          </label>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td align="left">Auto Payout</td>
-        <td>
-          <span class="toggle">
-          <label for="data[auto_payout]">
-          <input type="hidden" name="data[auto_payout]" value="0" />
-          <input type="checkbox" class="ios-switch" name="data[auto_payout]" id="data[auto_payout]" value="1"{nocache}{if $SETTINGS['auto_payout']}checked{/if}{/nocache} />
-          <div class="switch"></div>
-          </label>
-          </span>
-        </td>
-      </tr>
-      <tr>
-        <td align="left">Manual Payout</td>
-        <td>
-          <span class="toggle">
-          <label for="data[manual_payout]">
-          <input type="hidden" name="data[manual_payout]" value="0" />
-          <input type="checkbox" class="ios-switch" name="data[manual_payout]" id="data[manual_payout]" value="1"{nocache}{if $SETTINGS['manual_payout']}checked{/if}{/nocache} />
-          <div class="switch"></div>
-          </label>
-          </span>
-        </td>
-      </tr>
-    </table>
+    <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+    <input type="hidden" name="action" value="{$smarty.request.action|escape}">
+    <input type="hidden" name="do" value="save">
+
+    <div class="col-md-4">
+        <div class="box border">
+            <div class="box-title">Notification Settings</div>
+            <div class="box-body">
+                <table id="datatable1" cellpadding="0" cellspacing="0" border="0"
+                       class="datatable table table-hover">
+                    <tr>
+                        <th align="left">Type</th>
+                        <th align="center">Active</th>
+                    </tr>
+                    <tr>
+                        <td align="left">IDLE Worker</td>
+                        <td>
+                              <span class="toggle">
+                                  <label for="data[idle_worker]">
+                                      <input type="hidden" name="data[idle_worker]" value="0"/>
+                                      <input type="checkbox" class="ios-switch" name="data[idle_worker]"
+                                             id="data[idle_worker]"
+                                             value="1"{nocache}{if $SETTINGS['idle_worker']}checked{/if}{/nocache} />
+
+                                      <div class="switch"></div>
+                                  </label>
+                              </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="left">New Blocks</td>
+                        <td>
+                              <span class="toggle">
+                              <label for="data[new_block]">
+                                  <input type="hidden" name="data[new_block]" value="0"/>
+                                  <input type="checkbox" class="ios-switch" name="data[new_block]" id="data[new_block]"
+                                         value="1"{nocache}{if $SETTINGS['new_block']}checked{/if}{/nocache} />
+
+                                  <div class="switch"></div>
+                              </label>
+                              </span>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td align="left">Auto Payout</td>
+                        <td>
+                            <span class="toggle">
+                                <label for="data[auto_payout]">
+                                    <input type="hidden" name="data[auto_payout]" value="0"/>
+                                    <input type="checkbox" class="ios-switch" name="data[auto_payout]" id="data[auto_payout]"
+                                             value="1"{nocache}{if $SETTINGS['auto_payout']}checked{/if}{/nocache} />
+                                    <div class="switch"></div>
+                                </label>
+                            </span>
+                        </td>
+                        </tr>
+                        <tr>
+                            <td align="left">Manual Payout</td>
+                            <td>
+                                <span class="toggle">
+                                    <label for="data[manual_payout]">
+                                        <input type="hidden" name="data[manual_payout]" value="0"/>
+                                        <input type="checkbox" class="ios-switch" name="data[manual_payout]" id="data[manual_payout]"
+                                             value="1"{nocache}{if $SETTINGS['manual_payout']}checked{/if}{/nocache} />
+                                        <div class="switch"></div>
+                                    </label>
+                                </span>
+                            </td>
+                        </tr>
+                </table>
+                </div>
+            <div class="toolbox bottom">
+            <div class="submit_link">
+                <input type="submit" value="Update" class="alt_btn">
+            </div>
+        </div>
     </div>
-    <footer>
-      <div class="submit_link">
-        <input type="submit" value="Update" class="alt_btn">
-      </div>
-    </footer>
-  </article>
 </form>
 
-<article class="module width_3_quarter">
-  <header>
-      <h3>Notification History</h3>
-      <div class="submit_link">{include file="global/pagination.tpl"}</div>
-  </header>
-  <table width="100%" class="tablesorterpager" cellspacing="0">
+<div class="col-md-8">
+    <div class="box border">
+        <div class="box-title">Notification History</div>
+        <div class="box-body">
+            <table id="datatable2" cellpadding="0" cellspacing="0" border="0"
+                   class="datatable table table-hover">
     <thead style="font-size:13px;">
       <tr>
         <th align="center" style="cursor: pointer;">ID</th>
@@ -103,4 +111,6 @@
 {/section}
     </tbody>
   </table>
-</article>
+</div>
+    </div>
+</div>
