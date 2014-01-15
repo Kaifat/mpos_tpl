@@ -216,25 +216,19 @@
             class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=tac">Terms and Conditions</a></li>
 {/if}
 </ul>
-</li>
 
-{*{if $smarty.session.AUTHENTICATED|default:"0" == 1}*}
-{*<!-- br -->*}
-{*{else}*}
-{*{if !$GLOBAL.website.api.disabled && !$GLOBAL.config.disable_navbar && !$GLOBAL.config.disable_navbar_api}*}
-{*<ul>*}
-{*<center>*}
-{*<div style="display: inline-block;">*}
-{*<i><u><b><font size="2">LIVE STATS</font></b></u></i>*}
-{*<div id="mr" style="width:180px; height:120px;"></div>*}
-{*<div id="hr" style="width:180px; height:120px;"></div>*}
-{*</div>*}
-{*</center>*}
-{*</ul>*}
-{*<hr/>*}
-{*{include file="global/navjs.tpl"}*}
-{*{/if}*}
-{*{/if}*}
 
-</ul>
+{if $smarty.session.AUTHENTICATED|default:"0" == 0}
+    {if !$GLOBAL.website.api.disabled && !$GLOBAL.config.disable_navbar && !$GLOBAL.config.disable_navbar_api}
+    <hr>
+    <div class="box">
+        <div class="box-body center">
+            <h3 class="content-title">LIVE STATS</h3>
+            <div id="mr" style="width:100%; height:120px;"></div>
+            <div id="hr" style="width:100%; height:120px;"></div>
+        </div>
+    </div>
+    {include file="global/navjs.tpl"}
+    {/if}
+{/if}
 </div>

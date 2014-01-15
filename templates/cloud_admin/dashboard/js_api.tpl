@@ -1,16 +1,3 @@
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.json2.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.dateAxisRenderer.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.highlighter.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.canvasTextRenderer.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.trendline.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.enhancedLegendRenderer.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.canvasTextRenderer.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.categoryAxisRenderer.min.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.pointLabels.js"></script>
-<script type="text/javascript" src="{$PATH}/js/plugins/jqplot.donutRenderer.js"></script>
-
 <script>
 {literal}
 $(document).ready(function(){
@@ -45,14 +32,14 @@ $(document).ready(function(){
     series: [
       { yaxis: 'yaxis', label: 'Own',    fill: true                                            },
       { yaxis: 'yaxis', label: 'Pool',   fill: false, trendline: { show: false }, lineWidth: 2, markerOptions: { show: true, size: 4 }},
-      { yaxis: 'y3axis', label: 'Sharerate', fill: false, trendline: { show: false }              },
+      { yaxis: 'y3axis', label: 'Sharerate', fill: false, trendline: { show: false }              }
     ],
     legend: { show: true, location: 'sw', renderer: $.jqplot.EnhancedLegendRenderer, rendererOptions: { seriesToggleReplot: { resetAxes: true } } },
     axes: {
       yaxis:  { min: 0, pad: 1.25, label: 'Hashrate' , labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
       y3axis: { min: 0, pad: 1.25, label: 'Sharerate', labelRenderer: $.jqplot.CanvasAxisLabelRenderer },
-      xaxis:  { showTicks: false, tickInterval: {/literal}{$GLOBAL.config.statistics_ajax_refresh_interval}{literal}, labelRenderer: $.jqplot.CanvasAxisLabelRenderer, renderer: $.jqplot.DateAxisRenderer, angle: 30, tickOptions: { formatString: '%T' } },
-    },
+      xaxis:  { showTicks: false, tickInterval: {/literal}{$GLOBAL.config.statistics_ajax_refresh_interval}{literal}, labelRenderer: $.jqplot.CanvasAxisLabelRenderer, renderer: $.jqplot.DateAxisRenderer, angle: 30, tickOptions: { formatString: '%T' } }
+    }
   };
 
   var jqPlotShareinfoOptions = {
@@ -145,7 +132,7 @@ $(document).ready(function(){
     $('#b-esttimeperblock').html(minutes + " minutes " + seconds + " seconds"); // <- this needs some nicer format
     $('#b-nblock').html(data.getdashboarddata.data.network.block);
     $('#b-target').html(number_format(data.getdashboarddata.data.pool.shares.estimated) + " (done: " + data.getdashboarddata.data.pool.shares.progress + "%)" );
-    {/literal}{if $GLOBAL.config.payout_system != 'pps'}{literal }
+    {/literal}{if $GLOBAL.config.payout_system != 'pps'}{literal}
     $('#b-payout').html(number_format(data.getdashboarddata.data.personal.estimates.payout, 8));
     $('#b-block').html(number_format(data.getdashboarddata.data.personal.estimates.block, 8));
     $('#b-fee').html(number_format(data.getdashboarddata.data.personal.estimates.fee,8 ));

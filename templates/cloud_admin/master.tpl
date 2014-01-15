@@ -39,7 +39,21 @@
     <!-- BOOTSTRAP -->
     <script src="{$PATH}/bootstrap/js/bootstrap.min.js"></script>
 
+    <!-- jqplot -->
     <script src="{$PATH}/js/jquery.jqplot.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.json2.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.dateAxisRenderer.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.highlighter.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.canvasTextRenderer.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.trendline.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.enhancedLegendRenderer.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.canvasTextRenderer.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.pointLabels.js"></script>
+    <script src="{$PATH}/js/plugins/jqplot.donutRenderer.js"></script>
+
 
     <!-- DATE RANGE PICKER -->
     <script src="{$PATH}/js/bootstrap-daterangepicker/moment.min.js"></script>

@@ -12,6 +12,7 @@ $(document).ready(function(){
 
   g1 = new JustGage({
     id: "mr",
+    levelColors: [Theme.colors.blue],
     value: parseFloat({/literal}{$GLOBAL.workers}{literal}).toFixed(0),
     min: 0,
     max: Math.round({/literal}{$GLOBAL.workers}{literal} * 2),
@@ -30,6 +31,7 @@ $(document).ready(function(){
 
   g2 = new JustGage({
     id: "hr",
+    levelColors: [Theme.colors.red],
     value: parseFloat({/literal}{$GLOBAL.hashrate}{literal}).toFixed(2),
     min: 0,
     max: Math.round({/literal}{$GLOBAL.hashrate}{literal} * 2),
