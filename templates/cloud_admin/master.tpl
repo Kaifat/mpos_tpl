@@ -39,6 +39,7 @@
     <!-- BOOTSTRAP -->
     <script src="{$PATH}/bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="{$PATH}/js/jquery.jqplot.min.js"></script>
 
     <!-- DATE RANGE PICKER -->
     <script src="{$PATH}/js/bootstrap-daterangepicker/moment.min.js"></script>
@@ -64,6 +65,11 @@
     <script src="{$PATH}/js/flot/jquery.flot.pie.min.js"></script>
     <script src="{$PATH}/js/flot/jquery.flot.stack.min.js"></script>
     <script src="{$PATH}/js/flot/jquery.flot.crosshair.min.js"></script>
+    <!-- FLOT GROWRAF -->
+    <script src="{$PATH}/js/flot-growraf/jquery.flot.growraf.min.js"></script>
+    <!-- GAGE -->
+    <script src="{$PATH}/js/justgage/js/raphael.2.1.0.min.js"></script>
+    <script src="{$PATH}/js/justgage/js/justgage.1.0.1.min.js"></script>
     <!-- TODO -->
     <script type="text/javascript" src="{$PATH}/js/jquery-todo/js/paddystodolist.js"></script>
     <!-- TIMEAGO -->
@@ -82,6 +88,8 @@
     <!-- UNIFORM -->
     <!-- CUSTOM SCRIPT -->
     <script src="{$PATH}/js/script.js"></script>
+
+    <script type="text/javascript" src="{$PATH}/../global/js/number_format.js"></script>
 
     <script>
         jQuery(document).ready(function () {
