@@ -6,6 +6,5 @@
         </div>
         <div class="toolbox bottom">
         </div>
-        </div>
     </div>
 </div>

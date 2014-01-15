@@ -29,7 +29,6 @@
         <div class="box-title"><h4>Transaction Filter</h4></div>
         <form action="{$smarty.server.PHP_SELF}">
             <div class="box-body">
-
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}"/>
 

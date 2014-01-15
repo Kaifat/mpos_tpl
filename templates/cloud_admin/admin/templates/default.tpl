@@ -1,4 +1,4 @@
-<div class="col-md-5">
+<div class="col-md-4">
     <div class="box border">
         <div class="box-title">
             <h4><i class="fa fa-sitemap"></i>Select Page</h4>
@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="col-md-7">
+<div class="col-md-8">
     <div class="box border">
         <div class="box-title">
             <h4>Edit template '{$CURRENT_TEMPLATE}'</h4>

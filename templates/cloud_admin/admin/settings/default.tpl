@@ -1,8 +1,8 @@
 <div class="col-md-12">
     <div class="box border">
         <div class="box-title"><h4>Settings</h4></div>
-        <div class="box-body">
-            <form method="POST" class="form-horizontal" role="form">
+        <form method="POST" class="form-horizontal" role="form">
+            <div class="box-body">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}"/>
                 <input type="hidden" name="do" value="save"/>
@@ -44,12 +44,12 @@
                     </div>
                 {/foreach}
                 </div>
-                <div class="toolbox bottom">
-                    <div class="submit_link">
-                        <input class="btn btn-inverse" type="submit" value="Save" class="alt_btn">
-                    </div>
+            </div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <input class="btn btn-inverse" type="submit" value="Save" class="alt_btn">
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>

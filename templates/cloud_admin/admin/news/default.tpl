@@ -8,12 +8,11 @@
 <div class="col-md-12">
     <div class="box border">
         <div class="box-title"><h4>News Posts</h4></div>
-        <div class="box-body">
-            </fieldset>
-            <ul>
-                <li>News posts support the Markdown syntax</li>
-            </ul>
-            <form method="POST" action="{$smarty.server.PHP_SELF}">
+        <form method="POST" action="{$smarty.server.PHP_SELF}">
+            <div class="box-body">
+                <ul>
+                    <li>News posts support the Markdown syntax</li>
+                </ul>
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}">
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                 <input type="hidden" name="do" value="add">
@@ -26,14 +25,13 @@
                     <label>Content</label>
                     <textarea class="form-control" name="data[content]" rows="5" required></textarea>
                 </div>
-                {*</div>*}
-                <div class="toolbox bottom">
-                    <div class="submit_link">
-                        <input class="btn btn-inverse" type="submit" value="Add" class="alt_btn">
-                    </div>
+            </div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <input class="btn btn-inverse" type="submit" value="Add" class="alt_btn">
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </div>
 

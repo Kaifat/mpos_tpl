@@ -77,11 +77,12 @@
             </table>
         </div>
         <div class="toolbox bottom">
-        {if !$GLOBAL.website.api.disabled}
+            {if !$GLOBAL.website.api.disabled}
             <ul>
-                <li>These stats are also available in JSON format <a
-                        href="{$smarty.server.PHP_SELF}?page=api&action=getpoolstatus&api_key={$GLOBAL.userdata.api_key|default:""}">HERE</a>
+                <li>These stats are also available in JSON format <a href="{$smarty.server.PHP_SELF}?page=api&action=getpoolstatus&api_key={$GLOBAL.userdata.api_key|default:""}">HERE</a>
                 </li>
-            </ul>{/if}</div>
+            </ul>
+            {/if}
+        </div>
     </div>
 </div>

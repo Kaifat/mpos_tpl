@@ -53,7 +53,7 @@
                     <td align="right">{$BLOCKSFOUND[block].amount|number_format:"2"}</td>
                     <td align="right">
                         {assign var="totalexpectedshares" value=$totalexpectedshares+$BLOCKSFOUND[block].estshares}
-          {$BLOCKSFOUND[block].estshares|number_format}
+                        {$BLOCKSFOUND[block].estshares|number_format}
                     </td>
                     {if $GLOBAL.config.payout_system == 'pplns'}
                         <td align="right">{$BLOCKSFOUND[block].pplns_shares|number_format}</td>{/if}
@@ -76,13 +76,14 @@
                 </tr>
                 </tbody>
             </table>
-            </div>
-            <div class="toolbox bottom">
-            {if $GLOBAL.config.payout_system != 'pps'}
-                <ul>
-                    <li>Note: Round Earnings are not credited until <font color="orange">{$GLOBAL.confirmations}</font>
-                        confirms.
-                    </li>
-                </ul>{/if}</div>
+        </div>
+        <div class="toolbox bottom">
+        {if $GLOBAL.config.payout_system != 'pps'}
+            <ul>
+                <li>Note: Round Earnings are not credited until <font color="orange">{$GLOBAL.confirmations}</font>
+                    confirms.
+                </li>
+            </ul>{/if}
+        </div>
     </div>
 </div>

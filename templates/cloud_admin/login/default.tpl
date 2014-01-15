@@ -4,6 +4,7 @@
         <form action="{$smarty.server.PHP_SELF}?page=login" method="post" id="loginForm">
             <input type="hidden" name="to"
                    value="{($smarty.request.to|default:"{$smarty.server.PHP_SELF}?page=dashboard")|escape}"/>
+
             <div class="box-body">
                 <div class="form-group">
                     <label>Username or E-Mail</label>
@@ -20,11 +21,12 @@
                 <div class="clear"></div>
             </div>
             <div class="toolbox bottom">
-            <div class="submit_link">
-            <a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">Forgot your
-                password?</font></a>
-            <input class="btn btn-inverse" type="submit" value="Login" class="alt_btn"/>
-        </div>
+                <div class="submit_link">
+                    <a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">Forgot your
+                        password?</font></a>
+                    <input class="btn btn-inverse" type="submit" value="Login" class="alt_btn"/>
+                </div>
+            </div>
         </form>
     </div>
 </div>

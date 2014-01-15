@@ -25,8 +25,8 @@
 <div class="col-md-12">
     <div class="box border">
         <div class="box-title"><h4>User Search</h4></div>
-        <div class="box-body">
-            <form action="{$smarty.server.PHP_SELF}">
+        <form action="{$smarty.server.PHP_SELF}">
+            <div class="box-body">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}"/>
                 <input type="hidden" name="do" value="query"/>
@@ -97,14 +97,15 @@
                 <ul>
                     <li>Note: Text search fields support '%' as wildcard.</li>
                 </ul>
-        </div>
-        <div class="toolbox bottom">
-            <div class="submit_link">
-                <input class="btn btn-inverse" type="submit" value="Search" class="alt_btn">
             </div>
-        </div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <input class="btn btn-inverse" type="submit" value="Search" class="alt_btn">
+                </div>
+            </div>
         </form>
     </div>
+</div>
 
 
 <div class="col-md-12">

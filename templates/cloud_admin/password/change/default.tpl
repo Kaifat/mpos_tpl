@@ -1,25 +1,27 @@
-<article class="module width_half">
-  <form action="{$smarty.server.PHP_SELF}" method="post">
-    <input type="hidden" name="token" value="{$smarty.request.token|escape}">
-    <input type="hidden" name="page" value="{$smarty.request.page|escape}">
-    <input type="hidden" name="action" value="{$smarty.request.action|escape}">
-    <input type="hidden" name="do" value="resetPassword">
-    <header><h3>Password reset</h3></header>
-    <div class="module_content">
-      <div class="form-group">
-        <label>New Password</label>
-        <input type="password" name="newPassword" required>
-      </div>
-      <div class="form-group">
-        <label>Repeat New Password</label>
-        <input type="password" name="newPassword2" required>
-      </div>
-      <div class="clear"></div>
+<div class="col-md-6">
+    <div class="box border">
+        <form action="{$smarty.server.PHP_SELF}" method="post">
+            <input type="hidden" name="token" value="{$smarty.request.token|escape}">
+            <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+            <input type="hidden" name="action" value="{$smarty.request.action|escape}">
+            <input type="hidden" name="do" value="resetPassword">
+            <div class="box-title"><h4>Password reset</h4></div>
+            <div class="box-body">
+                <div class="form-group">
+                    <label>New Password</label>
+                    <input class="form-control" type="password" name="newPassword" required>
+                </div>
+                <div class="form-group">
+                    <label>Repeat New Password</label>
+                    <input class="form-control" type="password" name="newPassword2" required>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <input class="btn btn-inverse" type="submit" value="Change Password" class="alt_btn">
+                </div>
+            </div>
+        </form>
     </div>
-    <footer>
-      <div class="submit_link">
-        <input class="btn btn-inverse" type="submit" value="Change Password" class="alt_btn">
-      </div>
-    </footer>
-  </form>
-</article>
+</div>
