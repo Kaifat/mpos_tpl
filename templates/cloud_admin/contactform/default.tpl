@@ -32,7 +32,8 @@
                 <center>{nocache}{$RECAPTCHA|default:""}{/nocache}</center>
             </div>
             <div class="toolbox bottom">
-                <div class="submit_link"><input type="submit" class="alt_btn" name="sendMessage" value="Send Email"/>
+                <div class="submit_link">
+                    <input class="btn btn-info" type="submit" name="sendMessage" value="Send Email"/>
                 </div>
             </div>
         </div>

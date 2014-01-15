@@ -280,10 +280,10 @@
             <i class="fa fa-angle-down"></i>
         </a>
         <ul class="dropdown-menu">
-            <li><a href="#"><i class="fa fa-user"></i> My Profile</a></li>
-            <li><a href="#"><i class="fa fa-cog"></i> Account Settings</a></li>
+            <li><a href="{$smarty.server.PHP_SELF}?page=dashboard"><i class="fa fa-user"></i> My Profile</a></li>
+            <li><a href="{$smarty.server.PHP_SELF}?page=account&action=edit"><i class="fa fa-cog"></i> Account Settings</a></li>
             <li><a href="#"><i class="fa fa-eye"></i> Privacy Settings</a></li>
-            <li><a href="login.html"><i class="fa fa-power-off"></i> Log Out</a></li>
+            <li><a href="{$smarty.server.PHP_SELF}?page=logout"><i class="fa fa-power-off"></i> Log Out</a></li>
         </ul>
     </li>
     <!-- END USER LOGIN DROPDOWN -->
