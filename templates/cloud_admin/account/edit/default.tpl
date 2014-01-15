@@ -165,7 +165,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label>Current Password</label>
-                    <input type="password" name="currentPassword"/>
+                    <input class="form-control" type="password" name="currentPassword"/>
                 </div>
             </div>
             <div class="toolbox bottom">

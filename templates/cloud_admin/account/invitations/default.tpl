@@ -25,7 +25,6 @@
             </div>
         </div>
     </div>
-    </div>
 </form>
 
 <div class="col-md-8">

@@ -2,8 +2,6 @@
     <div class="box border">
         <div class="box-title"><h4>{$GLOBAL.website.name}</h4></div>
         <div class="box-body">
-        {*<table width="100%">*}
-        {*<tbody>*}
             <p>After mining in other pools I have decided to setup my own pool, mostly for educational reason. I was
                 curious how pools work, what is needed to get them started and what tools can be used to run them.</p>
 
@@ -35,8 +33,6 @@
                 I am not responsible for lost coins due to a pool crash or other malfunctions which
                 could be caused by by code or the tools used in this implementation.
             </p>
-        {*</tbody>*}
-        {*</table>*}
         </div>
     </div>
 </div>

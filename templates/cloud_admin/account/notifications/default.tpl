@@ -8,6 +8,8 @@
             <div class="box-title"><h4>Notification Settings</h4></div>
             <div class="box-body">
 
+                {*===================================*}
+
                 <div class="control-group">
                     <div class="controls">
                         <label for="option1">Option 1</label>
