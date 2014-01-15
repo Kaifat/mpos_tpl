@@ -11,6 +11,6 @@
             <label for="inputPassword" class="sr-only">Password</label>
             <input name="password" type="password" placeholder="Password" id="inputPassword" class="form-control">
         </div>
-        <input type="submit" value="Sign in" class="btn btn-inverse"/>
+        <input class="btn btn-inverse" type="submit" value="Sign in" class="btn btn-inverse"/>
     </form>
 {/if}

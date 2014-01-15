@@ -88,7 +88,7 @@
         <input type="hidden" name="page" value="{$smarty.request.page|escape}">
         <input type="hidden" name="action" value="{$smarty.request.action|escape}">
         <input type="text" class="pin" name="search" value="{$smarty.request.height|default:"%"|escape}">
-        <input type="submit" value="Search" class="alt_btn">
+        <input class="btn btn-inverse" type="submit" value="Search" class="alt_btn">
       </form>
     </div>
   </footer>

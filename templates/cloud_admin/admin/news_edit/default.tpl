@@ -30,7 +30,7 @@
   </table>
    <footer>
     <div class="submit_link">
-      <input type="submit" value="Save" class="alt_btn">
+      <input class="btn btn-inverse" type="submit" value="Save" class="alt_btn">
     </div>
   </footer> 
 </form>

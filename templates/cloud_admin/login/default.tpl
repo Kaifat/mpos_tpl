@@ -23,7 +23,7 @@
             <div class="submit_link">
             <a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">Forgot your
                 password?</font></a>
-            <input type="submit" value="Login" class="alt_btn"/>
+            <input class="btn btn-inverse" type="submit" value="Login" class="alt_btn"/>
         </div>
         </form>
     </div>

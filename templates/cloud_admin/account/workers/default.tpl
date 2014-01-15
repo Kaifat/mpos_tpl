@@ -1,8 +1,8 @@
 <div class="col-md-4">
     <div class="box border">
         <div class="box-title"><h4>Add New Worker</h4></div>
-        <div class="box-body">
-            <form action="{$smarty.server.PHP_SELF}" method="post">
+        <form action="{$smarty.server.PHP_SELF}" method="post">
+            <div class="box-body">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}">
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                 <input type="hidden" name="do" value="add">
@@ -17,21 +17,22 @@
                         <input class="form-control" type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
                     </div>
                 </div>
-                <div class="clear"></div>
-                <div class="toolbox bottom">
-                    <div class="submit_link">
-                        <input type="submit" value="Add New Worker" class="alt_btn">
-                    </div>
+            </div>
+            <div class="clear"></div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <input class="btn btn-inverse" type="submit" value="Add New Worker" class="alt_btn">
                 </div>
-            </form>
-        </div> {*если убрать, то становится ок*}
+            </div>
+        </form>
     </div>
 </div>
 
 <div class="col-md-8">
     <div class="box border">
         <div class="box-title"><h4>Worker Configuration</h4></div>
-        <div class="box-body">
+        <form action="{$smarty.server.PHP_SELF}" method="post">
+            <div class="box-body">
             <form action="{$smarty.server.PHP_SELF}" method="post">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}">
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}">
@@ -88,7 +89,7 @@
             <div class="clear"></div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input type="submit" class="alt_btn" value="Update Workers">
+                    <input class="btn btn-inverse" type="submit" class="alt_btn" value="Update Workers">
                 </div>
             </div>
         </form>
