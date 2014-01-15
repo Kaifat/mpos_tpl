@@ -41,20 +41,37 @@
                 </tr>{/if}
                 </tbody>
             </table>
-            <table class="tablesorter">
-                <tbody>
-                <tr>
-                    <td align="left">
-                        <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&height={if is_array($BLOCKSFOUND) && count($BLOCKSFOUND) > ($BLOCKLIMIT - 1)}{$BLOCKSFOUND[$BLOCKLIMIT - 1].height}{/if}&prev=1"><i
-                                class="icon-left-open"></i></a>
-                    </td>
-                    <td align="right">
-                        <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&height={if is_array($BLOCKSFOUND) && count($BLOCKSFOUND) > 0}{$BLOCKSFOUND[0].height}{/if}&next=1"><i
-                                class="icon-right-open"></i></a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+
+        {*<div class="form-actions form-actions-padding">*}
+            <ul class="pager">
+                <li class="previous">
+                    <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&height={if is_array($BLOCKSFOUND) && count($BLOCKSFOUND) > ($BLOCKLIMIT - 1)}{$BLOCKSFOUND[$BLOCKLIMIT - 1].height}{/if}&prev=1"
+                       class="btn btn-default"><i class="fa fa-chevron-left fa-2x"></i></a>
+
+                </li>
+                <li class="next">
+                    <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&height={if is_array($BLOCKSFOUND) && count($BLOCKSFOUND) > 0}{$BLOCKSFOUND[0].height}{/if}&next=1"
+                       class="btn btn-default"><i class="fa fa-chevron-right fa-2x"></i></a>
+                </li>
+            </ul>
+        {*</div>*}
+
+
+        {*<table class="tablesorter">*}
+        {*<tbody>*}
+        {*<tr>*}
+        {*<td align="left">*}
+        {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&height={if is_array($BLOCKSFOUND) && count($BLOCKSFOUND) > ($BLOCKLIMIT - 1)}{$BLOCKSFOUND[$BLOCKLIMIT - 1].height}{/if}&prev=1"><i*}
+        {*class="icon-left-open"></i></a>*}
+        {*</td>*}
+        {*<td align="right">*}
+        {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&height={if is_array($BLOCKSFOUND) && count($BLOCKSFOUND) > 0}{$BLOCKSFOUND[0].height}{/if}&next=1"><i*}
+        {*class="icon-right-open"></i></a>*}
+        {*</td>*}
+        {*</tr>*}
+        {*</tbody>*}
+        {*</table>*}
+
         </div>
         <div class="toolbox bottom">
             <p style="padding-left:30px; padding-redight:30px; font-size:10px;">

@@ -68,7 +68,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input type="submit" value="Update Account" class="alt_btn">
+                    <input class="btn btn-inverse" type="submit" value="Update Account" class="alt_btn">
                 </div>
             </div>
         </div>
@@ -107,7 +107,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input type="submit" value="Cash Out" class="alt_btn">
+                    <input class="btn btn-inverse" type="submit" value="Cash Out" class="alt_btn">
                 </div>
             </div>
         </div>
@@ -146,7 +146,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input type="submit" value="Change Password" class="alt_btn">
+                    <input class="btn btn-inverse" type="submit" value="Change Password" class="alt_btn">
                 </div>
             </div>
         </div>
@@ -170,7 +170,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input type="submit" class="alt_btn" value="Reset PIN">
+                    <input class="btn btn-inverse" type="submit" class="alt_btn" value="Reset PIN">
                 </div>
             </div>
         </div>

@@ -7,22 +7,32 @@
         <div class="box border">
             <div class="box-title"><h4>Notification Settings</h4></div>
             <div class="box-body">
-                <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
+
+                <div class="control-group">
+                    <div class="controls">
+                        <label for="option1">Option 1</label>
+                        <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                            <input id="option1" type="radio" name="radio1" value="option1">
+                        </div>
+                        </div>
+                    </div>
+
+                {*<table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">*}
                     {*<tr>*}
                         {*<th align="left">Type</th>*}
                         {*<th align="center">Active</th>*}
                     {*</tr>*}
-                    <div>
-                        <div class="control-group">
-                            <div class="controls">
-                        <label for="option1">IDLE Worker</label>
+                    {*<div>*}
+                        {*<div class="control-group">*}
+                            {*<div class="controls">*}
+                        {*<label for="option1">IDLE Worker</label>*}
 
-                            <div class="make-switch radio3 radio-no-uncheck-square-o" data-on="warning">
-                                <input id="option1" type="radio" name="radio1" value="option1">
-                            </div>
+                            {*<div class="make-switch radio3 radio-no-uncheck-square-o" data-on="warning">*}
+                                {*<input id="option16" type="radio" name="radio1" value="option1">*}
+                            {*</div>*}
 
-                                </div>
-                        </div>
+                                {*</div>*}
+                        {*</div>*}
                               {*<span class="toggle">*}
                                   {*<label for="data[idle_worker]">*}
                                       {*<input type="hidden" name="data[idle_worker]" value="0"/>*}
@@ -34,7 +44,7 @@
                                   {*</label>*}
                               {*</span>*}
                         {*</td>*}
-                    </div>
+                    {*</div>*}
                     {*<tr>*}
                         {*<td align="left">New Blocks</td>*}
                         {*<td>*}
@@ -79,7 +89,7 @@
                             {*</span>*}
                         {*</td>*}
                     {*</tr>*}
-                </table>
+                {*</table>*}
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">

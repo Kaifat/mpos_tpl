@@ -24,30 +24,51 @@
 </div>
 {/if}
 
-<div class="col-md-12">
+<div class="col-md-4">
     <div class="box border">
         <div class="box-title"><h4>Transaction Filter</h4></div>
-        <div class="box-body">
-            <form action="{$smarty.server.PHP_SELF}">
+        <form action="{$smarty.server.PHP_SELF}">
+            <div class="box-body">
+
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}"/>
-                <table cellspacing="0" class="tablesorter">
-                    <tbody>
-                    <tr>
-                        <td align="left">
-                        {if $smarty.request.start|default:"0" > 0}
-                            <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" - $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i
-                                    class="icon-left-open"></i></a>
-                            {else}
-                            <i class="icon-left-open"></i>
-                        {/if}
-                        </td>
-                        <td align="right">
-                            <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" + $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i
-                                    class="icon-right-open"></i></a>
-                        </td>
-                    </tbody>
-                </table>
+
+            {*<div class="form-actions form-actions-padding">*}
+                <ul class="pager">
+                    <li class="previous">
+                    {if $smarty.request.start|default:"0" > 0}
+                        <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" - $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"
+                           class="btn btn-default"><i class="fa fa-chevron-left fa-2x"></i></a>
+                        {else}
+                        <i class="icon-left-open"></i>
+                    {/if}
+                    </li>
+                    <li class="next">
+                        <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" + $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"
+                           class="btn btn-default"><i class="fa fa-chevron-right fa-2x"></i></a>
+                    </li>
+                </ul>
+            {*</div>*}
+
+
+            {*<table cellspacing="0" class="tablesorter">*}
+            {*<tbody>*}
+            {*<tr>*}
+            {*<td align="left">*}
+            {*{if $smarty.request.start|default:"0" > 0}*}
+            {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" - $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i*}
+            {*class="icon-left-open"></i></a>*}
+            {*{else}*}
+            {*<i class="icon-left-open"></i>*}
+            {*{/if}*}
+            {*</td>*}
+            {*<td align="right">*}
+            {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" + $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i*}
+            {*class="icon-right-open"></i></a>*}
+            {*</td>*}
+            {*</tbody>*}
+            {*</table>*}
+
                 <div class="form-group">
                     <label>Type</label>
                 {html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
@@ -66,12 +87,12 @@
                     <input class="form-control" size="20" type="text" name="filter[address]"
                            value="{$smarty.request.filter.address|default:""}"/>
                 </div>
-        </div>
-        <div class="toolbox bottom">
-            <div class="submit_link">
-                <input type="submit" value="Filter" class="alt_btn">
             </div>
-        </div>
+            <div class="toolbox bottom">
+                <div class="submit_link">
+                    <input type="submit" value="Filter" class="alt_btn">
+                </div>
+            </div>
         </form>
     </div>
 </div>

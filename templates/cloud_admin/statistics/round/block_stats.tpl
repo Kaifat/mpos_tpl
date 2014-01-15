@@ -2,18 +2,37 @@
     <div class="box border">
         <div class="box-title"><h4>Block Statistics</h4></div>
         <div class="box-body">
+
+
+        {*<div class="form-actions form-actions-padding">*}
+            <ul class="pager">
+                <li class="previous">
+                    <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&height={$BLOCKDETAILS.height}&prev=1"
+                       class="btn btn-default"><i class="fa fa-chevron-left fa-2x"></i></a>
+                </li>
+                <li class="next">
+                    <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&height={$BLOCKDETAILS.height}&next=1"
+                       class="btn btn-default"><i class="fa fa-chevron-right fa-2x"></i></a>
+                </li>
+            </ul>
+        {*</div>*}
+
+
+
+                {*<tr>*}
+                    {*<td>*}
+                        {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&height={$BLOCKDETAILS.height}&prev=1"><i*}
+                                {*class="icon-left-open"></i></a>*}
+                    {*</td>*}
+                    {*<td colspan="7">*}
+                        {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&height={$BLOCKDETAILS.height}&next=1"><i*}
+                                {*class="icon-right-open"></i></a>*}
+                    {*</td>*}
+                {*</tr>*}
+
+
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
                 <tbody>
-                <tr>
-                    <td>
-                        <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&height={$BLOCKDETAILS.height}&prev=1"><i
-                                class="icon-left-open"></i></a>
-                    </td>
-                    <td colspan="7">
-                        <a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page}&action={$smarty.request.action}&height={$BLOCKDETAILS.height}&next=1"><i
-                                class="icon-right-open"></i></a>
-                    </td>
-                </tr>
                 <tr class="odd">
                     <td>ID</td>
                     <td>{$BLOCKDETAILS.id|number_format:"0"|default:"0"}</td>
