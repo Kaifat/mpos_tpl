@@ -15,7 +15,7 @@
             <input name="password" type="password" placeholder="Password" id="inputPassword" class="form-control">
         </div>
         <input class="btn btn-info" type="submit" value="Sign in">
-        <a href="{$smarty.server.PHP_SELF}?page=login" class="btn btn-info">Sign up</a>
+        <a href="{$smarty.server.PHP_SELF}?page=login" class="btn btn-success">Sign up</a>
     </form>
 </div>
 {/if}
