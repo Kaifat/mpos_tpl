@@ -22,8 +22,10 @@
                         <label>Header</label>
                         <input class="form-control" size="30" type="text" name="data[header]" required/>
                     </div>
-                    <label>Content</label>
-                    <textarea class="form-control" name="data[content]" rows="5" required></textarea>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea class="form-control" name="data[content]" rows="5" required></textarea>
+                    </div>
                 </div>
             </div>
             <div class="toolbox bottom">
@@ -47,9 +49,9 @@
                 {$NEWS[news].content nofilter}</div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action=news_edit&id={$NEWS[news].id}'><i class="icon-wrench"></i></a>&nbsp;
+                    <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action=news_edit&id={$NEWS[news].id}'><i class="fa fa-wrench"></i></a>&nbsp;
                     <a href='{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&do=delete&id={$NEWS[news].id}'><i
-                            class="icon-trash"></i></a>
+                            class="fa fa-trash-o"></i></a>
                 </div>
             </div>
         </div>

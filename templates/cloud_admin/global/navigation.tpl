@@ -174,8 +174,8 @@
         <span class="arrow"></span>
     </a>
     <ul class="sub">
-        <li{if $smarty.request.page|default:false == "gettingstarted"}
-                class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=gettingstarted">Getting Started</a></li>
+        <li{if $smarty.request.page|default:false == "faq"}
+                class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=faq">FAQ</a></li>
 
     {if !$GLOBAL.website.about.disabled}
         <li{if $smarty.request.page|default:false == "about" && $smarty.request.action|default:false == "pool"}
@@ -212,8 +212,8 @@
         <li{if $smarty.request.page|default:false == "contactform"}
                 class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=contactform">Contact</a></li>
     {/if}
-    <li{if $smarty.request.page|default:false == "tac"}
-            class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=tac">Terms and Conditions</a></li>
+    {*<li{if $smarty.request.page|default:false == "tac"}*}
+            {*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=tac">Terms and Conditions</a></li>*}
 {/if}
 </ul>
 

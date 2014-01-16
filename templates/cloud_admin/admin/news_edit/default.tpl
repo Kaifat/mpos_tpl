@@ -14,28 +14,29 @@
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                 <input type="hidden" name="id" value="{$NEWS.id}">
                 <input type="hidden" name="do" value="save">
-                <table id="datatable1" cellpadding="0" cellspacing="0" border="0"
-                       class="datatable table table-hover">
-                    <tr>
-                        <th>Active</th>
-                        <td>
+
+                <div class="module_content">
+                    <div class="form-group">
+                        <label>Active</label>
+
+                        <div>
                             <input type="hidden" name="active" value="0"/>
                             <input type="checkbox" name="active" value="1"
                                    id="active" {nocache}{if $NEWS.active}checked{/if}{/nocache} />
                             <label for="active"></label>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th>Header</th>
-                        <td><input class="form-control" name="header" type="text" size="30"
-                                   value="{nocache}{$NEWS.header}{/nocache}" required/></td>
-                    </tr>
-                    <tr>
-                        <th>Content</th>
-                        <td><textarea class="form-control" name="content" rows="15" cols="150" type="text"
-                                      required>{nocache}{$NEWS.content nofilter}{/nocache}</textarea></td>
-                    </tr>
-                </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Header</label>
+                        <input class="form-control" name="header" type="text" size="30"
+                               value="{nocache}{$NEWS.header}{/nocache}" required/>
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea class="form-control" name="content" rows="15" cols="150" type="text"
+                                  required>{nocache}{$NEWS.content nofilter}{/nocache}</textarea>
+                    </div>
+                </div>
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
