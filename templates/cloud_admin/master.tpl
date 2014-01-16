@@ -21,6 +21,8 @@
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/jquery-todo/css/styles.css"/>
     <!-- FULL CALENDAR -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/fullcalendar/fullcalendar.min.css"/>
+    <!-- DROPZONE -->
+    <link rel="stylesheet" type="text/css" href="{$PATH}/js/dropzone/dropzone.min.css" />
     <!-- GRITTER -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/gritter/css/jquery.gritter.css"/>
     <!-- SELECT2 -->
@@ -92,6 +94,8 @@
     <script type="text/javascript" src="{$PATH}/js/fullcalendar/fullcalendar.min.js"></script>
     <!-- COOKIE -->
     <script type="text/javascript" src="{$PATH}/js/jQuery-Cookie/jquery.cookie.min.js"></script>
+    <!-- DROPZONE -->
+    <script type="text/javascript" src="{$PATH}/js/dropzone/dropzone.min.js"></script>
     <!-- GRITTER -->
     <script type="text/javascript" src="{$PATH}/js/gritter/js/jquery.gritter.min.js"></script>
     <!-- SELECT2 -->
