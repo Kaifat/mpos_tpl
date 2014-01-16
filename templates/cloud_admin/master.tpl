@@ -191,6 +191,11 @@
                                     {*</div>*}
                                 {*</div>*}
                         {*</div>*}
+
+                    </div>
+
+                    <div id="footer" class="modal-footer">
+                        {include file="global/footer.tpl"}
                     </div>
                 </div>
             </div>

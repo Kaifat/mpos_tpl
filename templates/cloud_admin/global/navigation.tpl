@@ -232,7 +232,3 @@
     {/if}
 {/if}
 </div>
-
-<div class="row">
-    {include file="global/footer.tpl"}
-</div>

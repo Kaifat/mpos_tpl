@@ -45,3 +45,7 @@ h1.site_title a:hover {
 .login-box-inline form input[type=password] {
     padding-left: 33px !important;
 }
+
+#footer {
+    border-left: 1px solid #CDD2D2;
+}
