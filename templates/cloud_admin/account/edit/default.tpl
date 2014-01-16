@@ -23,16 +23,15 @@
                 <div class="tab-content">
                     <!-- 1 tab - MY ACCOUNT -->
                     <div class="tab-pane fade in active" id="my_account">
-
                         <div class="row">
                             <!-- PROFILE PIC -->
                             <div class="col-md-3">
                                 <div class="list-group">
-                                    <li class="list-group-item zero-padding">
+                                    <div class="list-group-item zero-padding">
                                         <img alt="" class="img-responsive" src="{$PATH}/img/profile/avatar.jpg">
-                                    </li>
+                                    </div>
                                     <div class="list-group-item profile-details">
-                                        <h2>Jennifer Doe</h2>
+                                        <h2>{$GLOBAL.userdata.username|escape}</h2>
                                         <p><i class="fa fa-circle text-green"></i> Online</p>
                                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam tincidunt erat volutpat laoreet dolore magna aliquam tincidunt erat volutpat.</p>
                                         <p><a href="#">www.jenniferblogs.com</a></p>
@@ -56,23 +55,12 @@
                             <!-- /PROFILE PIC -->
                             <!-- PROFILE DETAILS -->
                             <div class="col-md-9">
-                                <!-- ROW 1 -->
-                                <div class="row">
-                                <!-- .................. -->
-                                </div>
-                                <!-- /ROW 1 -->
-                                <div class="divide-40"></div>
-                                <!-- ROW 2 -->
-                                <div class="row">
-                                <!-- .................. -->
-                                </div>
-                                <!-- /ROW 2 -->
+
                             </div>
                             <!-- /PROFILE DETAILS -->
                         </div>
                     </div>
 
-                    </div>
                     <!-- /MY ACCOUNT -->
 
                     <!-- 2 tab - ACCOUNT DETAILS -->
