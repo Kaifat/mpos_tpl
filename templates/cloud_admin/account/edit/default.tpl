@@ -7,23 +7,71 @@
         <div class="box-body">
             <div class="tabbable header-tabs user-profile">
                 <ul class="nav nav-tabs">
-                    <li><a href="#reset_pin" data-toggle="tab"><i class="fa fa-question"></i> <span class="hidden-inline-mobile">Reset Pin</span></a></li>
+                    <li><a href="#reset_pin" data-toggle="tab"><i class="fa fa-dot-circle-o"></i> <span class="hidden-inline-mobile">Reset Pin</span></a></li>
 
-                    <li><a href="#change_password" data-toggle="tab"><i class="fa fa-question"></i> <span class="hidden-inline-mobile">Change password</span></a></li>
+                    <li><a href="#change_password" data-toggle="tab"><i class="fa fa-lock"></i> <span class="hidden-inline-mobile">Change password</span></a></li>
 
                     {if !$GLOBAL.config.disable_payouts && !$GLOBAL.config.disable_manual_payouts}
-                    <li><a href="#cash_out" data-toggle="tab"><i class="fa fa-question"></i> <span class="hidden-inline-mobile">Cash out</span></a></li>
+                    <li><a href="#cash_out" data-toggle="tab"><i class="fa fa-dollar"></i> <span class="hidden-inline-mobile">Cash out</span></a></li>
                     {/if}
 
                     <li><a href="#account_details" data-toggle="tab"><i class="fa fa-edit"></i> <span class="hidden-inline-mobile">Account Details</span></a></li>
 
-                    <li class="active"><a href="#my_account" data-toggle="tab"><i class="fa fa-dot-circle-o"></i>                         <span class="hidden-inline-mobile">My Account</span></a></li>
+                    <li class="active"><a href="#my_account" data-toggle="tab"><i class="fa fa-user"></i>                         <span class="hidden-inline-mobile">My Account</span></a></li>
                 </ul>
 
                 <div class="tab-content">
                     <!-- 1 tab - MY ACCOUNT -->
                     <div class="tab-pane fade in active" id="my_account">
-                        MY ACCOUNT
+
+                        <div class="row">
+                            <!-- PROFILE PIC -->
+                            <div class="col-md-3">
+                                <div class="list-group">
+                                    <li class="list-group-item zero-padding">
+                                        <img alt="" class="img-responsive" src="{$PATH}/img/profile/avatar.jpg">
+                                    </li>
+                                    <div class="list-group-item profile-details">
+                                        <h2>Jennifer Doe</h2>
+                                        <p><i class="fa fa-circle text-green"></i> Online</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt laoreet dolore magna aliquam tincidunt erat volutpat laoreet dolore magna aliquam tincidunt erat volutpat.</p>
+                                        <p><a href="#">www.jenniferblogs.com</a></p>
+                                        <ul class="list-inline">
+                                            <li><i class="fa fa-facebook fa-2x"></i></li>
+                                            <li><i class="fa fa-twitter fa-2x"></i></li>
+                                            <li><i class="fa fa-dribbble fa-2x"></i></li>
+                                            <li><i class="fa fa-bitbucket fa-2x"></i></li>
+                                        </ul>
+                                    </div>
+                                    <a href="#" class="list-group-item"><i class="fa fa-user fa-fw"></i> Profile</a>
+                                    <a href="#" class="list-group-item">
+                                        <span class="badge badge-red">9</span>
+                                        <i class="fa fa-calendar fa-fw"></i> Events
+                                    </a>
+                                    <a href="#" class="list-group-item"><i class="fa fa-comment-o fa-fw"></i> Messages</a>
+                                    <a href="#" class="list-group-item"><i class="fa fa-picture-o fa-fw"></i> Photos</a>
+                                    <a href="#" class="list-group-item"><i class="fa fa-cog fa-fw"></i> Settings</a>
+                                </div>
+                            </div>
+                            <!-- /PROFILE PIC -->
+                            <!-- PROFILE DETAILS -->
+                            <div class="col-md-9">
+                                <!-- ROW 1 -->
+                                <div class="row">
+                                <!-- .................. -->
+                                </div>
+                                <!-- /ROW 1 -->
+                                <div class="divide-40"></div>
+                                <!-- ROW 2 -->
+                                <div class="row">
+                                <!-- .................. -->
+                                </div>
+                                <!-- /ROW 2 -->
+                            </div>
+                            <!-- /PROFILE DETAILS -->
+                        </div>
+                    </div>
+
                     </div>
                     <!-- /MY ACCOUNT -->
 
