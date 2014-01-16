@@ -161,7 +161,7 @@
                                     {include file="global/breadcrumbs.tpl"}
                                     <!-- /BREADCRUMBS -->
                                     <div class="clearfix">
-                                        <h3 class="content-title pull-left">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape|capitalize}{else}{$smarty.request.page|escape|default:"home"|capitalize}{/if}</h3>
+                                        <h3 class="content-title pull-left">{if $smarty.request.action|escape|default:""}{$smarty.request.action|escape|capitalize}{else}{$smarty.request.page|escape|capitalize|default:"HOME"}{/if}</h3>
                                     </div>
                                     <div class="description"></div>
                                 </div>
@@ -180,24 +180,18 @@
                                 Missing template for this page
                             {/if}
                         {/if}
+
+                        {*<div class="row">*}
+                            {*<div class="col-sm-12">*}
+                                {*<div class="footer-tools">*}
+                                      {*<span class="go-top">*}
+                                        {*<i class="fa fa-chevron-up"></i>*}
+                            {*Top*}
+                            {*</span>*}
+                                    {*</div>*}
+                                {*</div>*}
+                        {*</div>*}
                     </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="footer-tools">
-                            <span class="go-top">
-                            <i class="fa fa-chevron-up"></i>
-                            Top
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="separator"></div>
-
-                <div class="row">
-                    {include file="global/footer.tpl"}
                 </div>
             </div>
         </div>
