@@ -23,7 +23,7 @@
 </script>
 
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>User Search</h4></div>
         <form action="{$smarty.server.PHP_SELF}">
             <div class="box-body">
@@ -100,7 +100,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Search" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Search" class="alt_btn">
                 </div>
             </div>
         </form>
@@ -109,7 +109,7 @@
 
 
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>User Information</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">

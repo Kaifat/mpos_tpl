@@ -1,7 +1,7 @@
 <script type="text/javascript" src="{$GLOBALASSETS}/js/jquery.easypiechart.min.js"></script>
 
 <div class="col-md-6">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>UptimeRobot Status</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0"

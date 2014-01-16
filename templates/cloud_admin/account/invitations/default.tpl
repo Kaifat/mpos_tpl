@@ -4,7 +4,7 @@
     <input type="hidden" name="do" value="sendInvitation">
 
     <div class="col-md-4">
-        <div class="box border">
+        <div class="box border blue">
             <div class="box-title"><h4>Invitation</h4></div>
             <div class="box-body">
                 <div class="form-group">
@@ -20,7 +20,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Invite" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Invite" class="alt_btn">
                 </div>
             </div>
         </div>
@@ -28,7 +28,7 @@
 </form>
 
 <div class="col-md-8">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Past Invitations</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0"

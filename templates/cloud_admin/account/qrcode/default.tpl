@@ -16,7 +16,7 @@
 </script>
 
 <div class="col-md-4">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>API String</h4></div>
         <div class="box-body">
             <p>This code will allow you to import the full API string into your mobile application.</p>

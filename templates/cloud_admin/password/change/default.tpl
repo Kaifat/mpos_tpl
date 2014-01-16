@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <div class="box border">
+    <div class="box border blue">
         <form action="{$smarty.server.PHP_SELF}" method="post">
             <input type="hidden" name="token" value="{$smarty.request.token|escape}">
             <input type="hidden" name="page" value="{$smarty.request.page|escape}">
@@ -19,7 +19,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Change Password" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Change Password" class="alt_btn">
                 </div>
             </div>
         </form>

@@ -1,6 +1,6 @@
 <div class="col-md-12">
     <!-- BOX -->
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title">
             <h4><i class="fa fa-user"></i><span class="hidden-inline-mobile">Hello, {$GLOBAL.userdata.username|escape}!</span></h4>
         </div>
@@ -68,7 +68,7 @@
                         <div class="col-md-6">
                             <div class="form">
                                 <form action="{$smarty.server.PHP_SELF}" method="post">
-                                    <div class="box border">
+                                    <div class="box border blue">
                                         <div class="box-title"><h4>Account Details</h4></div>
                                         <div class="box-body">
 
@@ -134,7 +134,7 @@
 
                                         <div class="toolbox bottom">
                                             <div class="submit_link">
-                                                <input class="btn btn-inverse" type="submit" value="Update Account" class="alt_btn">
+                                                <input class="btn btn-info" type="submit" value="Update Account" class="alt_btn">
                                             </div>
                                         </div>
                                     </div>
@@ -155,7 +155,7 @@
                                 <input class="form-control" type="hidden" name="action" value="{$smarty.request.action|escape}">
                                 <input class="form-control" type="hidden" name="do" value="cashOut">
 
-                                <div class="box border">
+                                <div class="box border blue">
                                     <div class="box-title"><h4>Cash Out</h4></div>
                                     <div class="box-body">
                                         <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
@@ -180,7 +180,7 @@
                                     </div>
                                     <div class="toolbox bottom">
                                         <div class="submit_link">
-                                            <input class="btn btn-inverse" type="submit" value="Cash Out" class="alt_btn">
+                                            <input class="btn btn-info" type="submit" value="Cash Out" class="alt_btn">
                                         </div>
                                     </div>
                             </div>
@@ -199,7 +199,7 @@
                             <input type="hidden" name="do" value="updatePassword">
 
                             <div class="col-md-6">
-                                <div class="box border">
+                                <div class="box border blue">
                                     <div class="box-title"><h4>Change Password</h4></div>
                                     <div class="box-body">
                                         <p style="padding-left:30px; padding-redight:30px; font-size:10px;">
@@ -224,7 +224,7 @@
                                     </div>
                                     <div class="toolbox bottom">
                                         <div class="submit_link">
-                                            <input class="btn btn-inverse" type="submit" value="Change Password" class="alt_btn">
+                                            <input class="btn btn-info" type="submit" value="Change Password" class="alt_btn">
                                         </div>
                                     </div>
                                 </div>
@@ -242,7 +242,7 @@
                             <input type="hidden" name="do" value="genPin">
 
                             <div class="col-md-6">
-                                <div class="box border">
+                                <div class="box border blue">
                                     <div class="box-title"><h4>Reset PIN</h4></div>
                                     <div class="box-body">
                                         <div class="form-group">
@@ -252,7 +252,7 @@
                                     </div>
                                     <div class="toolbox bottom">
                                         <div class="submit_link">
-                                            <input class="btn btn-inverse" type="submit" class="alt_btn" value="Reset PIN">
+                                            <input class="btn btn-info" type="submit" class="alt_btn" value="Reset PIN">
                                         </div>
                                     </div>
                                 </div>

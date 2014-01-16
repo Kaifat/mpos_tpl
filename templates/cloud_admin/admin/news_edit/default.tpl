@@ -6,7 +6,7 @@
     });
 </script>
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Edit news entry #{$NEWS.id}</h4></div>
         <form method="POST" action="{$smarty.server.PHP_SELF}">
             <div class="box-body">
@@ -40,7 +40,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Save" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Save" class="alt_btn">
                 </div>
             </div>
         </form>

@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Block Statistics</h4></div>
         <div class="box-body">
 
@@ -73,7 +73,7 @@
                         <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                         <input type="text" class="pin" name="search"
                                value="{$smarty.request.height|default:"%"|escape}">
-                        <input class="btn btn-inverse" type="submit" value="Search" class="alt_btn">
+                        <input class="btn btn-info" type="submit" value="Search" class="alt_btn">
                     </form>
                 </div>
             </div>

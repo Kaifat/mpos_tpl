@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title">
             <h4>Stats</h4>
             <ul class="tabs">

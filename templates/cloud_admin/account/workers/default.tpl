@@ -1,5 +1,5 @@
 <div class="col-md-4">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Add New Worker</h4></div>
         <form action="{$smarty.server.PHP_SELF}" method="post">
             <div class="box-body">
@@ -21,7 +21,7 @@
             <div class="clear"></div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Add New Worker" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Add New Worker" class="alt_btn">
                 </div>
             </div>
         </form>
@@ -29,7 +29,7 @@
 </div>
 
 <div class="col-md-8">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Worker Configuration</h4></div>
         <form action="{$smarty.server.PHP_SELF}" method="post">
             <div class="box-body">
@@ -84,7 +84,7 @@
             <div class="clear"></div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" class="alt_btn" value="Update Workers">
+                    <input class="btn btn-info" type="submit" class="alt_btn" value="Update Workers">
                 </div>
             </div>
         </form>

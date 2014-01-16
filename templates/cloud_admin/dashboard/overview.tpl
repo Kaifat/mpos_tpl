@@ -1,5 +1,5 @@
 <div class="col-md-8">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Overview {if $GLOBAL.config.price.currency}{$GLOBAL.config.currency}
             /{$GLOBAL.config.price.currency}: <span id="b-price">{$GLOBAL.price|number_format:"8"}</span>{/if} / Pool
             Workers: <span id="b-dworkers">{$GLOBAL.workers}</span></h4></div>

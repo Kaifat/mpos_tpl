@@ -4,7 +4,7 @@
     <input type="hidden" name="do" value="save">
 
     <div class="col-md-4">
-        <div class="box border">
+        <div class="box border blue">
             <div class="box-title"><h4>Notification Settings</h4></div>
             <div class="box-body">
 
@@ -95,7 +95,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Update" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Update" class="alt_btn">
                 </div>
             </div>
         </div>
@@ -103,7 +103,7 @@
 </form>
 
 <div class="col-md-8">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Notification History</h4></div>
         <div class="box-body">
             <table id="datatable2" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">

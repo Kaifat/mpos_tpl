@@ -14,8 +14,8 @@
             <i class="fa fa-lock"></i>
             <input name="password" type="password" placeholder="Password" id="inputPassword" class="form-control">
         </div>
-        <input class="btn btn-inverse" type="submit" value="Sign in">
-        <a href="{$smarty.server.PHP_SELF}?page=register" class="btn btn-info">Sign up</a>
+        <input class="btn btn-info" type="submit" value="Sign in">
+        <a href="{$smarty.server.PHP_SELF}?page=login" class="btn btn-info">Sign up</a>
     </form>
 </div>
 {/if}
