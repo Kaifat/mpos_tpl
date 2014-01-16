@@ -46,6 +46,21 @@ h1.site_title a:hover {
     padding-left: 33px !important;
 }
 
+.login-box-inline .social-login a {
+    border: 0 none;
+    border-radius: 100%;
+    height: 42px;
+    line-height: 42px;
+    margin: 0 5px;
+    padding: 0;
+    text-decoration: none !important;
+    width: 42px;
+}
+
 #footer {
     border-left: 1px solid #CDD2D2;
+}
+
+.width {
+    width: 50%
 }
