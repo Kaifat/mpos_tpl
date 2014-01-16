@@ -14,7 +14,7 @@
         <a href="#tab2" data-toggle="tab" class="list-group-item"><i class="fa fa-tags"></i> Payment</a>
         <a href="#tab3" data-toggle="tab" class="list-group-item"><i class="fa fa-user"></i> Tabs 3</a>
         <a href="#tab4" data-toggle="tab" class="list-group-item"><i class="fa fa-sitemap"></i> Tabs 4</a>
-        <a href="#tab5" data-toggle="tab" class="list-group-item"><i class="fa fa-arrows"></i> Tabs 5</a>
+        <a href="#tab5" data-toggle="tab" class="list-group-item"><i class="fa fa-arrows"></i>Terms &amp; Conditions</a>
     </div>
 </div>
 <!-- /NAV -->
@@ -90,9 +90,7 @@
                         </tbody>
                     </table>
                     <p>If you use a command-line miner, type:</p>
-                <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if}
-                    -o stratum+tcp://{$SITESTRATUMURL|default:$smarty.server.SERVER_NAME}
-                    :{$SITESTRATUMPORT|default:"3333"} -u <em>Weblogin</em>.<em>Worker</em> -p <em>Worker password</em></pre>
+                <pre>./cgminer {if $GLOBAL.config.algorithm == 'scrypt'}--scrypt {/if} -o stratum+tcp://{$SITESTRATUMURL|default:$smarty.server.SERVER_NAME} :{$SITESTRATUMPORT|default:"3333"} -u <em>Weblogin</em>.<em>Worker</em> -p <em>Worker password</em></pre>
                     <p>If you want, you can create additional workers with usernames and passwords of your choice <a
                             href="{$smarty.server.PHP_SELF}?page=account&action=workers">Here</a></p>
                 </div>
@@ -452,18 +450,42 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_1">1. If I post to a public community, does that mean all my
-                    friends and followers can see it? </a></h3>
+                                           href="#collapse5_1">1. This Agreement governs your use of {$GLOBAL.website.name}. </a></h3>
             </div>
             <div id="collapse5_1" class="panel-collapse collapse">
-                <div class="panel-body"> No, the posts you share to a public community will not show up in your friends
-                    and followers’ Home streams, unless your friends and followers are also members of the same
-                    community.
-                    Your public community posts will be visible to people who navigate to your profile page unless you
-                    have set your settings for them not to appear. Visitors will see text indicating that it was shared
-                    to a community.
-                    Remember that your private community posts will only be visible to people in those communities,
-                    regardless of whether or not you show community posts on your profile.
+                <div class="panel-body">
+                    <ol>
+                        <li>By using any of the Pools or registering an account on the website, you agree to be bound by the
+                            terms and conditions below. If you do not agree with the terms and conditions in this Agreement you
+                            may not use the Pool.
+                        </li>
+                        <li>The {$GLOBAL.website.name} staff may modify this Agreement and any policies affecting the Site at
+                            any point of time. Such modification is effective immediately upon posting to the website and will
+                            be distribution via email, forum post and a link in chat. Your continued use of the Pool following
+                            any modification to this Agreement shall be deemed an acceptance of all modifications.
+                        </li>
+                        <li>The Pool rewards miners according to a <strong>{$GLOBAL.config.payout_system}</strong> system with
+                            <strong>{$GLOBAL.fees}%</strong> fee. The fee may change at any time, but notice will be given
+                            before doing so. Any fee change will be communicated through the pools news page.
+                        </li>
+                        <li>The Pool is not an e-wallet or a bank for your coins. The Pool and it's operators are not
+                            responsible for any loss of coins which are stored on the Pool. It is your responsibility to
+                            configure your account so that the coins you mine are regularly transferred to your own secured
+                            offline wallet.
+                        </li>
+                        <li>The uptime of the pool or website is not guaranteed, maintenance and downtime may be required at
+                            times. Users are responsible for configuring their miners so that they will automatically reconnect,
+                            switch to all the pools we offer or a backup pool in the case of downtime.
+                        </li>
+                        <li>Botnets are not welcome. Accounts with a large amount of miners connecting from different IPs may be
+                            suspended without prior notice. If we are uncertian then an investigation will be opened and the
+                            user will be notified via their configured e-mail address. If we do not receive a response your
+                            account may be suspended.
+                        </li>
+                        <li>Multiple accounts controlled by one person may be considered as a botnet and a investigation will be
+                            opened, see 6.
+                        </li>
+                    </ol>
                 </div>
             </div>
         </div>
