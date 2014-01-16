@@ -207,8 +207,8 @@
     <li{if $smarty.request.page|default:false == "login"}
             class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=login">Login</a></li>
     <li{if $smarty.request.page|default:false == "register"}
-            class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=register">Sign Up</a></li>
-    {if $GLOBAL.config.disable_contactform|default:"0" != 1}
+            {*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=register">Sign Up</a></li>*}
+    {*{if $GLOBAL.config.disable_contactform|default:"0" != 1}*}
         <li{if $smarty.request.page|default:false == "contactform"}
                 class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=contactform">Contact</a></li>
     {/if}

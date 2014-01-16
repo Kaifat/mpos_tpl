@@ -3,7 +3,7 @@
     <input type="hidden" name="action" value="{$smarty.request.action|escape|escape}">
 
     <div class="col-md-12">
-        <div class="box border">
+        <div class="box border blue">
             <div class="box-title"><h4>Earnings Information</h4></div>
             <div class="box-body">
 
@@ -76,7 +76,7 @@
     </div>
     <div class="toolbox bottom">
         <div class="submit_link">
-            <input class="btn btn-inverse" type="submit" value="Submit" class="alt_btn">
+            <input class="btn btn-info" type="submit" value="Submit" class="alt_btn">
         </div>
     </div>
     </div>

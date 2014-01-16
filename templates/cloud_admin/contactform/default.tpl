@@ -3,7 +3,7 @@
     <input type="hidden" name="page" value="{$smarty.request.page|escape}">
     <input type="hidden" name="action" value="contactform">
     <div class="col-md-8">
-        <div class="box border">
+        <div class="box border blue">
             <div class="box-title"><h4>Contact Us</h4></div>
             <div class="box-body">
                 <div class="form-group">

@@ -1,6 +1,6 @@
 {nocache}
 <div class="col-md-4">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Invitations</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">

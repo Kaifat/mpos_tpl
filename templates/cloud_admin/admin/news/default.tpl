@@ -6,7 +6,7 @@
     });
 </script>
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>News Posts</h4></div>
         <form method="POST" action="{$smarty.server.PHP_SELF}">
             <div class="box-body">
@@ -30,7 +30,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Add" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Add" class="alt_btn">
                 </div>
             </div>
         </form>
@@ -41,7 +41,7 @@
     {section name=news loop=$NEWS}
 
     <div class="col-md-12">
-        <div class="box border">
+        <div class="box border blue">
             <div class="box-title"><h4>{$NEWS[news].header} posted {$NEWS[news].time} by {$NEWS[news].author}</h4>
                 {if $NEWS[news].active == 0}<font size="2px"><font color="red"><b>inactive</b></font><br/><br/>{/if}
             </div>

@@ -1,6 +1,6 @@
 <!-- FAQ -->
 <div class="col-md-12">
-<div class="box border">
+<div class="box border blue">
 <div class="box-title"><h4>FAQ</h4></div>
 <div class="box-body">
 

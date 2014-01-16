@@ -1,5 +1,5 @@
 <div class="col-md-4">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title">
             <h4><i class="fa fa-sitemap"></i>Select Page</h4>
         </div>
@@ -13,7 +13,7 @@
 </div>
 
 <div class="col-md-8">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title">
             <h4>Edit template '{$CURRENT_TEMPLATE}'</h4>
         </div>
@@ -42,7 +42,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Save" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Save" class="alt_btn">
                 </div>
             </div>
         </form>

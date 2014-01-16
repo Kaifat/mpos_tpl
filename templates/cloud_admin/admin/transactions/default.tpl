@@ -1,6 +1,6 @@
 {if $DISABLE_TRANSACTIONSUMMARY|default:"0" != 1}
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Transaction Summary</h4></div>
         <div class="box-body">
             <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
@@ -25,7 +25,7 @@
 {/if}
 
 <div class="col-md-4">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Transaction Filter</h4></div>
         <form action="{$smarty.server.PHP_SELF}">
             <div class="box-body">
@@ -89,7 +89,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Filter" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Filter" class="alt_btn">
                 </div>
             </div>
         </form>
@@ -97,7 +97,7 @@
 </div>
 
 <div class="col-md-8">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Transaction History</h4></div>
         <div class="box-body">
             <table id="datatable3" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">

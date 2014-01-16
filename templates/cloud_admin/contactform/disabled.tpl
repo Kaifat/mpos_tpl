@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Contact &amp; Support</h4></div>
         <div class="box-body">
             <div class="module_content">

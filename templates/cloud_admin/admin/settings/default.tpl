@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <div class="box border">
+    <div class="box border blue">
         <div class="box-title"><h4>Settings</h4></div>
         <form method="POST" class="form-horizontal" role="form">
             <div class="box-body">
@@ -47,7 +47,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-inverse" type="submit" value="Save" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Save" class="alt_btn">
                 </div>
             </div>
         </form>
