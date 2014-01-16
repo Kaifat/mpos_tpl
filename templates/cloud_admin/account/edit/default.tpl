@@ -28,7 +28,7 @@
                             <div class="col-md-3">
                                 <div class="list-group">
                                     <div class="list-group-item zero-padding">
-                                        <img alt="" class="img-responsive" src="{$PATH}/img/profile/avatar.jpg">
+                                        <img alt="" class="img-responsive" src="/uploads/avatar/{$GLOBAL.userdata.avatar}">
                                     </div>
                                     <div class="list-group-item profile-details">
                                         <h2>{$GLOBAL.userdata.username|escape}</h2>
