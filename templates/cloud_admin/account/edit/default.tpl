@@ -55,12 +55,27 @@
                             <!-- /PROFILE PIC -->
                             <!-- PROFILE DETAILS -->
                             <div class="col-md-9">
-
+                                <div class="row">
+                                    <div class="box border blue">
+                                        <div class="box-title"><h4>Change Avatar</h4></div>
+                                        <div class="box-body">
+                                            <form action="//file-arrow-circle-o-up" class="dropzone" id="my-awesome-dropzone">
+                                                <div class="fallback">
+                                                    <input name="file" type="file" multiple="" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="toolbox bottom">
+                                            <div class="submit_link">
+                                                <input class="btn btn-inverse" type="submit" value="Upload" class="alt_btn">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /PROFILE DETAILS -->
                         </div>
                     </div>
-
                     <!-- /MY ACCOUNT -->
 
                     <!-- 2 tab - ACCOUNT DETAILS -->
