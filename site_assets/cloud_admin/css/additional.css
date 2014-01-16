@@ -28,3 +28,20 @@ h1.site_title a:hover {
 .tree-item {
     height: 20px !important;
 }
+
+.login-box-inline form i {
+    color: #CCCCCC;
+    display: block !important;
+    font-size: 16px;
+    height: 16px;
+    margin: 9px 2px 4px 10px;
+    position: absolute !important;
+    text-align: center;
+    width: 16px;
+    z-index: 1;
+}
+
+.login-box-inline form input[type=text],
+.login-box-inline form input[type=password] {
+    padding-left: 33px !important;
+}

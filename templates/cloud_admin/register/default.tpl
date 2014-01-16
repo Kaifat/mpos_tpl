@@ -1,3 +1,4 @@
+<div class="login-box-inline">
 <form action="{$smarty.server.PHP_SELF}" method="post">
     <div class="col-md-6">
         <div class="box border">
@@ -11,27 +12,33 @@
 
                 <div class="form-group">
                     <label>Username</label>
+                    <i class="fa fa-user"></i>
                     <input class="form-control" type="text" class="text tiny" name="username"
                            value="{$smarty.post.username|escape|default:""}" size="15" maxlength="20" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
+                    <i class="fa fa-lock"></i>
                     <input class="form-control" type="password" class="text tiny" name="password1" value="" size="15" maxlength="100"
                            required>
                     <label>Repeat Password</label>
+                    <i class="fa fa-lock"></i>
                     <input class="form-control" type="password" class="text tiny" name="password2" value="" size="15" maxlength="100"
                            required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
+                    <i class="fa fa-envelope"></i>
                     <input class="form-control" type="text" name="email1" class="text small" value="{$smarty.post.email1|escape|default:""}"
                            size="15" required>
                     <label>Email Repeat</label>
+                    <i class="fa fa-envelope"></i>
                     <input class="form-control" type="text" class="text small" name="email2" value="{$smarty.post.email2|escape|default:""}"
                            size="15" required>
                 </div>
                 <div class="form-group">
                     <label>PIN</label>
+                    <i class="fa fa-lock"></i>
                     <input class="form-control" type="password" class="text pin" name="pin" value="" size="4" maxlength="4"><font size="1">
                     (4 digit number. <b>Remember this pin!</b>)</font>
                 </div>
@@ -52,3 +59,4 @@
         </div>
     </div>
 </form>
+</div>
