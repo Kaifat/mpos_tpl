@@ -4,17 +4,17 @@
         <div class="box-body">
             <div class="tabbable header-tabs">
                 <ul class="nav nav-tabs">
-                    <li class="width"><a href="#box_tab6" data-toggle="tab"><i class="fa fa-desktop"></i> <span
+                    <li class="width"><a href="#tab_sign_up" data-toggle="tab"><i class="fa fa-desktop"></i> <span
                             class="hidden-inline-mobile">Sign up</span></a></li>
-                    <li><a href="#box_tab5" data-toggle="tab"><i class="fa fa-flask"></i> <span
+                    <li class="active"><a href="#tab_sign_in" data-toggle="tab"><i class="fa fa-flask"></i> <span
                             class="hidden-inline-mobile">Sign in</span></a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="box_tab5">
+                    <div class="tab-pane fade in active" id="tab_sign_in">
                         <div class="login-box-inline">
                             <form action="{$smarty.server.PHP_SELF}?page=login" method="post" id="loginForm">
-                                <input type="hidden" name="to"
-                                       value="{($smarty.request.to|default:"{$smarty.server.PHP_SELF}?page=dashboard")|escape}"/>
+                                <input type="hidden" name="to" value="{($smarty.request.to|default:"{$smarty.server.PHP_SELF}?page=dashboard")|escape}"/>
+                                <div class="divide-20"></div>
                                 <div class="col-md-12">
                                     <div class="box border">
                                         <div class="box-title"><h4>Sign in</h4></div>
@@ -41,14 +41,14 @@
 
                                         <div class="toolbox bottom">
                                             <div class="submit_link">
-                                                <a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">Forgot your
-                                                    password?</font></a>
-                                                <input class="btn btn-inverse" type="submit" value="Login" class="alt_btn"/>
+                                                {*<a href="{$smarty.server.PHP_SELF}?page=password"><font size="1">Forgot your*}
+                                                    {*password?</font></a>*}
+                                                <input class="btn btn-inverse btn-block" type="submit" value="Login" class="alt_btn"/>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
 
                         <!-- SOCIAL LOGIN -->
@@ -71,14 +71,14 @@
                             </div>
                             <!-- /SOCIAL LOGIN -->
                             <div class="login-helpers">
-                                <a href="#" onclick="swapScreen('forgot');return false;">Forgot Password?</a> <br>
+                                <a href="{$smarty.server.PHP_SELF}?page=password">Forgot Password?</a> <br>
                                 Don't have an account with us? <a href="#" onclick="swapScreen('register');return false;">Register
                                 now!</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="box_tab6">
+                    <div class="tab-pane fade" id="tab_sign_up">
                         <div class="login-box-inline">
                             <form action="{$smarty.server.PHP_SELF}" method="post">
                             {*<div class="box-title"><h4>Register new account</h4></div>*}
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="toolbox bottom">
                                     <div class="submit_link">
-                                        <input class="btn btn-inverse" type="submit" value="Register"
+                                        <input class="btn btn-inverse btn-block" type="submit" value="Register"
                                                class="alt_btn">
                                     </div>
                                 </div>
