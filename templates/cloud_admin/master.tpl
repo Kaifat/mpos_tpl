@@ -174,7 +174,12 @@
 
                         {if is_array($smarty.session.POPUP|default)}
                             {section popup $smarty.session.POPUP}
-                                <h4 class="{$smarty.session.POPUP[popup].TYPE|default:"info"}">{$smarty.session.POPUP[popup].CONTENT}</h4>
+                                <div class="col-md-12">
+                                    <div class="alert alert-block alert-{$smarty.session.POPUP[popup].TYPE|default:"info"} fade in">
+                                        <a aria-hidden="true" href="#" data-dismiss="alert" class="close">×</a>
+                                        <p>{$smarty.session.POPUP[popup].CONTENT}</p>
+                                    </div>
+                                </div>
                             {/section}
                         {/if}
                         {if $CONTENT != "empty" && $CONTENT != ""}

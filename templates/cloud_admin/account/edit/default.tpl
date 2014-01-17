@@ -28,7 +28,9 @@
                             <div class="col-md-3">
                                 <div class="list-group">
                                     <div class="list-group-item zero-padding">
+                                        {*<img alt="" class="img-responsive" src="/uploads/avatar/{$GLOBAL.userdata.avatar}">*}
                                         <img alt="" class="img-responsive" src="{$PATH}/img/profile/avatar.jpg">
+
                                     </div>
                                     <div class="list-group-item profile-details">
                                         <h2>{$GLOBAL.userdata.username|escape}</h2>
@@ -56,20 +58,39 @@
                             <!-- PROFILE DETAILS -->
                             <div class="col-md-9">
                                 <div class="row">
-                                    <div class="box border blue">
-                                        <div class="box-title"><h4>Change Avatar</h4></div>
-                                        <div class="box-body">
-                                            <form action="//file-arrow-circle-o-up" class="dropzone" id="my-awesome-dropzone">
-                                                <div class="fallback">
-                                                    <input name="file" type="file" multiple="" />
+                                    <div class="col-md-8">
+                                        <form action="{$smarty.server.PHP_SELF}" method="post">
+                                            <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+                                            <input type="hidden" name="action" value="{$smarty.request.action|escape}">
+                                            <input type="hidden" name="do" value="updateContacts">
+
+                                            <div class="box border blue">
+                                                <div class="box-title"><h4>Contacts</h4></div>
+                                                <div class="box-body">
+                                                    <div class="form-group">
+                                                        <label>Skype</label>
+                                                        <input name="c_skype" class="form-control" type="text" value="{$GLOBAL.userdata.c_skype|escape}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>VK</label>
+                                                        http://vk.com/<input name="c_vk" class="form-control" type="text" value="{$GLOBAL.userdata.c_vk|escape}">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>ICQ</label>
+                                                        <input name="c_icq" class="form-control" type="text" value="{if $GLOBAL.userdata.c_icq}{$GLOBAL.userdata.c_icq|escape}{/if}" maxlength="9">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>4 digit PIN</label>
+                                                        <input class="form-control" type="password" name="authPin" size="4" maxlength="4"/>
+                                                    </div>
                                                 </div>
-                                            </form>
-                                        </div>
-                                        <div class="toolbox bottom">
-                                            <div class="submit_link">
-                                                <input class="btn btn-inverse" type="submit" value="Upload" class="alt_btn">
+                                                <div class="toolbox bottom">
+                                                    <div class="submit_link">
+                                                        <input class="btn btn-info" type="submit" value="Update Contacts" class="alt_btn">
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
