@@ -161,7 +161,7 @@
             {if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}
                 <li{if $smarty.request.page|default:false == "statistics" && $smarty.request.action|default:false == "uptime"}
                         class="current"{/if}><a
-                        href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">Uptime</a></li>
+                        btn-inverse                href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">Uptime</a></li>
             {/if}
         {/if}
     </ul>
@@ -206,8 +206,8 @@
     {else}
     <li{if $smarty.request.page|default:false == "login"}
             class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=login">Login</a></li>
-    <li{if $smarty.request.page|default:false == "register"}
-            class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=register">Sign Up</a></li>
+    {*<li{if $smarty.request.page|default:false == "register"}*}
+            {*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=register">Sign Up</a></li>*}
     {if $GLOBAL.config.disable_contactform|default:"0" != 1}
         <li{if $smarty.request.page|default:false == "contactform"}
                 class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=contactform">Contact</a></li>
@@ -224,8 +224,8 @@
     <div class="box">
         <div class="box-body center">
             <h3 class="content-title">LIVE STATS</h3>
-            <div id="mr" style="width:100%; height:120px;"></div>
-            <div id="hr" style="width:100%; height:120px;"></div>
+            <div id="mr" style="width:100%; height:150px;"></div>
+            <div id="hr" style="width:100%; height:150px;"></div>
         </div>
     </div>
     {include file="global/navjs.tpl"}
