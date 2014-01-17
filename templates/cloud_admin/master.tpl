@@ -29,6 +29,8 @@
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/select2/select2.min.css" />
     <!-- FUELUX TREE -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/fuelux-tree/fuelux.min.css" />
+    <!-- CROP AVATAR -->
+    <link rel="stylesheet" type="text/css" href="{$PATH}/js/jquery-imgareaselect/css/imgareaselect-animated.css" />
     <!-- FONTS -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
@@ -103,6 +105,9 @@
     <!-- FUELUX TREE -->
     <script type="text/javascript" src="{$PATH}/js/fuelux-tree/fuelux.tree-sampledata.js"></script>
     <script type="text/javascript" src="{$PATH}/js/fuelux-tree/fuelux.tree.min.js"></script>
+    <!-- CROP AVATAR -->
+    <script type="text/javascript" src="{$PATH}/js/jquery-imgareaselect/jquery.imgareaselect.pack.js"></script>
+
     <!-- UNIFORM -->
     <!-- CUSTOM SCRIPT -->
     <script src="{$PATH}/js/script.js"></script>

@@ -64,3 +64,14 @@ h1.site_title a:hover {
 .width {
     width: 50%
 }
+
+img#uploadPreview{
+    border: none;
+    width: 100%;
+    height: auto;
+    border-radius: 3px;
+    -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, .27);
+    margin-bottom: 30px;
+    overflow: hidden;
+}
