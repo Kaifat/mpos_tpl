@@ -1,6 +1,6 @@
 .htaccess
 favicon.ico
-include/
+include/config/global.inc.php
 index.php
 site_assets/global/images/flags/ad.png
 site_assets/global/
