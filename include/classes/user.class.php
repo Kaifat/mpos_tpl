@@ -441,12 +441,12 @@ class User extends Base {
     $this->debug->append("STA " . __METHOD__, 4);
     $user = array();
     $password_hash = $this->getHash($password);
-    $stmt = $this->mysqli->prepare("SELECT username, id, is_admin FROM $this->table WHERE LOWER(username) = LOWER(?) AND pass = ? LIMIT 1");
-    if ($this->checkStmt($stmt) && $stmt->bind_param('ss', $username, $password_hash) && $stmt->execute() && $stmt->bind_result($row_username, $row_id, $row_admin)) {
+    $stmt = $this->mysqli->prepare("SELECT username, id, is_admin, avatar FROM $this->table WHERE LOWER(username) = LOWER(?) AND pass = ? LIMIT 1");
+    if ($this->checkStmt($stmt) && $stmt->bind_param('ss', $username, $password_hash) && $stmt->execute() && $stmt->bind_result($row_username, $row_id, $row_admin, $row_avatar)) {
       $stmt->fetch();
       $stmt->close();
       // Store the basic login information
-      $this->user = array('username' => $row_username, 'id' => $row_id, 'is_admin' => $row_admin);
+      $this->user = array('username' => $row_username, 'id' => $row_id, 'is_admin' => $row_admin, 'avatar' => $row_avatar);
       return strtolower($username) === strtolower($row_username);
     }
     return false;

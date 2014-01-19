@@ -9,12 +9,12 @@ if ($user->isAuthenticated()) {
     if ($user->generatePin($_SESSION['USERDATA']['id'], $_POST['currentPassword'])) {
       $_SESSION['POPUP'][] = array('CONTENT' => 'Your PIN # has been sent to your email.', 'TYPE' => 'success');
     } else {
-      $_SESSION['POPUP'][] = array('CONTENT' => $user->getError(), 'TYPE' => 'errormsg');
+      $_SESSION['POPUP'][] = array('CONTENT' => $user->getError(), 'TYPE' => 'warning');
     }
   }
   else {
     if ( @$_POST['do'] && (@$_POST['do'] != 'updateAvatar' && ! $user->checkPin($_SESSION['USERDATA']['id'], @$_POST['authPin']))) {
-      $_SESSION['POPUP'][] = array('CONTENT' => 'Invalid PIN. ' . ($config['maxfailed']['pin'] - $user->getUserPinFailed($_SESSION['USERDATA']['id'])) . ' attempts remaining.', 'TYPE' => 'errormsg');
+      $_SESSION['POPUP'][] = array('CONTENT' => 'Invalid PIN. ' . ($config['maxfailed']['pin'] - $user->getUserPinFailed($_SESSION['USERDATA']['id'])) . ' attempts remaining.', 'TYPE' => 'warning');
     } else {
       switch (@$_POST['do']) {
       case 'updateAvatar':
@@ -67,7 +67,7 @@ if ($user->isAuthenticated()) {
           if ($user->updateContacts($_SESSION['USERDATA']['id'], $_POST['c_skype'], $_POST['c_vk'], $_POST['c_icq'])) {
               $_SESSION['POPUP'][] = array('CONTENT' => 'Contacts updated', 'TYPE' => 'success');
           } else {
-              $_SESSION['POPUP'][] = array('CONTENT' => $user->getError(), 'TYPE' => 'errormsg');
+              $_SESSION['POPUP'][] = array('CONTENT' => $user->getError(), 'TYPE' => 'warning');
           }
       break;
       case 'cashOut':
@@ -81,13 +81,13 @@ if ($user->isAuthenticated()) {
               if ($iPayoutId = $oPayout->createPayout($_SESSION['USERDATA']['id'])) {
                 $_SESSION['POPUP'][] = array('CONTENT' => 'Created new manual payout request with ID #' . $iPayoutId);
               } else {
-                $_SESSION['POPUP'][] = array('CONTENT' => 'Failed to create manual payout request.', 'TYPE' => 'errormsg');
+                $_SESSION['POPUP'][] = array('CONTENT' => 'Failed to create manual payout request.', 'TYPE' => 'warning');
               }
             } else {
-              $_SESSION['POPUP'][] = array('CONTENT' => 'You already have one active manual payout request.', 'TYPE' => 'errormsg');
+              $_SESSION['POPUP'][] = array('CONTENT' => 'You already have one active manual payout request.', 'TYPE' => 'warning');
             }
           } else {
-            $_SESSION['POPUP'][] = array('CONTENT' => 'Insufficient funds, you need more than ' . $config['txfee'] . ' ' . $config['currency'] . ' to cover transaction fees', 'TYPE' => 'errormsg');
+            $_SESSION['POPUP'][] = array('CONTENT' => 'Insufficient funds, you need more than ' . $config['txfee'] . ' ' . $config['currency'] . ' to cover transaction fees', 'TYPE' => 'warning');
           }
         }
         break;
@@ -96,7 +96,7 @@ if ($user->isAuthenticated()) {
         if ($user->updateAccount($_SESSION['USERDATA']['id'], $_POST['paymentAddress'], $_POST['payoutThreshold'], $_POST['donatePercent'], $_POST['email'], $_POST['is_anonymous'])) {
           $_SESSION['POPUP'][] = array('CONTENT' => 'Account details updated', 'TYPE' => 'success');
         } else {
-          $_SESSION['POPUP'][] = array('CONTENT' => 'Failed to update your account: ' . $user->getError(), 'TYPE' => 'errormsg');
+          $_SESSION['POPUP'][] = array('CONTENT' => 'Failed to update your account: ' . $user->getError(), 'TYPE' => 'warning');
         }
         break;
 
@@ -104,7 +104,7 @@ if ($user->isAuthenticated()) {
         if ($user->updatePassword($_SESSION['USERDATA']['id'], $_POST['currentPassword'], $_POST['newPassword'], $_POST['newPassword2'])) {
           $_SESSION['POPUP'][] = array('CONTENT' => 'Password updated', 'TYPE' => 'success');
         } else {
-          $_SESSION['POPUP'][] = array('CONTENT' => $user->getError(), 'TYPE' => 'errormsg');
+          $_SESSION['POPUP'][] = array('CONTENT' => $user->getError(), 'TYPE' => 'warning');
         }
         break;
       }

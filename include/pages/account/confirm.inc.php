@@ -5,9 +5,9 @@ if (!defined('SECURITY')) die('Hacking attempt');
 
 // Confirm an account by token
 if (!isset($_GET['token']) || empty($_GET['token'])) {
-  $_SESSION['POPUP'][] = array('CONTENT' => 'Missing token', 'TYPE' => 'errormsg');
+  $_SESSION['POPUP'][] = array('CONTENT' => 'Missing token', 'TYPE' => 'warning');
 } else if (!$aToken = $oToken->getToken($_GET['token'], 'confirm_email')) {
-  $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to activate your account. Invalid token.', 'TYPE' => 'errormsg');
+  $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to activate your account. Invalid token.', 'TYPE' => 'warning');
 } else {
   $user->changeLocked($aToken['account_id']);
   $oToken->deleteToken($aToken['token']);

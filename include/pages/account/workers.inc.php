@@ -8,27 +8,27 @@ if ($user->isAuthenticated()) {
     if ($worker->deleteWorker($_SESSION['USERDATA']['id'], $_GET['id'])) {
       $_SESSION['POPUP'][] = array('CONTENT' => 'Worker removed');
     } else {
-      $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
+      $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'warning');
     }
     break;
   case 'add':
     if ($worker->addWorker($_SESSION['USERDATA']['id'], $_POST['username'], $_POST['password'])) {
       $_SESSION['POPUP'][] = array('CONTENT' => 'Worker added');
     } else {
-      $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
+      $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'warning');
     }
     break;
   case 'update':
     if ($worker->updateWorkers($_SESSION['USERDATA']['id'], @$_POST['data'])) {
       $_SESSION['POPUP'][] = array('CONTENT' => 'Worker updated');
     } else {
-      $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'errormsg');
+      $_SESSION['POPUP'][] = array('CONTENT' => $worker->getError(), 'TYPE' => 'warning');
     }
     break;
   }
 
   $aWorkers = $worker->getWorkers($_SESSION['USERDATA']['id']);
-  if (!$aWorkers) $_SESSION['POPUP'][] = array('CONTENT' => 'You have no workers configured', 'TYPE' => 'errormsg');
+  if (!$aWorkers) $_SESSION['POPUP'][] = array('CONTENT' => 'You have no workers configured', 'TYPE' => 'warning');
 
   $smarty->assign('WORKERS', $aWorkers);
 }

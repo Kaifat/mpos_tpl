@@ -15,7 +15,7 @@ if (!$smarty->isCached('master.tpl', $smarty_cache_key)) {
     $dDifficulty = 1;
     $dNetworkHashrate = 1;
     $iBlock = 0;
-    $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to connect to wallet RPC service: ' . $bitcoin->can_connect(), 'TYPE' => 'errormsg');
+    $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to connect to wallet RPC service: ' . $bitcoin->can_connect(), 'TYPE' => 'warning');
   }
 
   // Top share contributors

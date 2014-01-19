@@ -276,7 +276,7 @@
         <!-- BEGIN USER LOGIN DROPDOWN -->
         <li class="dropdown user" id="header-user">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <img alt="" src="{$PATH}/img/avatars/avatar3.jpg"/>
+                <img alt="" src="/uploads/avatar/{$smarty.session.USERDATA.avatar}"/>
                 <span class="username">{$smarty.session.USERDATA.username|escape}</span>
                 <i class="fa fa-angle-down"></i>
             </a>

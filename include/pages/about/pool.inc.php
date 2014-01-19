@@ -5,7 +5,7 @@ if (!defined('SECURITY'))
     die('Hacking attempt');
 
 if ($setting->getValue('disable_about')) {
-  $_SESSION['POPUP'][] = array('CONTENT' => 'Donors are currently disabled. Please try again later.', 'TYPE' => 'errormsg');
+  $_SESSION['POPUP'][] = array('CONTENT' => 'Donors are currently disabled. Please try again later.', 'TYPE' => 'warning');
   $smarty->assign("CONTENT", "disabled.tpl");
 } else {
   // Tempalte specifics

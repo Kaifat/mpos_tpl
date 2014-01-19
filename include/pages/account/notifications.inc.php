@@ -11,13 +11,13 @@ if ($user->isAuthenticated()) {
       if ($notification->updateSettings($_SESSION['USERDATA']['id'], $_REQUEST['data'])) {
         $_SESSION['POPUP'][] = array('CONTENT' => 'Updated notification settings');
       } else {
-        $_SESSION['POPUP'][] = array('CONTENT' => $notification->getError(), 'TYPE' => 'errormsg');
+        $_SESSION['POPUP'][] = array('CONTENT' => $notification->getError(), 'TYPE' => 'warning');
       }
     }
 
     // Fetch notifications
     $aNotifications = $notification->getNofifications($_SESSION['USERDATA']['id']);
-    if (!$aNotifications) $_SESSION['POPUP'][] = array('CONTENT' => 'Could not find any notifications', 'TYPE' => 'errormsg');
+    if (!$aNotifications) $_SESSION['POPUP'][] = array('CONTENT' => 'Could not find any notifications', 'TYPE' => 'warning');
 
     // Fetch user notification settings
     $aSettings = $notification->getNotificationSettings($_SESSION['USERDATA']['id']);

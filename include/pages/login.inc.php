@@ -12,7 +12,7 @@ if ($setting->getValue('maintenance') && !$user->isAdmin($user->getUserId($_POST
   if (!headers_sent()) header('Location: ' . $location);
   exit('<meta http-equiv="refresh" content="0; url=' . htmlspecialchars($location) . '"/>');
 } else if (@$_POST['username'] && @$_POST['password']) {
-  $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to login: '. $user->getError(), 'TYPE' => 'errormsg');
+  $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to login: '. $user->getError(), 'TYPE' => 'warning');
 }
 
 // Load login template
