@@ -1,7 +1,10 @@
 <script>
 {literal}
 $(document).ready(function(){
-  var g1, g2, g3, g4, g5;
+  var g1, g2, g3, g4, g5,
+      g6, g7, g8, g9, g10,
+      g11, g12, g13, g14, g15,
+      g16, g17, g18, g19, g20;
 
   // Ajax API URL
   var url_dashboard = "{/literal}{$smarty.server.PHP_SELF}?page=api&action=getdashboarddata&api_key={$GLOBAL.userdata.api_key}&id={$GLOBAL.userdata.id}{literal}";
@@ -68,16 +71,58 @@ $(document).ready(function(){
       [['your invalid', {/literal}{$GLOBAL.userdata.shares.invalid}{literal}], ['pool invalid', {/literal}{$GLOBAL.roundshares.invalid}{literal}]]
     ], jqPlotShareinfoOptions);
 
-  g1 = new JustGage({id: "nethashrate", value: parseFloat({/literal}{$GLOBAL.nethashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.nethashrate}{literal} * 2), title: "Net Hashrate", gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, label: "{/literal}{$GLOBAL.hashunits.network}{literal}"});
-  g2 = new JustGage({id: "poolhashrate", value: parseFloat({/literal}{$GLOBAL.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.hashrate}{literal}* 2), title: "Pool Hashrate", gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, label: "{/literal}{$GLOBAL.hashunits.pool}{literal}"});
-  g3 = new JustGage({id: "hashrate", value: parseFloat({/literal}{$GLOBAL.userdata.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.userdata.hashrate}{literal} * 2), title: "Hashrate", gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, label: "{/literal}{$GLOBAL.hashunits.personal}{literal}"});
+  g1 = new JustGage({id: "nethashrate_digitalcoin", value: parseFloat({/literal}{$GLOBAL.nethashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.nethashrate}{literal} * 2), title: "Net Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.network}{literal}"});
+  g2 = new JustGage({id: "poolhashrate_digitalcoin", value: parseFloat({/literal}{$GLOBAL.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.hashrate}{literal}* 2), title: "Pool Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.pool}{literal}"});
+  g3 = new JustGage({id: "hashrate_digitalcoin", value: parseFloat({/literal}{$GLOBAL.userdata.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.userdata.hashrate}{literal} * 2), title: "Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.personal}{literal}"});
   if ({/literal}{$GLOBAL.userdata.sharerate}{literal} > 1) {
     initSharerate = {/literal}{$GLOBAL.userdata.sharerate}{literal} * 2
   } else {
     initSharerate = 1
   }
-  g4 = new JustGage({id: "sharerate", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "Sharerate", label: "shares/s"});
-  g5 = new JustGage({id: "querytime", value: parseFloat(0).toFixed(0), min: 0, max: Math.round(5 * 100), gaugeColor: '#6f7a8a', valueFontColor: '#555', shadowOpacity : 0.8, shadowSize : 0, shadowVerticalOffset : 10, title: "Querytime", label: "ms"});
+  g4 = new JustGage({id: "sharerate_digitalcoin", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Sharerate", label: "shares/s"});
+  g5 = new JustGage({id: "querytime_digitalcoin", value: parseFloat(0).toFixed(0), min: 0, max: Math.round(5 * 100), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Querytime", label: "ms"});
+
+// -----------------
+
+     g6 = new JustGage({id: "nethashrate_dogeicon", value: parseFloat({/literal}{$GLOBAL.nethashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.nethashrate}{literal} * 2), title: "Net Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.network}{literal}"});
+     g7 = new JustGage({id: "poolhashrate_dogeicon", value: parseFloat({/literal}{$GLOBAL.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.hashrate}{literal}* 2), title: "Pool Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.pool}{literal}"});
+     g8 = new JustGage({id: "hashrate_dogeicon", value: parseFloat({/literal}{$GLOBAL.userdata.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.userdata.hashrate}{literal} * 2), title: "Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.personal}{literal}"});
+        if ({/literal}{$GLOBAL.userdata.sharerate}{literal} > 1) {
+    initSharerate = {/literal}{$GLOBAL.userdata.sharerate}{literal} * 2
+} else {
+    initSharerate = 1
+}
+    g9 = new JustGage({id: "sharerate_dogeicon", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Sharerate", label: "shares/s"});
+    g10 = new JustGage({id: "querytime_dogeicon", value: parseFloat(0).toFixed(0), min: 0, max: Math.round(5 * 100), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Querytime", label: "ms"});
+
+// -----------------
+
+        g11 = new JustGage({id: "nethashrate_earthcoin", value: parseFloat({/literal}{$GLOBAL.nethashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.nethashrate}{literal} * 2), title: "Net Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.network}{literal}"});
+        g12 = new JustGage({id: "poolhashrate_earthcoin", value: parseFloat({/literal}{$GLOBAL.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.hashrate}{literal}* 2), title: "Pool Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.pool}{literal}"});
+        g13 = new JustGage({id: "hashrate_earthcoin", value: parseFloat({/literal}{$GLOBAL.userdata.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.userdata.hashrate}{literal} * 2), title: "Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.personal}{literal}"});
+        if ({/literal}{$GLOBAL.userdata.sharerate}{literal} > 1) {
+    initSharerate = {/literal}{$GLOBAL.userdata.sharerate}{literal} * 2
+} else {
+    initSharerate = 1
+}
+        g14 = new JustGage({id: "sharerate_earthcoin", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Sharerate", label: "shares/s"});
+
+        g15 = new JustGage({id: "querytime_earthcoin", value: parseFloat(0).toFixed(0), min: 0, max: Math.round(5 * 100), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Querytime", label: "ms"});
+
+// -----------------
+
+        g16 = new JustGage({id: "nethashrate_fastcoin", value: parseFloat({/literal}{$GLOBAL.nethashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.nethashrate}{literal} * 2), title: "Net Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.network}{literal}"});
+        g17 = new JustGage({id: "poolhashrate_fastcoin", value: parseFloat({/literal}{$GLOBAL.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.hashrate}{literal}* 2), title: "Pool Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.pool}{literal}"});
+        g18 = new JustGage({id: "hashrate_fastcoin", value: parseFloat({/literal}{$GLOBAL.userdata.hashrate}{literal}).toFixed(2), min: 0, max: Math.round({/literal}{$GLOBAL.userdata.hashrate}{literal} * 2), title: "Hashrate", valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, label: "{/literal}{$GLOBAL.hashunits.personal}{literal}"});
+        if ({/literal}{$GLOBAL.userdata.sharerate}{literal} > 1) {
+    initSharerate = {/literal}{$GLOBAL.userdata.sharerate}{literal} * 2
+} else {
+    initSharerate = 1
+}
+        g19 = new JustGage({id: "sharerate_fastcoin", value: parseFloat({/literal}{$GLOBAL.userdata.sharerate}{literal}).toFixed(2), min: 0, max: Math.round(initSharerate), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Sharerate", label: "shares/s"});
+    g20 = new JustGage({id: "querytime_fastcoin", value: parseFloat(0).toFixed(0), min: 0, max: Math.round(5 * 100), valueFontColor: '#555', shadowOpacity : 0.5, shadowSize : 0, shadowVerticalOffset : 5, title: "Querytime", label: "ms"});
+
+// -----------------
 
   // Helper to refresh graphs
   function refreshInformation(data) {
@@ -86,6 +131,22 @@ $(document).ready(function(){
     g3.refresh(parseFloat(data.getdashboarddata.data.personal.hashrate).toFixed(2));
     g4.refresh(parseFloat(data.getdashboarddata.data.personal.sharerate).toFixed(2));
     g5.refresh(parseFloat(data.getdashboarddata.runtime).toFixed(0));
+    g6.refresh(parseFloat(data.getdashboarddata.data.network.hashrate).toFixed(2));
+    g7.refresh(parseFloat(data.getdashboarddata.data.pool.hashrate).toFixed(2));
+    g8.refresh(parseFloat(data.getdashboarddata.data.personal.hashrate).toFixed(2));
+    g9.refresh(parseFloat(data.getdashboarddata.data.personal.sharerate).toFixed(2));
+    g10.refresh(parseFloat(data.getdashboarddata.runtime).toFixed(0));
+    g11.refresh(parseFloat(data.getdashboarddata.data.network.hashrate).toFixed(2));
+    g12.refresh(parseFloat(data.getdashboarddata.data.pool.hashrate).toFixed(2));
+    g13.refresh(parseFloat(data.getdashboarddata.data.personal.hashrate).toFixed(2));
+    g14.refresh(parseFloat(data.getdashboarddata.data.personal.sharerate).toFixed(2));
+    g15.refresh(parseFloat(data.getdashboarddata.runtime).toFixed(0));
+    g16.refresh(parseFloat(data.getdashboarddata.data.network.hashrate).toFixed(2));
+    g17.refresh(parseFloat(data.getdashboarddata.data.pool.hashrate).toFixed(2));
+    g18.refresh(parseFloat(data.getdashboarddata.data.personal.hashrate).toFixed(2));
+    g19.refresh(parseFloat(data.getdashboarddata.data.personal.sharerate).toFixed(2));
+    g20.refresh(parseFloat(data.getdashboarddata.runtime).toFixed(0));
+      //----------------
     if (storedPersonalHashrate.length > 20) { storedPersonalHashrate.shift(); }
     if (storedPoolHashrate.length > 20) { storedPoolHashrate.shift(); }
     if (storedPersonalSharerate.length > 20) { storedPersonalSharerate.shift(); }

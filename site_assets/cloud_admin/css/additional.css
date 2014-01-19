@@ -75,3 +75,26 @@ img#uploadPreview{
     margin-bottom: 30px;
     overflow: hidden;
 }
+
+.cr {
+    width: 14px;
+    height: 14px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+.cr_FastCoin {
+    background-image: url("../img/cripto/Fastcoin.png");
+}
+
+.cr_DigitalCoin {
+    background-image: url("../img/cripto/Digitalcoin.png")
+}
+
+.cr_DogeCoin {
+    background-image: url("../img/cripto/Dogecoin.png")
+}
+
+.cr_EarthCoin {
+    background-image: url("../img/cripto/Earthcoin.png")
+}
