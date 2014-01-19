@@ -364,7 +364,7 @@ class User extends Base {
      * * Update the accounts avatar
      * @param $userID int
      * @param $avatar string
-     * @return bool
+     * @return string
      */
     public function updateAvatar($userID, $avatar) {
         $this->debug->append("STA " . __METHOD__, 4);
@@ -373,12 +373,19 @@ class User extends Base {
             return false;
         }
 
-        $stmt = $this->mysqli->prepare("UPDATE $this->table SET avatar = ? WHERE ( id = ? )");
+        $stmt = $this->mysqli->prepare("SELECT avatar FROM $this->table WHERE id = ?");
+        if ($this->checkStmt($stmt) && $stmt->bind_param('i', $userID) && $stmt->execute() && $stmt->bind_result($row_avatar)) {
+            $stmt->fetch();
+            $stmt->close();
+        }
+
+        // update
+        $stmt = $this->mysqli->prepare("UPDATE $this->table SET avatar = ? WHERE id = ?");
         if ($this->checkStmt($stmt)) {
             $stmt->bind_param('si', $avatar, $userID);
             $stmt->execute();
             if ($stmt->errno == 0 && $stmt->affected_rows === 1) {
-                return true;
+                return $row_avatar;
             }
             $stmt->close();
         }

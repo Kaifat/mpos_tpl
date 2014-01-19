@@ -28,7 +28,7 @@ if ($user->isAuthenticated()) {
                       $ext = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
                       if (in_array($ext, $valid_exts)) {
                           $avatarFileName = uniqid() . '.' . $ext;
-                          $path = 'uploads/avatar/' . $avatarFileName;
+                          $path = BASEPATH . 'uploads/avatar/' . $avatarFileName;
                           $size = getimagesize($_FILES['image']['tmp_name']);
 
                           $x = (int) $_POST['x'] * $_POST['scalePer'];
@@ -57,7 +57,10 @@ if ($user->isAuthenticated()) {
               $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Bad request!', 'TYPE' => 'danger');
           }
 
-          $user->updateAvatar($_SESSION['USERDATA']['id'], $avatarFileName);
+          $oldAva = $user->updateAvatar($_SESSION['USERDATA']['id'], $avatarFileName);
+          if ($oldAva) {
+              unlink(BASEPATH . 'uploads/avatar/' . $oldAva);
+          }
 
       break;
       case 'updateContacts':
