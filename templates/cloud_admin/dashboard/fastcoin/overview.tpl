@@ -6,15 +6,15 @@
         <div class="box-body">
             <center>
                 <div style="display: inline-block;">
-                    <div id="poolhashrate" style="width:120px; height:90px;"></div>
-                    <div id="sharerate" style="width:120px; height:90px;"></div>
+                    <div id="poolhashrate_fastcoin" style="width:120px; height:90px;"></div>
+                    <div id="sharerate_fastcoin" style="width:120px; height:90px;"></div>
                 </div>
                 <div style="display: inline-block;">
-                    <div id="hashrate" style="width:220px; height:180px;"></div>
+                    <div id="hashrate_fastcoin" style="width:220px; height:180px;"></div>
                 </div>
                 <div style="display: inline-block;">
-                    <div id="nethashrate" style="width:120px; height:90px;"></div>
-                    <div id="querytime" style="width:120px; height:90px;"></div>
+                    <div id="nethashrate_fastcoin" style="width:120px; height:90px;"></div>
+                    <div id="querytime_fastcoin" style="width:120px; height:90px;"></div>
                 </div>
             </center>
         {if !$DISABLED_DASHBOARD and !$DISABLED_DASHBOARD_API}
