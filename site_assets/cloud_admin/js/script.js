@@ -882,17 +882,17 @@ var App = function () {
 	/*	Toggle buttons
 	/*-----------------------------------------------------------------------------------*/
 	var handleToggle = function () {
-	$('.radio1').on('switch-change', function () {
-		$('.radio1').bootstrapSwitch('toggleRadioState');
-		});
-		// or
-		$('.radio1').on('switch-change', function () {
-		$('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck');
-		});
-		// or
-		$('.radio1').on('switch-change', function () {
-		$('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck', false);
-		});
+        $('.radio1').on('switch-change', function () {
+            $('.radio1').bootstrapSwitch('toggleRadioState');
+        });
+//		// or
+//		$('.radio1').on('switch-change', function () {
+//		$('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck');
+//		});
+//		// or
+//		$('.radio1').on('switch-change', function () {
+//		$('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck', false);
+//		});
 	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	jQuery UI Sliders
@@ -1348,90 +1348,92 @@ var App = function () {
 	/*	Select2
 	/*-----------------------------------------------------------------------------------*/
 	var handleSelect2 = function () {
-		function movieFormatResult(movie) {
-			var markup = "<table class='movie-result'><tr>";
-			if (movie.posters !== undefined && movie.posters.thumbnail !== undefined) {
-				markup += "<td class='movie-image'><img src='" + movie.posters.thumbnail + "'/></td>";
-			}
-			markup += "<td class='movie-info'><div class='movie-title'>" + movie.title + "</div>";
-			if (movie.critics_consensus !== undefined) {
-				markup += "<div class='movie-synopsis'>" + movie.critics_consensus + "</div>";
-			}
-			else if (movie.synopsis !== undefined) {
-				markup += "<div class='movie-synopsis'>" + movie.synopsis + "</div>";
-			}
-			markup += "</td></tr></table>"
-			return markup;
-		}
+        $('select').select2();
 
-		function movieFormatSelection(movie) {
-			return movie.title;
-		}
-		/* Basic */
-		$("#e1").select2();
-		/* Multi-Value Select Boxes */
-		$("#e2").select2();
-		/* With Placeholders */
-		$("#e3").select2({
-			 placeholder: "Select a State",
-			 allowClear: true
-		});
-		/* With Placeholders */
-		$("#e4").select2({
-			 placeholder: "Select a State"
-		});
-		/* Minimum Input */
-		$("#e5").select2({
-			  placeholder: "Select 2 characters",
-			  minimumInputLength: 2
-		});
-		/* Maximum Selection Size */
-		$("#e6").select2({
-			  placeholder: "Select a maximum of 3 states",
-			  maximumSelectionSize: 3
-		});
-		/* Loading Remote Data */
-		    $("#e7").select2({
-				placeholder: "Search for a movie",
-				minimumInputLength: 1,
-				ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-					url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
-					dataType: 'jsonp',
-					data: function (term, page) {
-					return {
-						q: term, // search term
-						page_limit: 10,
-						apikey: "uekzdmffsrmqzwdtcgmc5yu9" //please do not copy API. Use your own. Copying will be treated as a violation - Cloud Admin Author
-						};
-					},
-					results: function (data, page) { // parse the results into the format expected by Select2.
-						// since we are using custom formatting functions we do not need to alter remote JSON data
-						return {results: data.movies};
-					}
-					},
-					initSelection: function(element, callback) {
-					// the input tag has a value attribute preloaded that points to a preselected movie's id
-					// this function resolves that id attribute to an object that select2 can render
-					// using its formatResult renderer - that way the movie name is shown preselected
-					var id=$(element).val();
-					if (id!=="") {
-						$.ajax("http://api.rottentomatoes.com/api/public/v1.0/movies/"+id+".json", {
-						data: {
-						apikey: "uekzdmffsrmqzwdtcgmc5yu9" //please do not copy API. Use your own. Copying will be treated as a violation - Cloud Admin Author
-						},
-						dataType: "jsonp"
-						}).done(function(data) { callback(data); });
-					}
-					},
-					formatResult: movieFormatResult, // omitted for brevity, see the source of this page
-					formatSelection: movieFormatSelection, // omitted for brevity, see the source of this page
-					dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
-					escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
-			});
-		/* Tagging Support */
-		    $("#e8").select2({
-				tags:["red", "green", "blue"]
-			});
+//		function movieFormatResult(movie) {
+//			var markup = "<table class='movie-result'><tr>";
+//			if (movie.posters !== undefined && movie.posters.thumbnail !== undefined) {
+//				markup += "<td class='movie-image'><img src='" + movie.posters.thumbnail + "'/></td>";
+//			}
+//			markup += "<td class='movie-info'><div class='movie-title'>" + movie.title + "</div>";
+//			if (movie.critics_consensus !== undefined) {
+//				markup += "<div class='movie-synopsis'>" + movie.critics_consensus + "</div>";
+//			}
+//			else if (movie.synopsis !== undefined) {
+//				markup += "<div class='movie-synopsis'>" + movie.synopsis + "</div>";
+//			}
+//			markup += "</td></tr></table>"
+//			return markup;
+//		}
+//
+//		function movieFormatSelection(movie) {
+//			return movie.title;
+//		}
+//		/* Basic */
+//		$("#e1").select2();
+//		/* Multi-Value Select Boxes */
+//		$("#e2").select2();
+//		/* With Placeholders */
+//		$("#e3").select2({
+//			 placeholder: "Select a State",
+//			 allowClear: true
+//		});
+//		/* With Placeholders */
+//		$("#e4").select2({
+//			 placeholder: "Select a State"
+//		});
+//		/* Minimum Input */
+//		$("#e5").select2({
+//			  placeholder: "Select 2 characters",
+//			  minimumInputLength: 2
+//		});
+//		/* Maximum Selection Size */
+//		$("#e6").select2({
+//			  placeholder: "Select a maximum of 3 states",
+//			  maximumSelectionSize: 3
+//		});
+//		/* Loading Remote Data */
+//		    $("#e7").select2({
+//				placeholder: "Search for a movie",
+//				minimumInputLength: 1,
+//				ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+//					url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+//					dataType: 'jsonp',
+//					data: function (term, page) {
+//					return {
+//						q: term, // search term
+//						page_limit: 10,
+//						apikey: "uekzdmffsrmqzwdtcgmc5yu9" //please do not copy API. Use your own. Copying will be treated as a violation - Cloud Admin Author
+//						};
+//					},
+//					results: function (data, page) { // parse the results into the format expected by Select2.
+//						// since we are using custom formatting functions we do not need to alter remote JSON data
+//						return {results: data.movies};
+//					}
+//					},
+//					initSelection: function(element, callback) {
+//					// the input tag has a value attribute preloaded that points to a preselected movie's id
+//					// this function resolves that id attribute to an object that select2 can render
+//					// using its formatResult renderer - that way the movie name is shown preselected
+//					var id=$(element).val();
+//					if (id!=="") {
+//						$.ajax("http://api.rottentomatoes.com/api/public/v1.0/movies/"+id+".json", {
+//						data: {
+//						apikey: "uekzdmffsrmqzwdtcgmc5yu9" //please do not copy API. Use your own. Copying will be treated as a violation - Cloud Admin Author
+//						},
+//						dataType: "jsonp"
+//						}).done(function(data) { callback(data); });
+//					}
+//					},
+//					formatResult: movieFormatResult, // omitted for brevity, see the source of this page
+//					formatSelection: movieFormatSelection, // omitted for brevity, see the source of this page
+//					dropdownCssClass: "bigdrop", // apply css that makes the dropdown taller
+//					escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
+//			});
+//		/* Tagging Support */
+//		    $("#e8").select2({
+//				tags:["red", "green", "blue"]
+//			});
 	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	Uniform
@@ -3192,6 +3194,7 @@ var App = function () {
             }
 
             handleSelect2(); // TODO: need only forms!!!
+            handleToggle();
 
             if (App.isPage("index")) {
 				handleDateTimePickers(); //Function to display Date Timepicker
@@ -3211,10 +3214,10 @@ var App = function () {
 				handleRaty(); //To show star ratings
 				handleTimeAgo(); //Function to handle timestamps
             }
-			if (App.isPage("button_icons")) {
-				handleStatefulButtons(); //Function to display stateful buttons
-				handleToggle(); 		//Function to handle toggle buttons
-            }
+//			if (App.isPage("button_icons")) {
+//				handleStatefulButtons(); //Function to display stateful buttons
+//				handleToggle(); 		//Function to handle toggle buttons
+//            }
 			if (App.isPage("sliders_progress")) {
 				handleSliders(); //Function to display sliders
 				handleProgress(); //Function to display progress bars
