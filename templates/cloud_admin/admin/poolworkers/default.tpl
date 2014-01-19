@@ -6,7 +6,6 @@
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}"/>
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}"/>
 
-            {*<div class="form-actions form-actions-padding">*}
                 <ul class="pager">
                     <li class="previous">
                     {if $smarty.request.start|default:"0" > 0}
@@ -21,27 +20,6 @@
                            class="btn btn-default"><i class="fa fa-chevron-right fa-2x"></i></a>
                     </li>
                 </ul>
-            {*</div>*}
-
-
-                {*<table id="datatable1" cellpadding="0" cellspacing="0" border="0"*}
-                       {*class="datatable table table-hover">*}
-                    {*<tbody>*}
-                    {*<tr>*}
-                        {*<td align="left">*}
-                        {*{if $smarty.request.start|default:"0" > 0}*}
-                            {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" - $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i*}
-                                    {*class="icon-left-open"></i></a>*}
-                            {*{else}*}
-                            {*<i class="icon-left-open"></i>*}
-                        {*{/if}*}
-                        {*</td>*}
-                        {*<td align="right">*}
-                            {*<a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&start={$smarty.request.start|escape|default:"0" + $LIMIT}{if $FILTERS|default:""}{$FILTERS}{/if}"><i*}
-                                    {*class="icon-right-open"></i></a>*}
-                        {*</td>*}
-                    {*</tbody>*}
-                {*</table>*}
 
             </form>
             <table id="datatable2" cellpadding="0" cellspacing="0" border="0"

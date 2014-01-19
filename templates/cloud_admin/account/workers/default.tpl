@@ -1,30 +1,34 @@
 <div class="col-md-4">
     <div class="box border blue">
         <div class="box-title"><h4>Add New Worker</h4></div>
-        <form action="{$smarty.server.PHP_SELF}" method="post">
-            <div class="box-body">
-                <input type="hidden" name="page" value="{$smarty.request.page|escape}">
-                <input type="hidden" name="action" value="{$smarty.request.action|escape}">
-                <input type="hidden" name="do" value="add">
+        <div class="login-box-inline">
+            <form action="{$smarty.server.PHP_SELF}" method="post">
+                <div class="box-body">
+                    <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+                    <input type="hidden" name="action" value="{$smarty.request.action|escape}">
+                    <input type="hidden" name="do" value="add">
 
-                <div class="module_content">
-                    <div class="form-group">
-                        <label>Worker Name</label>
-                        <input class="form-control" type="text" name="username" value="user" size="10" maxlength="20" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Worker Password</label>
-                        <input class="form-control" type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
+                    <div class="module_content">
+                        <div class="form-group">
+                            <label>Worker Name</label>
+                            <i class="fa fa-user"></i>
+                            <input class="form-control" type="text" name="username" value="user" size="10" maxlength="20" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Worker Password</label>
+                            <i class="fa fa-lock"></i>
+                            <input class="form-control" type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="clear"></div>
-            <div class="toolbox bottom">
-                <div class="submit_link">
-                    <input class="btn btn-info" type="submit" value="Add New Worker" class="alt_btn">
+                <div class="clear"></div>
+                <div class="toolbox bottom">
+                    <div class="submit_link">
+                        <input class="btn btn-info" type="submit" value="Add New Worker" class="alt_btn">
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
 </div>
 
