@@ -42,27 +42,28 @@ if ($user->isAuthenticated()) {
                           imagecopyresampled($dstImg, $vImg, 0, 0, $x, $y, $nw, $nh, $w, $h);
                           imagejpeg($dstImg, $path);
                           imagedestroy($dstImg);
+                          $_SESSION['USERDATA']['avatar'] = $avatarFileName;
                           $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was updated', 'TYPE' => 'success');
 
                       } else {
-                          $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Unknown problem!', 'TYPE' => 'danger');
+                          $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Unknown problem!', 'TYPE' => 'warning');
                       }
                   } else {
-                      $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. File is too small or large!', 'TYPE' => 'danger');
+                      $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. File is too small or large!', 'TYPE' => 'warning');
                   }
               } else {
-                  $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. File not set!', 'TYPE' => 'danger');
+                  $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. File not set!', 'TYPE' => 'warning');
               }
           } else {
-              $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Bad request!', 'TYPE' => 'danger');
+              $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Bad request!', 'TYPE' => 'warning');
           }
 
           $oldAva = $user->updateAvatar($_SESSION['USERDATA']['id'], $avatarFileName);
           if ($oldAva) {
               unlink(BASEPATH . 'uploads/avatar/' . $oldAva);
           }
-
       break;
+
       case 'updateContacts':
           if ($user->updateContacts($_SESSION['USERDATA']['id'], $_POST['c_skype'], $_POST['c_vk'], $_POST['c_icq'])) {
               $_SESSION['POPUP'][] = array('CONTENT' => 'Contacts updated', 'TYPE' => 'success');

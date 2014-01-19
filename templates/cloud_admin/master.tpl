@@ -182,7 +182,13 @@
                                 <div class="col-md-12">
                                     <div class="alert alert-block alert-{$smarty.session.POPUP[popup].TYPE|default:"info"} fade in">
                                         <a aria-hidden="true" href="#" data-dismiss="alert" class="close">×</a>
-                                        <p>{$smarty.session.POPUP[popup].CONTENT}</p>
+                                        <p>
+                                        {if $smarty.session.POPUP[popup].TYPE == 'warning'}
+                                        <h4><i class="fa fa-exclamation-circle"></i> Warning!</h4>
+                                        {else}
+                                        <h4><i class="fa fa-check-square-o"></i> Successful!</h4>
+                                        {/if}
+                                        {$smarty.session.POPUP[popup].CONTENT}</p>
                                     </div>
                                 </div>
                             {/section}
