@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="box border blue">
         <div class="box-title"><h4>Add New Worker</h4></div>
         <div class="login-box-inline">
@@ -12,12 +12,12 @@
                         <div class="form-group">
                             <label>Worker Name</label>
                             <i class="fa fa-user"></i>
-                            <input class="form-control" type="text" name="username" value="user" size="10" maxlength="20" required>
+                            <input class="form-control" type="text" name="username" placeholder="user" size="10" maxlength="20" required>
                         </div>
                         <div class="form-group">
                             <label>Worker Password</label>
                             <i class="fa fa-lock"></i>
-                            <input class="form-control" type="text" name="password" value="password" size="10" maxlength="20" required>&nbsp;
+                            <input class="form-control" type="text" name="password" placeholder="password" size="10" maxlength="20" required>&nbsp;
                         </div>
                     </div>
                 </div>
@@ -32,15 +32,15 @@
     </div>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-9">
     <div class="box border blue">
         <div class="box-title"><h4>Worker Configuration</h4></div>
         <form action="{$smarty.server.PHP_SELF}" method="post">
-            <div class="box-body">
+            <div class="box-body col-lg-12">
                 <input type="hidden" name="page" value="{$smarty.request.page|escape}">
                 <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                 <input type="hidden" name="do" value="update">
-                <table class="tablesorter" cellspacing="0">
+                <table class="table table-striped table-bordered" cellspacing="0">
                     <thead>
                         <tr>
                             <th align="left">Worker Login</th>
@@ -59,7 +59,13 @@
                                 {assign var="username" value="."|escape|explode:$WORKERS[worker].username:2}
                                 <tr>
                                     <td align="left"{if $WORKERS[worker].hashrate > 0}
-                                        style="color: orange"{/if}>{$username.0|escape}.<input name="data[{$WORKERS[worker].id}][username]" value="{$username.1|escape}" size="10" required/>
+                                        style="color: orange"{/if}>
+                                        <div class="row">
+                                            <div class="col-xs-4"><label>{$username.0|escape}.</label></div>
+                                            <div class="col-xs-8">
+                                                <input class="form-control" name="data[{$WORKERS[worker].id}][username]" value="{$username.1|escape}" size="10" required/>
+                                            </div>
+                                        </div>
                                     </td>
                                     <td align="left"><input class="form-control" type="text" name="data[{$WORKERS[worker].id}][password]"  value="{$WORKERS[worker].password|escape}" size="10" required>
                                     </td>
