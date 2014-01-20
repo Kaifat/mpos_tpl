@@ -58,10 +58,10 @@
                             {section worker $WORKERS}
                                 {assign var="username" value="."|escape|explode:$WORKERS[worker].username:2}
                                 <tr>
-                                    <td align="left"{if $WORKERS[worker].hashrate > 0}
+                                    <td align="left" {if $WORKERS[worker].hashrate > 0}
                                         style="color: orange"{/if}>
                                         <div class="row">
-                                            <div class="col-xs-4"><label>{$username.0|escape}.</label></div>
+                                            <div class="col-xs-4" style="line-height:2.5"><label>{$username.0|escape}.</label></div>
                                             <div class="col-xs-8">
                                                 <input class="form-control" name="data[{$WORKERS[worker].id}][username]" value="{$username.1|escape}" size="10" required/>
                                             </div>
@@ -75,7 +75,6 @@
                                     <td>
                                         <div class="control-group">
                                             <div class="controls">
-                                                <label for="data[{$WORKERS[worker].id}][monitor]"></label>
                                                 <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
                                                     <input id="data[auto_payout]" type="radio" name="data[{$WORKERS[worker].id}][monitor]"  value="1" id="data[{$WORKERS[worker].id}][monitor]" {if $WORKERS[worker].monitor}checked{/if}
                                                 </div>
@@ -85,7 +84,7 @@
                                     {/if}
                                     <td align="right">{$WORKERS[worker].hashrate|number_format}</td>
                                     <td align="right">{$WORKERS[worker].difficulty|number_format:"2"}</td>
-                                    <td align="center" style="padding-right: 25px;"><a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&do=delete&id={$WORKERS[worker].id|escape}" class="icn_trash"><i class="icon-trash"/></a>
+                                    <td align="center" style="padding-right: 25px;"><a href="{$smarty.server.PHP_SELF}?page={$smarty.request.page|escape}&action={$smarty.request.action|escape}&do=delete&id={$WORKERS[worker].id|escape}" class="icn_trash"><i class="fa fa-trash-o"></i></a>
                                     </td>
                                 </tr>
                             {/section}
@@ -93,8 +92,8 @@
                     </tbody>
                 </table>
             </div>
-            <div class="clear"></div>
-            <div class="toolbox bottom">
+            <div class="clearfix"></div>
+            <div class="toolbox bottom center">
                 <div class="submit_link">
                     <input class="btn btn-info" type="submit" class="alt_btn" value="Update Workers">
                 </div>
