@@ -670,6 +670,40 @@ class User extends Base {
     return false;
   }
 
+    /**
+     * @param $account_id
+     * @param $provider
+     * @param $provider_uid
+     * @param $email
+     * @param $display_name
+     * @param $first_name
+     * @param $last_name
+     * @param $photo_url
+     * @param $profile_url
+     * @param $website_url
+     * @return bool
+     */
+    public function registerHybridAuth($account_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $photo_url, $profile_url, $website_url)
+  {
+      $this->debug->append("STA " . __METHOD__, 4);
+
+      $stmt = $this->mysqli->prepare("
+        INSERT INTO `authentications` (account_id, provider, provider_uid, email, display_name, first_name, last_name, photo_url, profile_url, website_url)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ? ,? ,?)
+        ");
+
+      if ($this->checkStmt($stmt) && $stmt->bind_param('isssssssss', $account_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $photo_url, $profile_url, $website_url) && $stmt->execute()) {
+
+          return true;
+      }
+
+      $this->setErrorMessage( 'Unable to register' );
+      $this->debug->append('Failed to insert user into DB: ' . $this->mysqli->error);
+      if ($stmt->sqlstate == '23000') $this->setErrorMessage( 'Username or email already registered' );
+      return false;
+
+  }
+
   /**
    * User a one time token to reset a password
    * @param token string one time token
