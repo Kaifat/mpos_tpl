@@ -109,7 +109,8 @@
     <script type="text/javascript" src="{$PATH}/js/fuelux-tree/fuelux.tree.min.js"></script>
     <!-- CROP AVATAR -->
     <script type="text/javascript" src="{$PATH}/js/jquery-imgareaselect/jquery.imgareaselect.pack.js"></script>
-
+    <!-- BOOTSTRAP SWITCH -->
+    <script type="text/javascript" src="{$PATH}/js/bootstrap-switch/bootstrap-switch.min.js"></script>
     <!-- UNIFORM -->
     <!-- CUSTOM SCRIPT -->
     <script src="{$PATH}/js/script.js"></script>
