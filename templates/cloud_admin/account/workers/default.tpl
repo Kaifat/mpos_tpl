@@ -66,6 +66,19 @@
                                     <td align="center"><i  class="icon-{if $WORKERS[worker].hashrate > 0}ok{else}cancel{/if}"></i>
                                     </td>
                                     {if $GLOBAL.config.disable_notifications != 1}
+
+                                    <td>
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <label for="data[{$WORKERS[worker].id}][monitor]"></label>
+                                                <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                                    <input id="data[auto_payout]" type="radio" name="data[{$WORKERS[worker].id}][monitor]"  value="1" id="data[{$WORKERS[worker].id}][monitor]" {if $WORKERS[worker].monitor}checked{/if}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+
                                     <td>
                                         <span class="toggle">
                                             <label for="data[{$WORKERS[worker].id}][monitor]">

@@ -881,10 +881,10 @@ var App = function () {
 	/*-----------------------------------------------------------------------------------*/
 	/*	Toggle buttons
 	/*-----------------------------------------------------------------------------------*/
-	var handleToggle = function () {
-        $('.radio1').on('switch-change', function () {
-            $('.radio1').bootstrapSwitch('toggleRadioState');
-        });
+//	var handleToggle = function () {
+//        $('.radio1').on('switch-change', function () {
+//            $('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck');
+//        });
 //		// or
 //		$('.radio1').on('switch-change', function () {
 //		$('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck');
@@ -893,7 +893,7 @@ var App = function () {
 //		$('.radio1').on('switch-change', function () {
 //		$('.radio1').bootstrapSwitch('toggleRadioStateAllowUncheck', false);
 //		});
-	}
+//	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	jQuery UI Sliders
 	/*-----------------------------------------------------------------------------------*/
@@ -3194,7 +3194,7 @@ var App = function () {
             }
 
             handleSelect2(); // TODO: need only forms!!!
-            handleToggle();
+//            handleToggle();
 
             if (App.isPage("index")) {
 				handleDateTimePickers(); //Function to display Date Timepicker
