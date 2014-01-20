@@ -72,7 +72,6 @@
                                     <td align="center"><i  class="icon-{if $WORKERS[worker].hashrate > 0}ok{else}cancel{/if}"></i>
                                     </td>
                                     {if $GLOBAL.config.disable_notifications != 1}
-
                                     <td>
                                         <div class="control-group">
                                             <div class="controls">
@@ -82,16 +81,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </td>
-
-
-                                    <td>
-                                        <span class="toggle">
-                                            <label for="data[{$WORKERS[worker].id}][monitor]">
-                                                <input type="checkbox" class="ios-switch" name="data[{$WORKERS[worker].id}][monitor]" value="1" id="data[{$WORKERS[worker].id}][monitor]" {if $WORKERS[worker].monitor}checked{/if} />
-                                                <div class="switch"></div>
-                                            </label>
-                                        </span>
                                     </td>
                                     {/if}
                                     <td align="right">{$WORKERS[worker].hashrate|number_format}</td>

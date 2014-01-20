@@ -24,7 +24,7 @@
                         <td>
                             <fieldset style="width:200px; padding-right:8px;">
                                 <label>Select User</label>
-                            {html_options name="id" options=$USERLIST selected=$USERID|default:"0"}
+                            {html_options class="col-md-12" name="id" options=$USERLIST selected=$USERID|default:"0"}
             </div>
             </td>
             <td>
@@ -39,15 +39,15 @@
                 <input class="form-control" type="text" class="pin" name="search" value="{$HEIGHT|default:"%"}">
     </div>
     </td>
-    <td><b>SHOW EMPTY ROUNDS</b><br><br>
-          <span style="margin: 0px 28px;" class="toggle">
-            <label for="filter">
-                <input type="checkbox" class="ios-switch" name="filter" value="1" id="filter"
-                       {if $FILTER}checked{/if} />
-
-                <div class="switch"></div>
-            </label>
-          </span>
+    <td>
+        <div class="control-group">
+            <div class="controls">
+                <label for="filter">Show empty rounds</label><br>
+                <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                    <input id="filter" type="radio" name="filter" value="1"{if $FILTER}checked{/if}>
+                </div>
+            </div>
+        </div>
     </td>
     </tbody>
     </table>
