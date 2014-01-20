@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="{$PATH}/css/animatecss/animate.min.css"/>
     <!-- DATE RANGE PICKER -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/bootstrap-daterangepicker/daterangepicker-bs3.css"/>
+    <!-- BOOTSTRAP SWITCH -->
+    <link rel="stylesheet" type="text/css" href="{$PATH}/js/bootstrap-switch/bootstrap-switch.min.css" />
     <!-- TODO -->
     <link rel="stylesheet" type="text/css" href="{$PATH}/js/jquery-todo/css/styles.css"/>
     <!-- FULL CALENDAR -->

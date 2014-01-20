@@ -14,10 +14,31 @@
                     <div class="controls">
                         <label for="option1">Option 1</label>
                         <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
-                            <input id="option1" type="radio" name="radio1" value="option1">
+                            <input id="option14" type="radio" name="radio1" value="option1">
                         </div>
                         </div>
                     </div>
+
+                    <div class="box-body big center">
+                    <p>
+                    <div class="control-group">
+                        <div class="controls">
+                            <label for="option1">Option 1</label>
+                            <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                <input id="option1" type="radio" name="radio1" value="option1">
+                            </div>
+                            <label for="option2">Option 2</label>
+                            <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                <input id="option2" type="radio" name="radio1" value="option2">
+                            </div>
+                            <label for="option3">Option 3</label>
+                            <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                <input id="option3" type="radio" name="radio1" value="option3">
+                            </div>
+                        </div>
+                    </div>
+                    </p>
+                        </div>
 
                 {*<table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">*}
                     {*<tr>*}

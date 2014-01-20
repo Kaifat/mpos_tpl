@@ -51,12 +51,13 @@
 
                 <div class="form-group">
                     <label>Type</label>
-                {html_options name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
+                {html_options class="col-md-12" name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
                 </div>
                 <div class="form-group">
                     <label>Status</label>
-                {html_options name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
+                {html_options class="col-md-12" name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
                 </div>
+                <div class="clearfix"></div>
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
