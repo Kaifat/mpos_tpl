@@ -61,7 +61,7 @@
                                 <a class="btn btn-info btn-lg">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=google" class="btn btn-danger btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Google" class="btn btn-danger btn-lg">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
                             </div>
@@ -78,11 +78,10 @@
                     <div class="tab-pane fade" id="tab_sign_up">
                         <div class="login-box-inline">
                             <form action="{$smarty.server.PHP_SELF}" method="post">
-                                <input type="hidden" name="page" value="{$smarty.request.page|escape}">
+                                <input type="hidden" name="page" value="register">
                             {if $smarty.request.token|default:""}
                                 <input type="hidden" name="token" value="{$smarty.request.token|escape}"/>
                             {/if}
-                                <input type="hidden" name="action" value="register">
 
                                 <div class="divide-20"></div>
                                 <div class="col-md-12">
@@ -157,7 +156,7 @@
                                 <a class="btn btn-info btn-lg">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=google" class="btn btn-danger btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Google" class="btn btn-danger btn-lg">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
                             </div>
