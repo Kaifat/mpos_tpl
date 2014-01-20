@@ -61,7 +61,7 @@
                                 <a class="btn btn-info btn-lg">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                                <a class="btn btn-danger btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=google" class="btn btn-danger btn-lg">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
                             </div>
@@ -157,7 +157,7 @@
                                 <a class="btn btn-info btn-lg">
                                     <i class="fa fa-twitter"></i>
                                 </a>
-                                <a class="btn btn-danger btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=google" class="btn btn-danger btn-lg">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
                             </div>
