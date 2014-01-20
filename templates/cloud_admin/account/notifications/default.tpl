@@ -8,110 +8,66 @@
             <div class="box-title"><h4>Notification Settings</h4></div>
             <div class="box-body">
 
-                {*===================================*}
-
-                <div class="control-group">
-                    <div class="controls">
-                        <label for="option1">Option 1</label>
-                        <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
-                            <input id="option14" type="radio" name="radio1" value="option1">
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="box-body big center">
-
+                <table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">
+                    <tr>
+                        <th align="left">Type</th>
+                        <th align="center">Active</th>
+                    </tr>
+                    <tr>
                         <div class="control-group">
                             <div class="controls">
-                                <label for="option1">Option 1</label>
-                                <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
-                                    <input id="option1" type="radio" name="radio1" value="option1">
-                                </div>
-                                <label for="option2">Option 2</label>
-                                <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
-                                    <input id="option2" type="radio" name="radio1" value="option2">
-                                </div>
-                                <label for="option3">Option 3</label>
-                                <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
-                                    <input id="option3" type="radio" name="radio1" value="option3">
-                                </div>
+                                <td><label for="data[idle_worker]">IDLE Worker</label></td>
+                                <td>
+                                    <input type="hidden" name="data[idle_worker]" value="0"/>
+                                    <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                        <input id="data[idle_worker]" type="radio" name="data[idle_worker]" value="1"{nocache}{if $SETTINGS['idle_worker']}checked{/if}{/nocache}>
+                                    </div>
+                                </td>
                             </div>
                         </div>
-                    </div>
+                    </tr>
+                    <tr>
+                        <div class="control-group">
+                            <div class="controls">
+                                <td><label for="data[new_block]">New Blocks</label></td>
+                                <td>
+                                    <input type="hidden" name="data[new_block]" value="0"/>
+                                    <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                    <input id="data[new_block]" type="radio" name="data[new_block]" value="1"{nocache}{if $SETTINGS['new_block']} checked{/if}{/nocache}>
+                                    </div>
+                                </td>
+                            </div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="control-group">
+                            <div class="controls">
+                                <td><label for="data[auto_payout]">Auto Payout</label></td>
+                                <td>
+                                    <input type="hidden" name="data[auto_payout]" value="0"/>
+                                    <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                        <input id="data[auto_payout]" type="radio" name="data[auto_payout]" value="1"{nocache}{if $SETTINGS['auto_payout']}checked{/if}{/nocache}>
+                                    </div>
+                                </td>
+                            </div>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="control-group">
+                            <div class="controls">
+                                <td><label for="data[manual_payout]">Manual Payout</label></td>
+                                <td>
+                                    <input type="hidden" name="data[manual_payout]" value="0"/>
+                                    <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                        <input id="data[manual_payout]" type="radio" name="data[manual_payout]" value="1"{nocache}{if $SETTINGS['manual_payout']}checked{/if}{/nocache}>
+                                    </div>
+                                </td>
+                            </div>
+                        </div>
+                    </tr>
 
-                {*<table id="datatable1" cellpadding="0" cellspacing="0" border="0" class="datatable table table-hover">*}
-                    {*<tr>*}
-                        {*<th align="left">Type</th>*}
-                        {*<th align="center">Active</th>*}
-                    {*</tr>*}
-                    {*<div>*}
-                        {*<div class="control-group">*}
-                            {*<div class="controls">*}
-                        {*<label for="option1">IDLE Worker</label>*}
 
-                            {*<div class="make-switch radio3 radio-no-uncheck-square-o" data-on="warning">*}
-                                {*<input id="option16" type="radio" name="radio1" value="option1">*}
-                            {*</div>*}
-
-                                {*</div>*}
-                        {*</div>*}
-                              {*<span class="toggle">*}
-                                  {*<label for="data[idle_worker]">*}
-                                      {*<input type="hidden" name="data[idle_worker]" value="0"/>*}
-                                      {*<input type="checkbox" class="ios-switch" name="data[idle_worker]"*}
-                                             {*id="data[idle_worker]"*}
-                                             {*value="1"{nocache}{if $SETTINGS['idle_worker']}checked{/if}{/nocache} />*}
-
-                                      {*<div class="switch"></div>*}
-                                  {*</label>*}
-                              {*</span>*}
-                        {*</td>*}
-                    {*</div>*}
-                    {*<tr>*}
-                        {*<td align="left">New Blocks</td>*}
-                        {*<td>*}
-                              {*<span class="toggle">*}
-                              {*<label for="data[new_block]">*}
-                                  {*<input type="hidden" name="data[new_block]" value="0"/>*}
-                                  {*<input type="checkbox" class="ios-switch" name="data[new_block]" id="data[new_block]"*}
-                                         {*value="1"{nocache}{if $SETTINGS['new_block']}checked{/if}{/nocache} />*}
-
-                                  {*<div class="switch"></div>*}
-                              {*</label>*}
-                              {*</span>*}
-                        {*</td>*}
-                    {*</tr>*}
-                    {*<tr>*}
-                        {*<td align="left">Auto Payout</td>*}
-                        {*<td>*}
-                            {*<span class="toggle">*}
-                                {*<label for="data[auto_payout]">*}
-                                    {*<input type="hidden" name="data[auto_payout]" value="0"/>*}
-                                    {*<input type="checkbox" class="ios-switch" name="data[auto_payout]"*}
-                                           {*id="data[auto_payout]"*}
-                                           {*value="1"{nocache}{if $SETTINGS['auto_payout']}checked{/if}{/nocache} />*}
-
-                                    {*<div class="switch"></div>*}
-                                {*</label>*}
-                            {*</span>*}
-                        {*</td>*}
-                    {*</tr>*}
-                    {*<tr>*}
-                        {*<td align="left">Manual Payout</td>*}
-                        {*<td>*}
-                            {*<span class="toggle">*}
-                                {*<label for="data[manual_payout]">*}
-                                    {*<input type="hidden" name="data[manual_payout]" value="0"/>*}
-                                    {*<input type="checkbox" class="ios-switch" name="data[manual_payout]"*}
-                                           {*id="data[manual_payout]"*}
-                                           {*value="1"{nocache}{if $SETTINGS['manual_payout']}checked{/if}{/nocache} />*}
-
-                                    {*<div class="switch"></div>*}
-                                {*</label>*}
-                            {*</span>*}
-                        {*</td>*}
-                    {*</tr>*}
-                {*</table>*}
+                </table>
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
@@ -142,9 +98,9 @@
                     <td align="center">{$NOTIFICATIONS[notification].time}</td>
                     <td align="center">
                         {if $NOTIFICATIONS[notification].type == new_block}New Block
-                            {else if $NOTIFICATIONS[notification].type == auto_payout}Auto Payout
-                            {else if $NOTIFICATIONS[notification].type == idle_worker}IDLE Worker
-                            {else if $NOTIFICATIONS[notification].type == manual_payout}Manual Payout
+                            {elseif $NOTIFICATIONS[notification].type == auto_payout}Auto Payout
+                            {elseif $NOTIFICATIONS[notification].type == idle_worker}IDLE Worker
+                            {elseif $NOTIFICATIONS[notification].type == manual_payout}Manual Payout
                         {/if}
                     </td>
                     <td align="center">

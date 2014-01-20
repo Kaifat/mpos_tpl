@@ -73,12 +73,14 @@
                                     </td>
                                     {if $GLOBAL.config.disable_notifications != 1}
                                     <td>
-                                        <span class="toggle">
-                                            <label for="data[{$WORKERS[worker].id}][monitor]">
-                                                <input type="checkbox" class="ios-switch" name="data[{$WORKERS[worker].id}][monitor]" value="1" id="data[{$WORKERS[worker].id}][monitor]" {if $WORKERS[worker].monitor}checked{/if} />
-                                                <div class="switch"></div>
-                                            </label>
-                                        </span>
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <label for="data[{$WORKERS[worker].id}][monitor]"></label>
+                                                <div class="make-switch radio1 radio-no-uncheck-square-o" data-on="warning">
+                                                    <input id="data[auto_payout]" type="radio" name="data[{$WORKERS[worker].id}][monitor]"  value="1" id="data[{$WORKERS[worker].id}][monitor]" {if $WORKERS[worker].monitor}checked{/if}
+                                                </div>
+                                            </div>
+                                        </div>
                                     </td>
                                     {/if}
                                     <td align="right">{$WORKERS[worker].hashrate|number_format}</td>
