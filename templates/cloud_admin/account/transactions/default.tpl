@@ -26,7 +26,7 @@
 </div>
 {/if}
 
-<div class="col-md-4">
+<div class="col-md-3">
     <div class="box border blue">
         <div class="box-title"><h4>Transaction Filter</h4></div>
         <form action="{$smarty.server.PHP_SELF}">
@@ -61,14 +61,14 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-info" type="submit" value="Filter" class="alt_btn">
+                    <input class="btn btn-info btn-block" type="submit" value="Filter" class="alt_btn">
                 </div>
             </div>
         </form>
     </div>
 </div>
 
-<div class="col-md-8">
+<div class="col-md-9">
     <div class="box border blue">
         <div class="box-title"><h4>Transaction History</h4></div>
         <div class="box-body">
@@ -128,8 +128,7 @@
             </table>
         </div>
         <div class="toolbox bottom">
-        <p style="margin-left: 25px; font-size: 9px;"><b>Debit_AP</b> = Auto Threshold Payment,
-            <b>Debit_MP</b> = Manual Payment, <b>Donation</b> = Donation, <b>Fee</b> = Pool Fees (if applicable)</p>
+        <p style="margin-left: 25px; font-size: 11px;"><b>Debit_AP</b> = Auto Threshold Payment,&nbsp;&nbsp;&nbsp;<b>Debit_MP</b> = Manual Payment,&nbsp;&nbsp;&nbsp;<b>Donation</b> = Donation,&nbsp;&nbsp;&nbsp;<b>Fee</b> = Pool Fees (if applicable)</p>
         </div>
     </div>
 </div>
