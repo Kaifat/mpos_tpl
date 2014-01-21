@@ -692,8 +692,12 @@ class User extends Base {
         VALUES (?, ?, ?, ?, ?, ?, ?, ? ,? ,?)
         ");
 
-      if ($this->checkStmt($stmt) && $stmt->bind_param('isssssssss', $account_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $photo_url, $profile_url, $website_url) && $stmt->execute()) {
-
+      if ($this->checkStmt($stmt) && $stmt->bind_param('isssssssss', $account_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $photo_url, $profile_url, $website_url)) {
+          if (!$stmt->execute()) {
+//              var_dump($stmt);
+              $this->debug->append('Failed to execute statement');
+              return false;
+          }
           return true;
       }
 

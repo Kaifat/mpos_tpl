@@ -21,7 +21,7 @@ if (!empty($_GET['provider'])) {
         $adapter = $hybridauth->authenticate( $provider );
 
         // if okey, we will redirect to user profile page
-        $hybridauth->redirect( "/index.php?page=dashboard&provider=".$provider );
+        $hybridauth->redirect( "index.php?provider=".$provider );
     }
     catch( Exception $e ){
         // In case we have errors 6 or 7, then we have to use Hybrid_Provider_Adapter::logout() to
