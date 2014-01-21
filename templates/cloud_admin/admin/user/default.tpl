@@ -56,15 +56,15 @@
                 </div>
                 <div class="form-group">
                     <label>Is Admin</label>
-                {html_options name="filter[is_admin]" options=$ADMIN selected=$smarty.request.filter.is_admin|default:""}
+                {html_options class="col-md-12" name="filter[is_admin]" options=$ADMIN selected=$smarty.request.filter.is_admin|default:""}
                 </div>
                 <div class="form-group">
                     <label>Is Locked</label>
-                {html_options name="filter[is_locked]" options=$LOCKED selected=$smarty.request.filter.is_locked|default:""}
+                {html_options class="col-md-12" name="filter[is_locked]" options=$LOCKED selected=$smarty.request.filter.is_locked|default:""}
                 </div>
                 <div class="form-group">
                     <label>No Fees</label>
-                {html_options name="filter[no_fees]" options=$NOFEE selected=$smarty.request.filter.no_fees|default:""}
+                {html_options class="col-md-12" name="filter[no_fees]" options=$NOFEE selected=$smarty.request.filter.no_fees|default:""}
                 </div>
                 <ul>
                     <li>Note: Text search fields support '%' as wildcard.</li>

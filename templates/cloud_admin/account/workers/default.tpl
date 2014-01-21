@@ -61,7 +61,7 @@
                                     <td align="left" {if $WORKERS[worker].hashrate > 0}
                                         style="color: orange"{/if}>
                                         <div class="row">
-                                            <div class="col-xs-4" style="line-height:2.5"><label>{$username.0|escape}.</label></div>
+                                            <div class="col-xs-4" style="line-height:2.5em"><label>{$username.0|escape}.</label></div>
                                             <div class="col-xs-8">
                                                 <input class="form-control" name="data[{$WORKERS[worker].id}][username]" value="{$username.1|escape}" size="10" required/>
                                             </div>
