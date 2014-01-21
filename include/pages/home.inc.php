@@ -28,32 +28,8 @@ if (!empty($_GET['provider'])) {
 
         // grab the user profile
         $user_data = $adapter->getUserProfile();
-        $username = str_replace('@', '_', $user_data->email);
-        $username = str_replace('.', '_', $username);
-        $username = str_replace('-', '_', $username);
-        //Initialize the random password
-        $password1 = '';
-        //Initialize a random desired length
-        $desired_length = rand(8, 12);
-        for($length = 0; $length < $desired_length; $length++) {
-            //Append a random ASCII character (including symbols)
-            $password1 .= chr(rand(32, 126));
-        }
-        $password2 = $password1;
-        $pin = '1111';
-        $tac = '1';
-        $token = '';
-
-        if ($user->register($username, $password1, $password2, $pin, $user_data->email, $user_data->email,$tac, $token)) {
-            if ($account_id = $user->getUserId($username)) {
-                $user->registerHybridAuth($account_id, $provider, $user_data->identifier, $user_data->email, $user_data->displayName, $user_data->firstName, $user_data->lastName, $user_data->photoURL, $user_data->profileURL, $user_data->webSiteURL);
-            } else {
-                $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create account: ' . $user->getError(), 'TYPE' => 'warning');
-            }
-        } else {
-            $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create account: ' . $user->getError(), 'TYPE' => 'warning');
-        }
-
+        // check hybrid Auth
+        $user->doHybridAuth($provider, $user_data);
     }
     catch( Exception $e ){
         // In case we have errors 6 or 7, then we have to use Hybrid_Provider_Adapter::logout() to

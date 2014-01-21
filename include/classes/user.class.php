@@ -6,6 +6,7 @@ if (!defined('SECURITY'))
 
 class User extends Base {
   protected $table = 'accounts';
+  protected $tableHybridAuth = 'authentications';
   private $userID = false;
   private $user = array();
 
@@ -95,17 +96,115 @@ class User extends Base {
     return $this->updateSingle($id, $field);
   }
 
-  /**
-   * Fetch all users for administrative tasks
-   * @param none
-   * @return data array All users with db columns as array fields
-   **/
-  public function getUsers($filter='%') {
-    $stmt = $this->mysqli->prepare("SELECT * FROM " . $this->getTableName() . " WHERE username LIKE ?");
-    if ($this->checkStmt($stmt) && $stmt->bind_param('s', $filter) && $stmt->execute() && $result = $stmt->get_result()) {
-      return $result->fetch_all(MYSQLI_ASSOC);
+    /**
+     * Fetch all users for administrative tasks
+     * @param none
+     * @return data array All users with db columns as array fields
+     **/
+    public function getUsers($filter='%') {
+        $stmt = $this->mysqli->prepare("SELECT * FROM " . $this->getTableName() . " WHERE username LIKE ?");
+        if ($this->checkStmt($stmt) && $stmt->bind_param('s', $filter) && $stmt->execute() && $result = $stmt->get_result()) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        }
     }
-  }
+
+    /**
+     * @param $userName
+     * @return string
+     */
+    public function generateUsername($userName)
+    {
+        $userName .= rand(1, 40 - strlen($userName));
+        if ($this->getUserId($userName)) {
+            $userName = $this->generateUsername($userName);
+        }
+        return $userName;
+    }
+
+    /**
+     * @return string
+     */
+    public function generatePassword()
+    {
+        //Initialize the random password
+        $password = '';
+        //Initialize a random desired length
+        $desired_length = rand(8, 12);
+        for($length = 0; $length < $desired_length; $length++) {
+            //Append a random ASCII character (including symbols)
+            $password .= chr(rand(32, 126));
+        }
+
+        return $password;
+    }
+
+    /**
+     * @param $accountId
+     * @return int
+     */
+    public function getHybridAuth($accountId)
+    {
+        $retval = 0;
+        $this->debug->append("STA " . __METHOD__, 4);
+        $sql = "SELECT id FROM $this->tableHybridAuth WHERE account_id = ?";
+        $sql .= " LIMIT 1";
+        $stmt = $this->mysqli->prepare($sql);
+        if ($this->checkStmt($stmt)) {
+            $stmt->bind_param('i', $accountId);
+            $stmt->execute();
+            $stmt->bind_result($retval);
+            $stmt->fetch();
+            $stmt->close();
+        }
+
+        return $retval;
+    }
+
+    /**
+     * @param $provider
+     * @param $userData
+     * @return bool
+     */
+    public function doHybridAuth($provider, $userData)
+    {
+        if (!$username = $this->getUserNameByEmail($userData->email)) {
+            // create user account
+            $username = str_replace('@', '_', $userData->email);
+            $username = str_replace('.', '_', $username);
+            $username = str_replace('-', '_', $username);
+
+            // check unic username
+            if ($this->getUserId($username)) {
+                $username = $this->generateUsername($username);
+            }
+            // generate password
+            $password1 = $this->generatePassword();
+            $password2 = $password1;
+            $pin = '1111';
+            $tac = '1';
+            $token = '';
+
+            if (!$this->register($username, $password1, $password2, $pin, $userData->email, $userData->email,$tac, $token)) {
+                $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create account: ' . $this->getError(), 'TYPE' => 'warning');
+                return false;
+            }
+        }
+
+        $account_id = $this->getUserId($username);
+        // check present in tableHybridAuth
+        if (!$this->getHybridAuth($account_id)) {
+            // BIND User Account with Hybrid Auth
+            if (!$this->registerHybridAuth($account_id, $provider, $userData->identifier, $userData->email,
+                $userData->displayName, $userData->firstName, $userData->lastName,
+                $userData->photoURL, $userData->profileURL, $userData->webSiteURL)) {
+                    $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create '.$provider.' account: ' . $this->getError(), 'TYPE' => 'warning');
+                return false;
+            }
+        }
+
+        $this->checkLogin($username, $password1);
+
+    }
 
   /**
    * Check user login
@@ -688,7 +787,7 @@ class User extends Base {
       $this->debug->append("STA " . __METHOD__, 4);
 
       $stmt = $this->mysqli->prepare("
-        INSERT INTO `authentications` (account_id, provider, provider_uid, email, display_name, first_name, last_name, photo_url, profile_url, website_url)
+        INSERT INTO $this->tableHybridAuth (account_id, provider, provider_uid, email, display_name, first_name, last_name, photo_url, profile_url, website_url)
         VALUES (?, ?, ?, ?, ?, ?, ?, ? ,? ,?)
         ");
 
