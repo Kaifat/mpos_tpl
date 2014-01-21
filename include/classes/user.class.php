@@ -167,10 +167,11 @@ class User extends Base {
      */
     public function doHybridAuth($provider, $userData)
     {
+        // check if user present
         if (!$username = $this->getUserNameByEmail($userData->email)) {
             // create user account
-            $username = str_replace('@', '_', $userData->email);
-            $username = str_replace('.', '_', $username);
+            $usernameTemp = explode('@', '_', $userData->email);
+            $username = str_replace('.', '_', $usernameTemp[0]);
             $username = str_replace('-', '_', $username);
 
             // check unic username
@@ -202,8 +203,21 @@ class User extends Base {
             }
         }
 
-        $this->checkLogin($username, $password1);
-
+        $accountUserData = $this->getUserData($account_id);
+        if (empty($accountUserData['avatar'])) {
+            $avatar = $userData->photoURL;
+        } else {
+            $avatar = '/uploads/avatar/' . $accountUserData['avatar'];
+        }
+        $this->user = array(
+            'username' => $username,
+            'id' => $account_id,
+            'is_admin' => $accountUserData['is_admin'],
+            'avatar' => $avatar
+        );
+        $this->createSession($username);
+        if ($this->setUserIp($this->getUserId($username), $_SERVER['REMOTE_ADDR']))
+            return true;
     }
 
   /**
@@ -230,6 +244,7 @@ class User extends Base {
       $this->setErrorMessage('Account locked.');
       return false;
     }
+
     if ($this->checkUserPassword($username, $password)) {
       $this->createSession($username);
       if ($this->setUserIp($this->getUserId($username), $_SERVER['REMOTE_ADDR']))
@@ -633,8 +648,9 @@ class User extends Base {
       SELECT
       id, username, pin, api_key, is_admin, is_anonymous, email, no_fees,
       IFNULL(donate_percent, '0') as donate_percent, coin_address, ap_threshold,
-      avatar, c_skype, c_vk, c_icq
+      avatar, c_skype, c_vk, c_icq, $this->tableHybridAuth.photo_url
       FROM $this->table
+      JOIN LEFT $this->tableHybridAuth ON $this->tableHybridAuth.account_id = $this->table.id
       WHERE id = ? LIMIT 0,1");
     if ($this->checkStmt($stmt)) {
       $stmt->bind_param('i', $userID);
