@@ -1,4 +1,4 @@
-<div class="sidebar-menu nav-collapse">
+<div class="sidebar-menu nav-collapse" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 {*<div class="divide-20"></div>*}
 
 <!-- SIDEBAR QUICK-LAUNCH -->
@@ -13,6 +13,22 @@
         <span class="selected"></span>
     </a>
 </li>
+
+
+
+<li class="has-sub{if $smarty.request.page|default:false == "service"} active{/if}">
+    <a href="javascript:;">
+        <i class="fa fa-bar-chart-o fa-fw"></i> <span class="menu-text">Services</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub">
+        <li{if $smarty.request.page|default:false == "service" && $smarty.request.action|default:false == "calculator"}
+                class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=service&action=calculator">Calculator</a></li>
+    </ul>
+</li>
+
+
+
 
 {if $smarty.session.AUTHENTICATED|default:"0" == 1}
 <li class="has-sub{if $smarty.request.page|default:false && $smarty.request.page|default:false == "dashboard" || $smarty.request.page|default:false == "account"} active{/if}">
@@ -161,7 +177,7 @@
             {if $GLOBAL.config.monitoring_uptimerobot_api_keys|default:"0"}
                 <li{if $smarty.request.page|default:false == "statistics" && $smarty.request.action|default:false == "uptime"}
                         class="current"{/if}><a
-                        btn-inverse                href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">Uptime</a></li>
+                        btn-inverse href="{$smarty.server.PHP_SELF}?page=statistics&action=uptime">Uptime</a></li>
             {/if}
         {/if}
     </ul>
@@ -206,14 +222,14 @@
     {else}
     <li{if $smarty.request.page|default:false == "login"}
             class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=login">Login</a></li>
-    {*<li{if $smarty.request.page|default:false == "register"}*}
-            {*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=register">Sign Up</a></li>*}
+{*<li{if $smarty.request.page|default:false == "register"}*}
+{*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=register">Sign Up</a></li>*}
     {if $GLOBAL.config.disable_contactform|default:"0" != 1}
         <li{if $smarty.request.page|default:false == "contactform"}
                 class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=contactform">Contact</a></li>
     {/if}
-    {*<li{if $smarty.request.page|default:false == "tac"}*}
-            {*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=tac">Terms and Conditions</a></li>*}
+{*<li{if $smarty.request.page|default:false == "tac"}*}
+{*class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=tac">Terms and Conditions</a></li>*}
 {/if}
 </ul>
 
@@ -224,6 +240,7 @@
     <div class="box">
         <div class="box-body center">
             <h3 class="content-title">LIVE STATS</h3>
+
             <div id="mr" style="width:100%; height:150px;"></div>
             <div id="hr" style="width:100%; height:150px;"></div>
         </div>
