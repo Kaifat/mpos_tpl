@@ -47,7 +47,7 @@
                         <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                         <input type="hidden" name="do" value="updateAvatar">
 
-                        <div class="box border blue">
+                        <div class="box-container box">
                             <div class="box-title"><h4>Update Avatar</h4></div>
                             <div class="box-body">
                                 <div class="row">
@@ -62,7 +62,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="toolbox bottom">
+                            {*<div class="toolbox bottom">*}
                                 <div class="submit_link">
                                     <!-- hidden inputs -->
                                     <input type="hidden" id="x" name="x" />
@@ -72,7 +72,7 @@
                                     <input type="hidden" id="scalePer" name="scalePer" />
                                     <input class="btn btn-info" type="submit" value="Upload" class="alt_btn">
                                 </div>
-                            </div>
+                            {*</div>*}
                         </div>
 
                     </form>
