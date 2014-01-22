@@ -42,8 +42,14 @@ if ($user->isAuthenticated()) {
                           imagecopyresampled($dstImg, $vImg, 0, 0, $x, $y, $nw, $nh, $w, $h);
                           imagejpeg($dstImg, $path);
                           imagedestroy($dstImg);
-                          $_SESSION['USERDATA']['avatar'] = $avatarFileName;
+
+                          $_SESSION['USERDATA']['avatar'] = $path;
                           $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was updated', 'TYPE' => 'success');
+
+                          $oldAva = $user->updateAvatar($_SESSION['USERDATA']['id'], $avatarFileName);
+                          if ($oldAva) {
+                              unlink(BASEPATH . 'uploads/avatar/' . $oldAva);
+                          }
 
                       } else {
                           $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Unknown problem!', 'TYPE' => 'warning');
@@ -56,11 +62,6 @@ if ($user->isAuthenticated()) {
               }
           } else {
               $_SESSION['POPUP'][] = array('CONTENT' => 'Avatar was not updated. Bad request!', 'TYPE' => 'warning');
-          }
-
-          $oldAva = $user->updateAvatar($_SESSION['USERDATA']['id'], $avatarFileName);
-          if ($oldAva) {
-              unlink(BASEPATH . 'uploads/avatar/' . $oldAva);
           }
       break;
 

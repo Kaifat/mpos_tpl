@@ -12,7 +12,7 @@ if (mysqli_connect_errno()) {
   die("Failed to connect to database");
 }
 
-/* изменение набора символов на utf8 */
+/* set charset utf8 */
 if (!mysqli_set_charset($mysqli, "utf8")) {
     die("Failed to set charset utf-8");
 }

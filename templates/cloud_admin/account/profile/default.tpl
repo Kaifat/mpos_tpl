@@ -12,7 +12,10 @@
                     <div class="col-md-3">
                         <div class="list-group">
                             <div class="list-group-item zero-padding center">
-                                {if $profileData.avatar}<img alt="" class="img-responsive" src="/uploads/avatar/{$profileData.avatar}">
+                                {if $profileData.avatar}
+                                    <img alt="" class="img-responsive" src="/uploads/avatar/{$profileData.avatar}">
+                                {elseif $profileData.photo_url}
+                                    <img alt="" class="img-responsive" src="{$profileData.photo_url}">
                                 {else}
                                     <i class="fa fa-user" style="font-size:250px;"></i>
                                 {/if}

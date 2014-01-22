@@ -28,6 +28,7 @@ if (!empty($_GET['provider'])) {
 
         // grab the user profile
         $user_data = $adapter->getUserProfile();
+
         // check hybrid Auth
         $user->doHybridAuth($provider, $user_data);
     }

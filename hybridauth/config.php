@@ -36,13 +36,13 @@ return
 			),
 
 			"Facebook" => array ( 
-				"enabled" => false,
-				"keys"    => array ( "id" => "", "secret" => "" )
+				"enabled" => true,
+				"keys"    => array ( "id" => "576945409060898", "secret" => "efb374688fdb0369bc1394af947f56e5" )
 			),
 
 			"Twitter" => array ( 
-				"enabled" => false,
-				"keys"    => array ( "key" => "", "secret" => "" ) 
+				"enabled" => true,
+				"keys"    => array ( "key" => "130439073-VEMuLIB36H1apllOvV3Y3kaE68Sga0Q0lhS19o0V", "secret" => "2ptllh9WT0BANC9zOhEauNv9ZiSU19pasitfSGfTtkmgH" )
 			),
 
 			// windows live

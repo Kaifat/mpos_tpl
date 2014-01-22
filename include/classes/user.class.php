@@ -170,7 +170,7 @@ class User extends Base {
         // check if user present
         if (!$username = $this->getUserNameByEmail($userData->email)) {
             // create user account
-            $usernameTemp = explode('@', '_', $userData->email);
+            $usernameTemp = explode('@', $userData->email);
             $username = str_replace('.', '_', $usernameTemp[0]);
             $username = str_replace('-', '_', $username);
 
@@ -206,6 +206,7 @@ class User extends Base {
         $accountUserData = $this->getUserData($account_id);
         if (empty($accountUserData['avatar'])) {
             $avatar = $userData->photoURL;
+//            $avatar = $accountUserData['photo_url'];
         } else {
             $avatar = '/uploads/avatar/' . $accountUserData['avatar'];
         }
@@ -555,12 +556,22 @@ class User extends Base {
     $this->debug->append("STA " . __METHOD__, 4);
     $user = array();
     $password_hash = $this->getHash($password);
-    $stmt = $this->mysqli->prepare("SELECT username, id, is_admin, avatar FROM $this->table WHERE LOWER(username) = LOWER(?) AND pass = ? LIMIT 1");
-    if ($this->checkStmt($stmt) && $stmt->bind_param('ss', $username, $password_hash) && $stmt->execute() && $stmt->bind_result($row_username, $row_id, $row_admin, $row_avatar)) {
+    $stmt = $this->mysqli->prepare(
+        "SELECT  ac.username, ac.id, ac.is_admin, ac.avatar, ha.photo_url
+        FROM $this->table AS ac
+        LEFT JOIN $this->tableHybridAuth as ha ON ha.account_id = ac.id
+        WHERE LOWER(ac.username) = LOWER(?) AND ac.pass = ? LIMIT 1");
+
+    if ($this->checkStmt($stmt) && $stmt->bind_param('ss', $username, $password_hash) && $stmt->execute() && $stmt->bind_result($row_username, $row_id, $row_admin, $row_avatar, $photo_url)) {
       $stmt->fetch();
       $stmt->close();
       // Store the basic login information
-      $this->user = array('username' => $row_username, 'id' => $row_id, 'is_admin' => $row_admin, 'avatar' => $row_avatar);
+      $this->user = array(
+          'username' => $row_username,
+          'id' => $row_id,
+          'is_admin' => $row_admin,
+          'avatar' => (empty($row_avatar)) ? $photo_url : '/uploads/avatar/' . $row_avatar
+      );
       return strtolower($username) === strtolower($row_username);
     }
     return false;
@@ -646,12 +657,13 @@ class User extends Base {
     $this->debug->append("Fetching user information for user id: $userID");
     $stmt = $this->mysqli->prepare("
       SELECT
-      id, username, pin, api_key, is_admin, is_anonymous, email, no_fees,
-      IFNULL(donate_percent, '0') as donate_percent, coin_address, ap_threshold,
-      avatar, c_skype, c_vk, c_icq, $this->tableHybridAuth.photo_url
-      FROM $this->table
-      JOIN LEFT $this->tableHybridAuth ON $this->tableHybridAuth.account_id = $this->table.id
-      WHERE id = ? LIMIT 0,1");
+      ac.id, ac.username, ac.pin, ac.api_key, ac.is_admin, ac.is_anonymous, ac.email, ac.no_fees,
+      IFNULL(ac.donate_percent, '0') as donate_percent, ac.coin_address, ac.ap_threshold,
+      ac.avatar, ac.c_skype, ac.c_vk, ac.c_icq, ha.photo_url
+      FROM $this->table AS ac
+      LEFT JOIN $this->tableHybridAuth as ha ON ha.account_id = ac.id
+      WHERE ac.id = ? LIMIT 0,1");
+
     if ($this->checkStmt($stmt)) {
       $stmt->bind_param('i', $userID);
       if (!$stmt->execute()) {
