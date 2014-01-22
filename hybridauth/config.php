@@ -65,6 +65,11 @@ return
 				"enabled" => false,
 				"keys"    => array ( "id" => "", "secret" => "" ) 
 			),
+
+            "Vkontakte" => array (
+                "enabled" => true,
+                "keys"    => array ( "id" => "4137623", "secret" => "w1WYvMLBodvVTEGMW2IU" )
+            ),
 		),
 
 		// if you want to enable logging, set 'debug_mode' to true  then provide a writable file by the web server on "debug_file"

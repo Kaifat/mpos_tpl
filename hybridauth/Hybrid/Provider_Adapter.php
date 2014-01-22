@@ -119,7 +119,7 @@ class Hybrid_Provider_Adapter
 		$this->params["hauth_token"] = session_id();
 
 		# set request timestamp
-        date_default_timezone_set("UTC");
+//        date_default_timezone_set("UTC");
 		$this->params["hauth_time"]  = time();
 
 		# for default HybridAuth endpoint url hauth_login_start_url

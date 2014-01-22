@@ -55,6 +55,9 @@
                             </div>
                             <div class="divide-20"></div>
                             <div class="social-login center">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Vkontakte" class="btn btn-info btn-lg">
+                                    <i class="fa fa-vk"></i>
+                                </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Facebook" class="btn btn-primary btn-lg">
                                     <i class="fa fa-facebook"></i>
                                 </a>
@@ -150,6 +153,9 @@
                             </div>
                             <div class="divide-20"></div>
                             <div class="social-login center">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Vkontakte" class="btn btn-info btn-lg">
+                                    <i class="fa fa-vk"></i>
+                                </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Facebook" class="btn btn-primary btn-lg">
                                     <i class="fa fa-facebook"></i>
                                 </a>
