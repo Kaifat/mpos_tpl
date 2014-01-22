@@ -114,7 +114,7 @@ class User extends Base {
      */
     public function generateUsername($userName)
     {
-        $userName .= rand(1, 40 - strlen($userName));
+        $userName .= rand(1, 100);
         if ($this->getUserId($userName)) {
             $userName = $this->generateUsername($userName);
         }
@@ -167,6 +167,10 @@ class User extends Base {
      */
     public function doHybridAuth($provider, $userData)
     {
+//        // check present email (fix for Vkontakte)
+//        if (empty($userData->email)) {
+//            $username = $this->ru2lat($userData->lastName.$userData->firstName);
+//        }
         // check if user present
         if (!$username = $this->getUserNameByEmail($userData->email)) {
             // create user account
@@ -191,6 +195,7 @@ class User extends Base {
             }
         }
 
+        // after registration (if not registered)
         $account_id = $this->getUserId($username);
         // check present in tableHybridAuth
         if (!$this->getHybridAuth($account_id)) {
@@ -926,6 +931,32 @@ class User extends Base {
     if ($logout == true) $this->logoutUser($_SERVER['REQUEST_URI']);
     return false;
   }
+
+    /**
+     * @param $str
+     * @return string
+     */
+    private function ru2lat($str)
+    {
+        $tr = array(
+            "А"=>"a", "Б"=>"b", "В"=>"v", "Г"=>"g", "Д"=>"d",
+            "Е"=>"e", "Ё"=>"yo", "Ж"=>"zh", "З"=>"z", "И"=>"i",
+            "Й"=>"j", "К"=>"k", "Л"=>"l", "М"=>"m", "Н"=>"n",
+            "О"=>"o", "П"=>"p", "Р"=>"r", "С"=>"s", "Т"=>"t",
+            "У"=>"u", "Ф"=>"f", "Х"=>"kh", "Ц"=>"ts", "Ч"=>"ch",
+            "Ш"=>"sh", "Щ"=>"sch", "Ъ"=>"", "Ы"=>"y", "Ь"=>"",
+            "Э"=>"e", "Ю"=>"yu", "Я"=>"ya", "а"=>"a", "б"=>"b",
+            "в"=>"v", "г"=>"g", "д"=>"d", "е"=>"e", "ё"=>"yo",
+            "ж"=>"zh", "з"=>"z", "и"=>"i", "й"=>"j", "к"=>"k",
+            "л"=>"l", "м"=>"m", "н"=>"n", "о"=>"o", "п"=>"p",
+            "р"=>"r", "с"=>"s", "т"=>"t", "у"=>"u", "ф"=>"f",
+            "х"=>"kh", "ц"=>"ts", "ч"=>"ch", "ш"=>"sh", "щ"=>"sch",
+            "ъ"=>"", "ы"=>"y", "ь"=>"", "э"=>"e", "ю"=>"yu",
+            "я"=>"ya", " "=>"-", "."=>"", ","=>"", "/"=>"-",
+            ":"=>"", ";"=>"","—"=>"", "–"=>"-"
+        );
+        return strtr($str,$tr);
+    }
 }
 
 // Make our class available automatically
