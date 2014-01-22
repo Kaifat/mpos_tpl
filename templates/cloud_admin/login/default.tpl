@@ -55,10 +55,10 @@
                             </div>
                             <div class="divide-20"></div>
                             <div class="social-login center">
-                                <a class="btn btn-primary btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Facebook" class="btn btn-primary btn-lg">
                                     <i class="fa fa-facebook"></i>
                                 </a>
-                                <a class="btn btn-info btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Twitter" class="btn btn-info btn-lg">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Google" class="btn btn-danger btn-lg">
@@ -150,10 +150,10 @@
                             </div>
                             <div class="divide-20"></div>
                             <div class="social-login center">
-                                <a class="btn btn-primary btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Facebook" class="btn btn-primary btn-lg">
                                     <i class="fa fa-facebook"></i>
                                 </a>
-                                <a class="btn btn-info btn-lg">
+                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Twitter" class="btn btn-info btn-lg">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Google" class="btn btn-danger btn-lg">

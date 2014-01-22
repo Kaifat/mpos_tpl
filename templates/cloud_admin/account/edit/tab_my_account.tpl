@@ -5,7 +5,10 @@
         <div class="col-md-3">
             <div class="list-group">
                 <div class="list-group-item zero-padding center">
-                    {if $GLOBAL.userdata.avatar}<img alt="" class="img-responsive" src="/uploads/avatar/{$GLOBAL.userdata.avatar}">
+                    {if $GLOBAL.userdata.avatar}
+                        <img alt="" class="img-responsive" src="/uploads/avatar/{$GLOBAL.userdata.avatar}">
+                    {elseif $GLOBAL.userdata.photo_url}
+                        <img alt="" class="img-responsive" src="{$GLOBAL.userdata.photo_url}">
                     {else}
                     <i class="fa fa-user" style="font-size:250px;"></i>
                     {/if}
