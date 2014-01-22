@@ -15,6 +15,19 @@
 </li>
 
 
+<li class="has-sub{if $smarty.request.page|default:false == "community"} active{/if}">
+    <a href="javascript:;">
+        <i class="fa fa-bar-chart-o fa-fw"></i> <span class="menu-text">Community</span>
+        <span class="arrow"></span>
+    </a>
+    <ul class="sub">
+        <li{if $smarty.request.page|default:false == "community" && $smarty.request.action|default:false == "news"}
+                class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=community&action=news">News</a></li>
+        <li{if $smarty.request.page|default:false == "community" && $smarty.request.action|default:false == "chat"}
+                class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=community&action=chat">Chat Room</a></li>
+    </ul>
+</li>
+
 
 <li class="has-sub{if $smarty.request.page|default:false == "service"} active{/if}">
     <a href="javascript:;">
@@ -53,11 +66,6 @@
         {if !$GLOBAL.config.disable_notifications}
             <li{if $smarty.request.page|default:false == "account" && $smarty.request.action|default:false == "notifications"}
                     class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=account&action=notifications">Notifications</a>
-            </li>{/if}
-        {if !$GLOBAL.config.disable_invitations}
-            <li{if $smarty.request.page|default:false == "account" && $smarty.request.action|default:false == "invitations"}
-                    class="current"{/if}><a
-                    href="{$smarty.server.PHP_SELF}?page=account&action=invitations">Invitations</a>
             </li>{/if}
         <li{if $smarty.request.page|default:false == "account" && $smarty.request.action|default:false == "qrcode"}
                 class="current"{/if}><a href="{$smarty.server.PHP_SELF}?page=account&action=qrcode">QR Codes</a></li>
