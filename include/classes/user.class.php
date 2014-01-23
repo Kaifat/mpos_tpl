@@ -202,10 +202,9 @@ class User extends Base {
             $isNewVkUser = $this->isNewVkUser($username, $vkUid);
         }
         // check if user present
-        if (!$username = $this->getUserNameByEmail($userData->email)
-        || $isNewVkUser) {
+        if ($isNewVkUser || ($provider !== 'Vkontakte' && !$username = $this->getUserNameByEmail($userData->email))) {
 
-            if (isset($userData->email)) {
+            if (!empty($userData->email)) {
                 // create user account
                 $usernameTemp = explode('@', $userData->email);
                 $username = str_replace('.', '_', $usernameTemp[0]);
@@ -223,7 +222,7 @@ class User extends Base {
             $tac = '1';
             $token = '';
 
-            if (!$this->register($username, $password1, $password2, $pin, $userData->email, $userData->email,$tac, $token)) {
+            if (!$this->register($username, $password1, $password2, $pin, $userData->email, $userData->email,$tac, $token, $isNewVkUser)) {
                 $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create account: ' . $this->getError(), 'TYPE' => 'warning');
                 return false;
             }
@@ -727,7 +726,7 @@ class User extends Base {
    * @param email2 string Email confirmation
    * @return bool
    **/
-  public function register($username, $password1, $password2, $pin, $email1='', $email2='', $tac='', $strToken='') {
+  public function register($username, $password1, $password2, $pin, $email1='', $email2='', $tac='', $strToken='', $byVk = false) {
     $this->debug->append("STA " . __METHOD__, 4);
     if ($tac != 1) {
       $this->setErrorMessage('You need to accept our <a href="'.$_SERVER['PHP_SELF'].'?page=tac" target="_blank">Terms and Conditions</a>');
@@ -753,14 +752,17 @@ class User extends Base {
       $this->setErrorMessage( 'Password do not match' );
       return false;
     }
-    if (empty($email1) || !filter_var($email1, FILTER_VALIDATE_EMAIL)) {
-      $this->setErrorMessage( 'Invalid e-mail address' );
-      return false;
-    }
-    if ($email1 !== $email2) {
-      $this->setErrorMessage( 'E-mail do not match' );
-      return false;
-    }
+
+      if (!$byVk) {
+        if (empty($email1) || !filter_var($email1, FILTER_VALIDATE_EMAIL)) {
+          $this->setErrorMessage( 'Invalid e-mail address' );
+          return false;
+        }
+        if ($email1 !== $email2) {
+          $this->setErrorMessage( 'E-mail do not match' );
+          return false;
+        }
+      }
     if (!is_numeric($pin) || strlen($pin) > 4 || strlen($pin) < 4) {
       $this->setErrorMessage( 'Invalid PIN' );
       return false;
@@ -860,8 +862,7 @@ class User extends Base {
 
       if ($this->checkStmt($stmt) && $stmt->bind_param('isssssssss', $account_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $photo_url, $profile_url, $website_url)) {
           if (!$stmt->execute()) {
-//              var_dump($stmt);
-              $this->debug->append('Failed to execute statement');
+              $this->setErrorMessage('Failed to execute statement');
               return false;
           }
           return true;
