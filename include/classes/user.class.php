@@ -112,10 +112,10 @@ class User extends Base {
      * @param $userName
      * @return string
      */
-    public function generateUsername($userName)
+    public function generateUsername($userName, $vkUid = null)
     {
-        $userName .= rand(1, 40 - strlen($userName));
-        if ($this->getUserId($userName)) {
+        $userName .= rand(1, 100);
+        if ($this->getUserId($userName) || !$this->isNewVkUser($userName, $vkUid)) {
             $userName = $this->generateUsername($userName);
         }
         return $userName;
@@ -161,22 +161,59 @@ class User extends Base {
     }
 
     /**
+     * @param $vkUserName
+     * @param $vkUid
+     * @return bool
+     */
+    public function isNewVkUser($vkUserName, $vkUid)
+    {
+        $retval = 0;
+        $this->debug->append("STA " . __METHOD__, 4);
+        $sql = "SELECT ac.id
+          FROM $this->table AS ac
+          LEFT JOIN $this->tableHybridAuth as ha ON ha.account_id = ac.id
+          WHERE LOWER(ac.username) = LOWER(?) AND ha.provider_uid = ? LIMIT 1";
+
+        $stmt = $this->mysqli->prepare($sql);
+        if ($this->checkStmt($stmt)) {
+            $stmt->bind_param('si', $vkUserName, $vkUid);
+            $stmt->execute();
+            $stmt->bind_result($retval);
+            $stmt->fetch();
+            $stmt->close();
+        }
+
+        return ($retval) ? false : true;
+    }
+
+    /**
      * @param $provider
      * @param $userData
      * @return bool
      */
     public function doHybridAuth($provider, $userData)
     {
+        // check present email (fix for Vkontakte)
+        $vkUid = null;
+        $isNewVkUser = false;
+        if (empty($userData->email) && $provider == 'Vkontakte') {
+            $vkUid = $userData->identifier;
+            $username = $this->ru2lat($userData->lastName.$userData->firstName);
+            $isNewVkUser = $this->isNewVkUser($username, $vkUid);
+        }
         // check if user present
-        if (!$username = $this->getUserNameByEmail($userData->email)) {
-            // create user account
-            $usernameTemp = explode('@', $userData->email);
-            $username = str_replace('.', '_', $usernameTemp[0]);
-            $username = str_replace('-', '_', $username);
+        if ($isNewVkUser || ($provider !== 'Vkontakte' && !$username = $this->getUserNameByEmail($userData->email))) {
+
+            if (!empty($userData->email)) {
+                // create user account
+                $usernameTemp = explode('@', $userData->email);
+                $username = str_replace('.', '_', $usernameTemp[0]);
+                $username = str_replace('-', '_', $username);
+            }
 
             // check unic username
             if ($this->getUserId($username)) {
-                $username = $this->generateUsername($username);
+                $username = $this->generateUsername($username, $vkUid);
             }
             // generate password
             $password1 = $this->generatePassword();
@@ -185,12 +222,13 @@ class User extends Base {
             $tac = '1';
             $token = '';
 
-            if (!$this->register($username, $password1, $password2, $pin, $userData->email, $userData->email,$tac, $token)) {
+            if (!$this->register($username, $password1, $password2, $pin, $userData->email, $userData->email,$tac, $token, $isNewVkUser)) {
                 $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create account: ' . $this->getError(), 'TYPE' => 'warning');
                 return false;
             }
         }
 
+        // after registration (if not registered)
         $account_id = $this->getUserId($username);
         // check present in tableHybridAuth
         if (!$this->getHybridAuth($account_id)) {
@@ -688,7 +726,7 @@ class User extends Base {
    * @param email2 string Email confirmation
    * @return bool
    **/
-  public function register($username, $password1, $password2, $pin, $email1='', $email2='', $tac='', $strToken='') {
+  public function register($username, $password1, $password2, $pin, $email1='', $email2='', $tac='', $strToken='', $byVk = false) {
     $this->debug->append("STA " . __METHOD__, 4);
     if ($tac != 1) {
       $this->setErrorMessage('You need to accept our <a href="'.$_SERVER['PHP_SELF'].'?page=tac" target="_blank">Terms and Conditions</a>');
@@ -714,14 +752,17 @@ class User extends Base {
       $this->setErrorMessage( 'Password do not match' );
       return false;
     }
-    if (empty($email1) || !filter_var($email1, FILTER_VALIDATE_EMAIL)) {
-      $this->setErrorMessage( 'Invalid e-mail address' );
-      return false;
-    }
-    if ($email1 !== $email2) {
-      $this->setErrorMessage( 'E-mail do not match' );
-      return false;
-    }
+
+      if (!$byVk) {
+        if (empty($email1) || !filter_var($email1, FILTER_VALIDATE_EMAIL)) {
+          $this->setErrorMessage( 'Invalid e-mail address' );
+          return false;
+        }
+        if ($email1 !== $email2) {
+          $this->setErrorMessage( 'E-mail do not match' );
+          return false;
+        }
+      }
     if (!is_numeric($pin) || strlen($pin) > 4 || strlen($pin) < 4) {
       $this->setErrorMessage( 'Invalid PIN' );
       return false;
@@ -821,8 +862,7 @@ class User extends Base {
 
       if ($this->checkStmt($stmt) && $stmt->bind_param('isssssssss', $account_id, $provider, $provider_uid, $email, $display_name, $first_name, $last_name, $photo_url, $profile_url, $website_url)) {
           if (!$stmt->execute()) {
-//              var_dump($stmt);
-              $this->debug->append('Failed to execute statement');
+              $this->setErrorMessage('Failed to execute statement');
               return false;
           }
           return true;
@@ -926,6 +966,32 @@ class User extends Base {
     if ($logout == true) $this->logoutUser($_SERVER['REQUEST_URI']);
     return false;
   }
+
+    /**
+     * @param $str
+     * @return string
+     */
+    private function ru2lat($str)
+    {
+        $tr = array(
+            "А"=>"a", "Б"=>"b", "В"=>"v", "Г"=>"g", "Д"=>"d",
+            "Е"=>"e", "Ё"=>"yo", "Ж"=>"zh", "З"=>"z", "И"=>"i",
+            "Й"=>"j", "К"=>"k", "Л"=>"l", "М"=>"m", "Н"=>"n",
+            "О"=>"o", "П"=>"p", "Р"=>"r", "С"=>"s", "Т"=>"t",
+            "У"=>"u", "Ф"=>"f", "Х"=>"kh", "Ц"=>"ts", "Ч"=>"ch",
+            "Ш"=>"sh", "Щ"=>"sch", "Ъ"=>"", "Ы"=>"y", "Ь"=>"",
+            "Э"=>"e", "Ю"=>"yu", "Я"=>"ya", "а"=>"a", "б"=>"b",
+            "в"=>"v", "г"=>"g", "д"=>"d", "е"=>"e", "ё"=>"yo",
+            "ж"=>"zh", "з"=>"z", "и"=>"i", "й"=>"j", "к"=>"k",
+            "л"=>"l", "м"=>"m", "н"=>"n", "о"=>"o", "п"=>"p",
+            "р"=>"r", "с"=>"s", "т"=>"t", "у"=>"u", "ф"=>"f",
+            "х"=>"kh", "ц"=>"ts", "ч"=>"ch", "ш"=>"sh", "щ"=>"sch",
+            "ъ"=>"", "ы"=>"y", "ь"=>"", "э"=>"e", "ю"=>"yu",
+            "я"=>"ya", " "=>"-", "."=>"", ","=>"", "/"=>"-",
+            ":"=>"", ";"=>"","—"=>"", "–"=>"-"
+        );
+        return strtr($str,$tr);
+    }
 }
 
 // Make our class available automatically
