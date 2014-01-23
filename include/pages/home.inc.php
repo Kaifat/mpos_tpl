@@ -65,4 +65,6 @@ if (!empty($_GET['provider'])) {
     }
 }
 
+$smarty->assign("CONTENT", "default.tpl");
+
 ?>

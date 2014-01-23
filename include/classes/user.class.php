@@ -112,10 +112,10 @@ class User extends Base {
      * @param $userName
      * @return string
      */
-    public function generateUsername($userName)
+    public function generateUsername($userName, $vkUid = null)
     {
         $userName .= rand(1, 100);
-        if ($this->getUserId($userName)) {
+        if ($this->getUserId($userName) || !$this->isNewVkUser($userName, $vkUid)) {
             $userName = $this->generateUsername($userName);
         }
         return $userName;
@@ -161,26 +161,60 @@ class User extends Base {
     }
 
     /**
+     * @param $vkUserName
+     * @param $vkUid
+     * @return bool
+     */
+    public function isNewVkUser($vkUserName, $vkUid)
+    {
+        $retval = 0;
+        $this->debug->append("STA " . __METHOD__, 4);
+        $sql = "SELECT ac.id
+          FROM $this->table AS ac
+          LEFT JOIN $this->tableHybridAuth as ha ON ha.account_id = ac.id
+          WHERE LOWER(ac.username) = LOWER(?) AND ha.provider_uid = ? LIMIT 1";
+
+        $stmt = $this->mysqli->prepare($sql);
+        if ($this->checkStmt($stmt)) {
+            $stmt->bind_param('si', $vkUserName, $vkUid);
+            $stmt->execute();
+            $stmt->bind_result($retval);
+            $stmt->fetch();
+            $stmt->close();
+        }
+
+        return ($retval) ? false : true;
+    }
+
+    /**
      * @param $provider
      * @param $userData
      * @return bool
      */
     public function doHybridAuth($provider, $userData)
     {
-//        // check present email (fix for Vkontakte)
-//        if (empty($userData->email)) {
-//            $username = $this->ru2lat($userData->lastName.$userData->firstName);
-//        }
+        // check present email (fix for Vkontakte)
+        $vkUid = null;
+        $isNewVkUser = false;
+        if (empty($userData->email) && $provider == 'Vkontakte') {
+            $vkUid = $userData->identifier;
+            $username = $this->ru2lat($userData->lastName.$userData->firstName);
+            $isNewVkUser = $this->isNewVkUser($username, $vkUid);
+        }
         // check if user present
-        if (!$username = $this->getUserNameByEmail($userData->email)) {
-            // create user account
-            $usernameTemp = explode('@', $userData->email);
-            $username = str_replace('.', '_', $usernameTemp[0]);
-            $username = str_replace('-', '_', $username);
+        if (!$username = $this->getUserNameByEmail($userData->email)
+        || $isNewVkUser) {
+
+            if (isset($userData->email)) {
+                // create user account
+                $usernameTemp = explode('@', $userData->email);
+                $username = str_replace('.', '_', $usernameTemp[0]);
+                $username = str_replace('-', '_', $username);
+            }
 
             // check unic username
             if ($this->getUserId($username)) {
-                $username = $this->generateUsername($username);
+                $username = $this->generateUsername($username, $vkUid);
             }
             // generate password
             $password1 = $this->generatePassword();

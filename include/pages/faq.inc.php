@@ -4,10 +4,10 @@
 if (!defined('SECURITY'))
     die('Hacking attempt');
 
-$smarty->assign("SITESTRATUMURL", $config['faq']['stratumurl']);
-$smarty->assign("SITESTRATUMPORT", $config['faq']['stratumport']);
-$smarty->assign("SITECOINNAME", $config['faq']['coinname']);
-$smarty->assign("SITECOINURL", $config['faq']['coinurl']);
+$smarty->assign("SITESTRATUMURL", $config['gettingstarted']['stratumurl']);
+$smarty->assign("SITESTRATUMPORT", $config['gettingstarted']['stratumport']);
+$smarty->assign("SITECOINNAME", $config['gettingstarted']['coinname']);
+$smarty->assign("SITECOINURL", $config['gettingstarted']['coinurl']);
 
 // Tempalte specifics
 $smarty->assign("CONTENT", "default.tpl");
