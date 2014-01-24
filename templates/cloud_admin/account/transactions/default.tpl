@@ -26,7 +26,7 @@
 </div>
 {/if}
 
-<div class="col-md-3">
+<div class="col-md-12">
     <div class="box border blue">
         <div class="box-title"><h4>Transaction Filter</h4></div>
         <form action="{$smarty.server.PHP_SELF}">
@@ -49,26 +49,28 @@
                         </li>
                     </ul>
 
-                <div class="form-group">
-                    <label>Type</label>
-                {html_options class="col-md-12" name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Type</label>
+                    {html_options class="col-md-12" name="filter[type]" options=$TRANSACTIONTYPES selected=$smarty.request.filter.type|default:""}
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Status</label>
+                    {html_options class="col-md-12" name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="form-group">
-                    <label>Status</label>
-                {html_options class="col-md-12" name="filter[status]" options=$TXSTATUS selected=$smarty.request.filter.status|default:""}
-                </div>
-                <div class="clearfix"></div>
             </div>
-            <div class="toolbox bottom">
+            <div class="toolbox bottom center">
                 <div class="submit_link">
-                    <input class="btn btn-info btn-block" type="submit" value="Filter" >
+                    <input class="btn btn-info" type="submit" value="Filter" >
                 </div>
             </div>
         </form>
     </div>
 </div>
 
-<div class="col-md-9">
+<div class="col-md-12">
     <div class="box border blue">
         <div class="box-title"><h4>Transaction History</h4></div>
         <div class="box-body">
@@ -128,7 +130,7 @@
             </table>
         </div>
         <div class="toolbox bottom">
-        <p style="margin-left: 25px; font-size: 11px;"><b>Debit_AP</b> = Auto Threshold Payment,&nbsp;&nbsp;&nbsp;<b>Debit_MP</b> = Manual Payment,&nbsp;&nbsp;&nbsp;<b>Donation</b> = Donation,&nbsp;&nbsp;&nbsp;<b>Fee</b> = Pool Fees (if applicable)</p>
+        <p style="margin-left: 25px; font-size: 12px;"><b>Debit_AP</b> = Auto Threshold Payment,&nbsp;&nbsp;&nbsp;<b>Debit_MP</b> = Manual Payment,&nbsp;&nbsp;&nbsp;<b>Donation</b> = Donation,&nbsp;&nbsp;&nbsp;<b>Fee</b> = Pool Fees (if applicable)</p>
         </div>
     </div>
 </div>
