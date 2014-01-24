@@ -16,6 +16,7 @@ function getCalcVal ($array,$currency) {
 $calc = array();
 
 $aData = $tools->getApi($config['price']['url'], $config['price']['target']);
+var_dump($aData);die;
 $calc['DGC'] = getCalcVal($aData, 'DGC');
 $calc['EAC'] = getCalcVal($aData, 'EAC');
 $calc['DOGE'] = getCalcVal($aData, 'DOGE');

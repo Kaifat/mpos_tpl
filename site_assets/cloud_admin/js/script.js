@@ -3183,14 +3183,12 @@ var App = function () {
 
         //Initialise theme pages
         init: function () {
-            if (App.isPage("home")) {
+            if (App.isPage("home_index")) {
 
             }
-            if (App.isPage("dashboard")) {
 
-            }
-            if (App.isPage("account")) {
-
+            if (App.isPage("service_calculator")) {
+                handleActiveToggle(); //Function to handle active toggle
             }
 
             handleSelect2(); // TODO: need only forms!!!

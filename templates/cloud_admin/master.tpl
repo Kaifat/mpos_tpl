@@ -120,7 +120,7 @@
     <script>
         jQuery(document).ready(function () {
             App.setThemePath("{$PATH}/");
-            App.setPage("{$smarty.request.page|escape|default:'home'}");  //Set current page
+            App.setPage("{$smarty.request.page|escape|default:'home'}_{$smarty.request.action|escape|default:'index'}");  //Set current page
             App.init(); //Initialise plugins and elements
         });
     </script>
