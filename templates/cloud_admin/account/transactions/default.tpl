@@ -61,7 +61,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-info btn-block" type="submit" value="Filter" class="alt_btn">
+                    <input class="btn btn-info btn-block" type="submit" value="Filter" >
                 </div>
             </div>
         </form>

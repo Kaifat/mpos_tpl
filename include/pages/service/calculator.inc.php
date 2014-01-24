@@ -7,10 +7,14 @@ if (!defined('SECURITY')) die('Hacking attempt');
 require_once(CLASS_DIR . '/tools.class.php');
 
 function getCalcVal ($array,$currency) {
-    foreach ($array as $item) {
-        if($currency == $item[0])
-            return $item;
+    if (!empty($array)) {
+        foreach ($array as $item) {
+            if($currency == $item[0])
+                return $item;
+        }
     }
+
+    return false;
 }
 
 $calc = array();

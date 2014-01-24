@@ -31,7 +31,7 @@
                 </div>
                 <div class="toolbox bottom">
                     <div class="submit_link">
-                        <input class="btn btn-info" type="submit" value="Change Password" class="alt_btn">
+                        <input class="btn btn-info" type="submit" value="Change Password">
                     </div>
                 </div>
             </div>

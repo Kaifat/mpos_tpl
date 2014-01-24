@@ -69,7 +69,7 @@
 
                     <div class="toolbox bottom">
                         <div class="submit_link">
-                            <input class="btn btn-info" type="submit" value="Update Account" class="alt_btn">
+                            <input class="btn btn-info" type="submit" value="Update Account">
                         </div>
                     </div>
                 </div>
