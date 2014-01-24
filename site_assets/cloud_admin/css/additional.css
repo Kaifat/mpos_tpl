@@ -61,10 +61,6 @@ h1.site_title a:hover {
     border-left: 1px solid #CDD2D2;
 }
 
-.width {
-    width: 50%
-}
-
 img#uploadPreview{
     border: none;
     width: 100%;

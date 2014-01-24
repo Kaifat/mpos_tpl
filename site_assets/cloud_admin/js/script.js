@@ -1089,13 +1089,21 @@ var App = function () {
 				})
 			};
 			$("body").on("click", '.nav.nav-tabs.tabs-left a[data-toggle="tab"], .nav.nav-tabs.tabs-right a[data-toggle="tab"]', function () {
-				adjustMinHeight($(this))
+				adjustMinHeight($(this));
 			});
 			adjustMinHeight('.nav.nav-tabs.tabs-left > li.active > a[data-toggle="tab"], .nav.nav-tabs.tabs-right > li.active > a[data-toggle="tab"]');
-			if (location.hash) {
-				var w = location.hash.substr(1);
-				$('a[href="#' + w + '"]').click()
-			}
+
+        $("body").on("click", '.nav.nav-tabs a[data-toggle="tab"]', function () {
+            window.location.hash = $(this).attr('href');
+            checkHashUrl();
+        });
+
+
+        if (location.hash) {
+            var w = location.hash.substr(1);
+            $('a[href="#' + w + '"]').click()
+        }
+
 	}
 	/*-----------------------------------------------------------------------------------*/
 	/*	Fuel UX Tree

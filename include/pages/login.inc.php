@@ -51,7 +51,7 @@ if (!empty($_GET['provider'])) {
         $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to login: '. $error, 'TYPE' => 'warning');
     }
 } elseif ($setting->getValue('maintenance') && !$user->isAdmin($user->getUserId($_POST['username']))) {
-  $_SESSION['POPUP'][] = array('CONTENT' => 'You are not allowed to login during maintenace.', 'TYPE' => 'info');
+  $_SESSION['POPUP'][] = array('CONTENT' => 'You are not allowed to login during maintenace.');
 } else if ($user->checkLogin(@$_POST['username'], @$_POST['password']) ) {
   empty($_POST['to']) ? $to = $_SERVER['PHP_SELF'] : $to = $_POST['to'];
   $port = ($_SERVER["SERVER_PORT"] == "80" or $_SERVER["SERVER_PORT"] == "443") ? "" : (":".$_SERVER["SERVER_PORT"]);

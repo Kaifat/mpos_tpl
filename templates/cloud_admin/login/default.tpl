@@ -4,13 +4,13 @@
         <div class="box-body">
             <div class="tabbable header-tabs">
                 <ul class="nav nav-tabs">
-                    <li class="width"><a href="#tab_sign_up" data-toggle="tab"><i class="fa fa-desktop"></i> <span
+                    <li class="col-md-6{if $HASH_URL == 'tab_sign_up'} active{/if}"><a href="#tab_sign_up" data-toggle="tab"><i class="fa fa-desktop"></i> <span
                             class="hidden-inline-mobile">Sign up</span></a></li>
-                    <li class="active"><a href="#tab_sign_in" data-toggle="tab"><i class="fa fa-flask"></i> <span
+                    <li{if $HASH_URL|default:'tab_sign_in' == 'tab_sign_in'} class="active"{/if}><a href="#tab_sign_in" data-toggle="tab"><i class="fa fa-flask"></i> <span
                             class="hidden-inline-mobile">Sign in</span></a></li>
                 </ul>
                 <div class="tab-content">
-                    <div class="tab-pane fade in active" id="tab_sign_in">
+                    <div class="tab-pane fade{if $HASH_URL|default:'tab_sign_in' == 'tab_sign_in'} in active{/if}" id="tab_sign_in">
                         <div class="login-box-inline">
                             <form action="{$smarty.server.PHP_SELF}?page=login" method="post" id="loginForm">
                                 <input type="hidden" name="to"
@@ -61,9 +61,6 @@
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Facebook" class="btn btn-primary btn-lg">
                                     <i class="fa fa-facebook"></i>
                                 </a>
-                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Twitter" class="btn btn-info btn-lg">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Google" class="btn btn-danger btn-lg">
                                     <i class="fa fa-google-plus"></i>
                                 </a>
@@ -78,13 +75,17 @@
                         </div>
                     </div>
 
-                    <div class="tab-pane fade" id="tab_sign_up">
+                    <div class="tab-pane fade{if $HASH_URL == 'tab_sign_up'} in active{/if}" id="tab_sign_up">
                         <div class="login-box-inline">
                             <form action="{$smarty.server.PHP_SELF}" method="post">
                                 <input type="hidden" name="page" value="register">
-                            {if $smarty.request.token|default:""}
-                                <input type="hidden" name="token" value="{$smarty.request.token|escape}"/>
-                            {/if}
+                                <input type="hidden" name="action" value="register">
+                                <input type="hidden" name="hash_url" value="tab_sign_up">
+                                {if $smarty.request.token|default:""}
+                                    <input type="hidden" name="token" value="{$smarty.request.token|escape}"/>
+                                {/if}
+                                <input type="hidden" name="to"
+                                       value="{($smarty.request.to|default:"{$smarty.server.PHP_SELF}?page=login")|escape}"/>
 
                                 <div class="divide-20"></div>
                                 <div class="col-md-12">
@@ -158,9 +159,6 @@
                                 </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Facebook" class="btn btn-primary btn-lg">
                                     <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="{$smarty.server.PHP_SELF}?page=login&provider=Twitter" class="btn btn-info btn-lg">
-                                    <i class="fa fa-twitter"></i>
                                 </a>
                                 <a href="{$smarty.server.PHP_SELF}?page=login&provider=Google" class="btn btn-danger btn-lg">
                                     <i class="fa fa-google-plus"></i>

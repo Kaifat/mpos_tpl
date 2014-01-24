@@ -40,8 +40,17 @@ if ($setting->getValue('disable_invitations') && $setting->getValue('lock_regist
   } else {
     isset($_POST['token']) ? $token = $_POST['token'] : $token = '';
     if ($user->register(@$_POST['username'], @$_POST['password1'], @$_POST['password2'], @$_POST['pin'], @$_POST['email1'], @$_POST['email2'], @$_POST['tac'], $token)) {
-      ! $setting->getValue('accounts_confirm_email_disabled') ? $_SESSION['POPUP'][] = array('CONTENT' => 'Please check your mailbox to activate this account') : $_SESSION['POPUP'][] = array('CONTENT' => 'Account created, please login');
+      $setting->getValue('accounts_confirm_email_disabled') ? $_SESSION['POPUP'][] = array('CONTENT' => 'Account created, please login') : $_SESSION['POPUP'][] = array('CONTENT' => 'Please check your mailbox to activate this account');
+
+        empty($_POST['to']) ? $to = $_SERVER['PHP_SELF'] : $to = $_POST['to'];
+        $to .= '#tab_sign_in';
+        $port = ($_SERVER["SERVER_PORT"] == "80" or $_SERVER["SERVER_PORT"] == "443") ? "" : (":".$_SERVER["SERVER_PORT"]);
+        $location = @$_SERVER['HTTPS'] === true ? 'https://' . $_SERVER['SERVER_NAME'] . $port . $to : 'http://' . $_SERVER['SERVER_NAME'] . $port . $to;
+        if (!headers_sent()) header('Location: ' . $location);
+        exit('<meta http-equiv="refresh" content="0; url=' . htmlspecialchars($location) . '"/>');
+
     } else {
+
       $_SESSION['POPUP'][] = array('CONTENT' => 'Unable to create account: ' . $user->getError(), 'TYPE' => 'warning');
     }
   }
