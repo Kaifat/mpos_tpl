@@ -17,6 +17,7 @@ function getCalcVal ($array,$currency) {
                 );
             }
         }
+    }
 
     return array(
         'price' => 0,
