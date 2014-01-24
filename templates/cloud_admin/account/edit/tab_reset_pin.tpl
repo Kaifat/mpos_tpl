@@ -16,7 +16,7 @@
                 </div>
                 <div class="toolbox bottom">
                     <div class="submit_link">
-                        <input class="btn btn-info" type="submit" class="alt_btn" value="Reset PIN">
+                        <input class="btn btn-info" type="submit"  value="Reset PIN">
                     </div>
                 </div>
             </div>

@@ -30,7 +30,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-info" type="submit" value="Add" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Add" >
                 </div>
             </div>
         </form>

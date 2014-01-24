@@ -5,22 +5,22 @@
             <div class="box-body">
                 <div class="form-group">
                     <div class="submit_link">
-                        <input class="btn btn-success btn-block" type="submit" value="EarthCoin" class="alt_btn">
+                        <input class="btn btn-success btn-block" type="submit" value="EarthCoin" >
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="submit_link">
-                        <input class="btn btn-success btn-block" type="submit" value="DogeCoin" class="alt_btn">
+                        <input class="btn btn-success btn-block" type="submit" value="DogeCoin" >
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="submit_link">
-                        <input class="btn btn-success btn-block" type="submit" value="DigitalCoin" class="alt_btn">
+                        <input class="btn btn-success btn-block" type="submit" value="DigitalCoin" >
                     </div>
                 </div>
                 <div class="form-group">
                     <div class="submit_link">
-                        <input class="btn btn-success btn-block" type="submit" value="FastCoin" class="alt_btn">
+                        <input class="btn btn-success btn-block" type="submit" value="FastCoin" >
                     </div>
                 </div>
             </div>

@@ -62,7 +62,7 @@
 {*</div>*}
 {*<div class="toolbox bottom">*}
 {*<div class="submit_link">*}
-{*<input class="btn btn-info" type="submit" value="Calculate" class="alt_btn">*}
+{*<input class="btn btn-info" type="submit" value="Calculate" >*}
 {*</div>*}
 {*</div>*}
 {*</form>*}
@@ -97,10 +97,10 @@
 <div class="tab-content">
     <div class="tab-pane active" id="tab1">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                               href="#collapse1_1">1. Create account. </a></h3>
+                    <h3 class="panel-title center"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapse1_1">Calculate DigitalCoin</a></h3>
                 </div>
                 <div id="collapse1_1" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Pool Fees %:</label>
-                                    <i class="fa fa-lock"></i>
+                                    <i class="fa fa-users"></i>
                                     <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
@@ -159,16 +159,16 @@
                                 <div class="col-md-6">
                                     <label>Hardware Costs (USD):</label>
                                     <i class="fa fa-video-camera"></i>
-                                    <input class="form-control" type="text" name="password" placeholder="0.00" size="10"
+                                    <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="toolbox bottom">
+                    <div class="toolbox bottom center">
                         <div class="submit_link">
-                            <input class="btn btn-info" type="submit" value="Calculate" class="alt_btn">
+                            <input class="btn btn-primary" type="submit" value="Calculate" >
                         </div>
                     </div>
                 </div>
@@ -177,10 +177,10 @@
     </div>
     <div class="tab-pane" id="tab2">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-danger">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                               href="#collapse2_1">1. empty</a></h3>
+                    <h3 class="panel-title center"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapse2_1">Calculate DogeCoin</a></h3>
                 </div>
                 <div id="collapse2_1" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -239,16 +239,16 @@
                                 <div class="col-md-6">
                                     <label>Hardware Costs (USD):</label>
                                     <i class="fa fa-video-camera"></i>
-                                    <input class="form-control" type="text" name="password" placeholder="0.00" size="10"
+                                    <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="toolbox bottom">
+                    <div class="toolbox bottom center">
                         <div class="submit_link">
-                            <input class="btn btn-info" type="submit" value="Calculate" class="alt_btn">
+                            <input class="btn btn-primary" type="submit" value="Calculate">
                         </div>
                     </div>
                 </div>
@@ -257,12 +257,10 @@
     </div>
     <div class="tab-pane" id="tab3">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                               href="#collapse3_1">1. If I post to a public community, does that mean
-                        all my
-                        friends and followers can see it? </a></h3>
+                    <h3 class="panel-title center"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapse3_1">Calculate EarthCoin</a></h3>
                 </div>
                 <div id="collapse3_1" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -321,16 +319,16 @@
                                 <div class="col-md-6">
                                     <label>Hardware Costs (USD):</label>
                                     <i class="fa fa-video-camera"></i>
-                                    <input class="form-control" type="text" name="password" placeholder="0.00" size="10"
+                                    <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="toolbox bottom">
+                    <div class="toolbox bottom center">
                         <div class="submit_link">
-                            <input class="btn btn-info" type="submit" value="Calculate" class="alt_btn">
+                            <input class="btn btn-primary" type="submit" value="Calculate" >
                         </div>
                     </div>
                 </div>
@@ -339,12 +337,10 @@
     </div>
     <div class="tab-pane" id="tab4">
         <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                               href="#collapse4_1">1. If I post to a public community, does that mean
-                        all my
-                        friends and followers can see it? </a></h3>
+                    <h3 class="panel-title center"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+                                               href="#collapse4_1">Calculate FastCoin </a></h3>
                 </div>
                 <div id="collapse4_1" class="panel-collapse collapse in">
                     <div class="panel-body">
@@ -403,16 +399,16 @@
                                 <div class="col-md-6">
                                     <label>Hardware Costs (USD):</label>
                                     <i class="fa fa-video-camera"></i>
-                                    <input class="form-control" type="text" name="password" placeholder="0.00" size="10"
+                                    <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
                             </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="toolbox bottom">
+                    <div class="toolbox bottom center">
                         <div class="submit_link">
-                            <input class="btn btn-info" type="submit" value="Calculate" class="alt_btn">
+                            <input class="btn btn-primary" type="submit" value="Calculate" >
                         </div>
                     </div>
                 </div>
@@ -455,13 +451,14 @@
                    class="datatable table table-striped">
                 <thead>
                 <tr>
-                    <th align="center">Time Frame</th>
-                    <th><span>ALF</span> Coins</th>
-                    <th>BTC (ANC/BTC at 0.00469115)</th>
-                    <th align="center">USD (BTC at $962.31)</th>
-                    <th>Power Cost (in USD)</th>
-                    <th>Pool Fees (in USD)</th>
-                    <th>Profit (in USD)</th>
+                    <th class="center">Time<br>Frame</th>
+                    <th class="center"><span>ALF</span><br> Coins</th>
+                    <th class="center">BTC (ANC/BTC<br>at 0.00469115)</th>
+                    <th class="center">USD (BTC<br>at $962.31)</th>
+                    <th class="center">Power Cost<br>(in USD)</th>
+                    <th class="center" >Pool Fees<br>(in USD)</th>
+                    <th class="center">Profit<br>(USD)</th>
+                    <th>Profit<br>(RUB)</th>
                 </tr>
                 </thead>
                 <tbody style="font-size:12px;">

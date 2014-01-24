@@ -53,7 +53,7 @@
             </div>
             <div class="toolbox bottom">
                 <div class="submit_link">
-                    <input class="btn btn-info" type="submit" value="Register" class="alt_btn">
+                    <input class="btn btn-info" type="submit" value="Register" >
                 </div>
             </div>
         </div>

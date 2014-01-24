@@ -56,7 +56,7 @@
                         <input type="hidden" name="action" value="{$smarty.request.action|escape}">
                         <input type="text" class="pin" name="search"
                                value="{$smarty.request.height|default:"%"|escape}">
-                        <input class="btn btn-info" type="submit" value="Search" class="alt_btn">
+                        <input class="btn btn-info" type="submit" value="Search" >
                     </form>
                 </div>
             </div>

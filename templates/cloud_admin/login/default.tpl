@@ -40,7 +40,7 @@
                                             <label class="checkbox"> <input type="checkbox" class="uniform" value="">
                                                 Remember me</label>
                                             <input class="btn btn-danger btn-block" type="submit" value="Login"
-                                                   class="alt_btn"/>
+                                                   />
                                         </div>
                                     </div>
                                 </div>
@@ -138,7 +138,7 @@
                                             <div class="divide-20"></div>
                                             <div class="submit_link">
                                                 <input class="btn btn-success btn-block" type="submit" value="Register"
-                                                       class="alt_btn">
+                                                       >
                                             </div>
                                         </div>
                                     </div>

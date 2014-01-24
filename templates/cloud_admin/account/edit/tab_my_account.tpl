@@ -70,7 +70,7 @@
                                     <input type="hidden" id="w" name="w" />
                                     <input type="hidden" id="h" name="h" />
                                     <input type="hidden" id="scalePer" name="scalePer" />
-                                    <input class="btn btn-info" type="submit" value="Upload" class="alt_btn">
+                                    <input class="btn btn-info" type="submit" value="Upload">
                                 </div>
                             {*</div>*}
                         </div>
@@ -110,7 +110,7 @@
                             </div>
                             <div class="toolbox bottom">
                                 <div class="submit_link">
-                                    <input class="btn btn-info" type="submit" value="Update Contacts" class="alt_btn">
+                                    <input class="btn btn-info" type="submit" value="Update Contacts" >
                                 </div>
                             </div>
                         </div>

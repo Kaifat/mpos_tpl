@@ -24,7 +24,7 @@
                 <div class="clear"></div>
                 <div class="toolbox bottom">
                     <div class="submit_link">
-                        <input class="btn btn-info" type="submit" value="Add New Worker" class="alt_btn">
+                        <input class="btn btn-info" type="submit" value="Add New Worker" >
                     </div>
                 </div>
             </form>
@@ -95,7 +95,7 @@
             <div class="clearfix"></div>
             <div class="toolbox bottom center">
                 <div class="submit_link">
-                    <input class="btn btn-info" type="submit" class="alt_btn" value="Update Workers">
+                    <input class="btn btn-info" type="submit"  value="Update Workers">
                 </div>
             </div>
         </form>

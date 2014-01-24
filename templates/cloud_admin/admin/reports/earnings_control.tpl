@@ -54,7 +54,7 @@
     </div>
     <div class="toolbox bottom">
         <div class="submit_link">
-            <input class="btn btn-info" type="submit" value="Submit" class="alt_btn">
+            <input class="btn btn-info" type="submit" value="Submit" >
         </div>
     </div>
     </div>

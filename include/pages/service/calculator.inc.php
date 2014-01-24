@@ -7,15 +7,22 @@ if (!defined('SECURITY')) die('Hacking attempt');
 require_once(CLASS_DIR . '/tools.class.php');
 
 function getCalcVal ($array,$currency) {
-    foreach ($array as $item) {
-        if($currency == $item['primarycode']) {
-            return array(
-                'price' => $item['recenttrades'][0]['price'],
-                'difficulty' => 0.000,
-                'reward' => 15
-            );
+    if (!empty($array)) {
+        foreach ($array as $item) {
+            if($currency == $item['primarycode']) {
+                return array(
+                    'price' => $item['recenttrades'][0]['price'],
+                    'difficulty' => 0.0001,
+                    'reward' => 15
+                );
+            }
         }
-    }
+
+    return array(
+        'price' => 0,
+        'difficulty' => 0.0001,
+        'reward' => 15
+    );
 }
 
 $calc = array();

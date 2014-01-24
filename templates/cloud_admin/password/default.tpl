@@ -14,7 +14,7 @@
                                value="{$smarty.post.username|escape|default:""}" size="22" maxlength="100" required>
                     </div>
                     <div class="submit_link form-actions">
-                        <input class="btn btn-info btn-block" type="submit" value="Send Me Reset Instructions" class="alt_btn">
+                        <input class="btn btn-info btn-block" type="submit" value="Send Me Reset Instructions" >
                     </div>
                     <div class="login-helpers">
                         <a href="{$smarty.server.PHP_SELF}?page=login"> Back to Login</a>
