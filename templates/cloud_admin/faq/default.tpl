@@ -450,9 +450,9 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_1">1. This Agreement governs your use of {$GLOBAL.website.name}. </a></h3>
+                                           href="#collapse5_1">This Agreement governs your use of {$GLOBAL.website.name}. </a></h3>
             </div>
-            <div id="collapse5_1" class="panel-collapse collapse">
+            <div id="collapse5_1" class="panel-collapse collapse in">
                 <div class="panel-body">
                     <ol>
                         <li>By using any of the Pools or registering an account on the website, you agree to be bound by the
@@ -486,66 +486,6 @@
                             opened, see 6.
                         </li>
                     </ol>
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-success">
-            <div class="panel-heading">
-                <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_2">2. empty </a></h3>
-            </div>
-            <div id="collapse5_2" class="panel-collapse collapse">
-                <div class="panel-body"> empty
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_3">3. empty </a></h3>
-            </div>
-            <div id="collapse5_3" class="panel-collapse collapse">
-                <div class="panel-body">empty
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-warning">
-            <div class="panel-heading">
-                <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_4">4. empty </a></h3>
-            </div>
-            <div id="collapse5_4" class="panel-collapse collapse">
-                <div class="panel-body">empty
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-danger">
-            <div class="panel-heading">
-                <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_5">5.empty</a></h3>
-            </div>
-            <div id="collapse5_5" class="panel-collapse collapse">
-                <div class="panel-body">empty
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_6">6. empty </a></h3>
-            </div>
-            <div id="collapse5_6" class="panel-collapse collapse">
-                <div class="panel-body">empty
-                </div>
-            </div>
-        </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title"><a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
-                                           href="#collapse5_7">7. empty </a></h3>
-            </div>
-            <div id="collapse5_7" class="panel-collapse collapse">
-                <div class="panel-body">empty
                 </div>
             </div>
         </div>
