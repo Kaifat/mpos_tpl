@@ -1,75 +1,3 @@
-{*<div class="col-md-6">*}
-{*<div class="box border blue">*}
-{*<div class="box-title"><h4>Mining and Profit Calculator</h4></div>*}
-{*<div class="login-box-inline">*}
-{*<form action="{$smarty.server.PHP_SELF}" method="post">*}
-{*<div class="box-body">*}
-{*<input type="hidden" name="page" value="{$smarty.request.page|escape}">*}
-{*<input type="hidden" name="action" value="{$smarty.request.action|escape}">*}
-{*<input type="hidden" name="do" value="add">*}
-
-{*<div class="col-lg-12">*}
-{*<div class="row">*}
-{*<div class="col-md-6">*}
-{*<label>Hash Rate (KH/s):</label>*}
-{*<i class="fa fa-user"></i>*}
-{*<input class="form-control" type="text" name="username" value="1000.00" size="10" maxlength="20" required>*}
-{*</div>*}
-{*<div class="col-md-6">*}
-{*<label>Power (Watts):</label>*}
-{*<i class="fa fa-lock"></i>*}
-{*<input class="form-control" type="text" name="password" value="500.00" size="10" maxlength="20" required>&nbsp;*}
-{*</div>*}
-{*</div>*}
-{*<div class="row">*}
-{*<div class="col-md-6">*}
-{*<label>Power Cost ($/kWh):</label>*}
-{*<i class="fa fa-lightbulb-o"></i>*}
-{*<input class="form-control" type="text" name="username" value="0.10" size="10" maxlength="20" required>*}
-{*</div>*}
-{*<div class="col-md-6">*}
-{*<label>Pool Fees %:</label>*}
-{*<i class="fa fa-lock"></i>*}
-{*<input class="form-control" type="text" name="password" value="0.00" size="10" maxlength="20" required>&nbsp;*}
-{*</div>*}
-{*</div>*}
-{*<div class="row">*}
-{*<div class="col-md-6">*}
-{*<label>Difficulty:</label>*}
-{*<i class="fa fa-user"></i>*}
-{*<input class="form-control" type="text" name="username" value="{$CALC.DGC.difficulty}" size="10" maxlength="20" required>*}
-{*</div>*}
-{*<div class="col-md-6">*}
-{*<label>Block Reward:</label>*}
-{*<i class="fa fa-lock"></i>*}
-{*<input class="form-control" type="text" name="password" value="{$CALC.DGC.reward}.00000000" size="10" maxlength="20" required>&nbsp;*}
-{*</div>*}
-{*</div>*}
-{*<div class="row">*}
-{*<div class="col-md-6">*}
-{*<label>Exchange Rate:</label>*}
-{*<i class="fa fa-user"></i>*}
-{*<input class="form-control" type="text" name="username" value="{$CALC.DGC.price}" size="10" maxlength="20" required>*}
-{*</div>*}
-{*<div class="col-md-6">*}
-{*<label>Hardware Costs (USD):</label>*}
-{*<i class="fa fa-lock"></i>*}
-{*<input class="form-control" type="text" name="password" value="0.00" size="10" maxlength="20" required>&nbsp;*}
-{*</div>*}
-{*</div>*}
-{*</div>*}
-{*<div class="clearfix"></div>*}
-{*</div>*}
-{*<div class="toolbox bottom">*}
-{*<div class="submit_link">*}
-{*<input class="btn btn-info" type="submit" value="Calculate" >*}
-{*</div>*}
-{*</div>*}
-{*</form>*}
-{*</div>*}
-{*</div>*}
-{*</div>*}
-
 
 <div class="col-md-12">
 <div class="box border blue">
@@ -208,7 +136,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Pool Fees %:</label>
-                                    <i class="fa fa-lock"></i>
+                                    <i class="fa fa-users"></i>
                                     <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
@@ -288,7 +216,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Pool Fees %:</label>
-                                    <i class="fa fa-lock"></i>
+                                    <i class="fa fa-users"></i>
                                     <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
@@ -368,7 +296,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label>Pool Fees %:</label>
-                                    <i class="fa fa-lock"></i>
+                                    <i class="fa fa-users"></i>
                                     <input class="form-control" type="text" name="password" value="0.00" size="10"
                                            maxlength="20" required>&nbsp;
                                 </div>
@@ -516,11 +444,6 @@
                 {*{/section}*}
                 </tbody>
             </table>
-        </div>
-        <div class="toolbox bottom">
-            <p style="margin-left: 25px; font-size: 11px;"><b>Debit_AP</b> = Auto Threshold
-                Payment,&nbsp;&nbsp;&nbsp;<b>Debit_MP</b> = Manual Payment,&nbsp;&nbsp;&nbsp;<b>Donation</b> = Donation,&nbsp;&nbsp;&nbsp;<b>Fee</b>
-                = Pool Fees (if applicable)</p>
         </div>
     </div>
 </div>

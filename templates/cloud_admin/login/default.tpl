@@ -130,16 +130,14 @@
                                             (4 digit number. <b>Remember this pin!</b>)</font>
                                         </div>
                                         <div class="form-group form-actions center">
-                                            <label>Terms and Conditions</label><br><a style="width:152px;"
-                                                                                      onclick="TINY.box.show({literal}{url:'?page=tacpop',height:500}{/literal})"><font size="1">Accept Terms and Conditions</font></a>
+                                            <label>Terms and Conditions</label><br><a style="width:152px;" href="http://mpos/index.php?page=faq#tab5"><font size="1">Accept Terms and Conditions</font></a>
                                             <input type="checkbox" value="1" name="tac" id="tac" checked="checked">
                                             <label for="tac" style="margin:1px 0px 0px -20px"></label>
 
                                             <center>{nocache}{$RECAPTCHA|default:""}{/nocache}</center>
                                             <div class="divide-20"></div>
                                             <div class="submit_link">
-                                                <input class="btn btn-success btn-block" type="submit" value="Register"
-                                                       >
+                                                <input class="btn btn-success btn-block" type="submit" value="Register">
                                             </div>
                                         </div>
                                     </div>
